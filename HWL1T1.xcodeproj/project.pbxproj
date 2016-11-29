@@ -26,8 +26,8 @@
 /* Begin PBXFileReference section */
 		9321120F1DEAF26B00622EE1 /* HWL1T1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HWL1T1; sourceTree = BUILT_PRODUCTS_DIR; };
 		932112121DEAF26B00622EE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9321121C1DEAF31F00622EE1 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
-		9321121D1DEAF31F00622EE1 /* Human.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Human.m; sourceTree = "<group>"; };
+		9321121C1DEAF31F00622EE1 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Human.h; path = ../HWL1T1/Human.h; sourceTree = "<group>"; };
+		9321121D1DEAF31F00622EE1 /* Human.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Human.m; path = ../HWL1T1/Human.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +44,7 @@
 		932112061DEAF26B00622EE1 = {
 			isa = PBXGroup;
 			children = (
+				932112251DEE1B0500622EE1 /* Sources */,
 				932112111DEAF26B00622EE1 /* HWL1T1 */,
 				932112101DEAF26B00622EE1 /* Products */,
 			);
@@ -61,10 +62,17 @@
 			isa = PBXGroup;
 			children = (
 				932112121DEAF26B00622EE1 /* main.m */,
+			);
+			path = HWL1T1;
+			sourceTree = "<group>";
+		};
+		932112251DEE1B0500622EE1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
 				9321121C1DEAF31F00622EE1 /* Human.h */,
 				9321121D1DEAF31F00622EE1 /* Human.m */,
 			);
-			path = HWL1T1;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +272,7 @@
 				932112181DEAF26B00622EE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
