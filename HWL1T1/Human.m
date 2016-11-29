@@ -49,12 +49,12 @@
 
 - (void)fight
 {
-    NSLog(@"I'm fighting!");
+    NSLog(@"Fight!");
 }
 
 - (void)giveBirth
 {
-    NSLog(@"Happy Birthday!");
+    NSLog(@"Give birth to baby!");
 }
 
 - (void)addChild:(Human *)withName {
