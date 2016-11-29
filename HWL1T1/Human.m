@@ -21,7 +21,7 @@
     return self;
 }
 
-- (id)initWithName:(NSString *)name andGender:(NSString *)gender andAge:(int)age andWeight:(double)weight{
+- (id)initWithName:(NSString *)name andGender:(Gender)gender andAge:(int)age andWeight:(double)weight{
     humanName = name;
     humanGender = gender;
     humanAge = age;

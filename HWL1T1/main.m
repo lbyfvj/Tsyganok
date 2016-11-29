@@ -15,10 +15,10 @@ int main(int argc, const char * argv[]) {
     
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     
-    Human *human = [[[Human alloc]initWithName:@"Ivan" andGender:@"Male" andAge:32 andWeight:65] init];
-    Human *human1 = [[[Human alloc]initWithName:@"Lena" andGender:@"Female" andAge:32 andWeight:60] init];
-    Human *child = [[[Human alloc]initWithName:@"Baby1" andGender:@"Female" andAge:18 andWeight:50] init];
-    Human *childOfChild1 = [[[Human alloc]initWithName:@"ChildOfBaby1" andGender:@"Female" andAge:1 andWeight:5] init];
+    Human *human = [[[Human alloc]initWithName:@"Ivan" andGender:Male andAge:32 andWeight:65] init];
+    Human *human1 = [[[Human alloc]initWithName:@"Lena" andGender:Female andAge:32 andWeight:60] init];
+    Human *child = [[[Human alloc]initWithName:@"Baby1" andGender:Female andAge:18 andWeight:50] init];
+    Human *childOfChild1 = [[[Human alloc]initWithName:@"ChildOfBaby1" andGender:Female andAge:1 andWeight:5] init];
     [human addChild:child];
     [child addChild:childOfChild1];
     [humansArray addObject:human];
@@ -29,9 +29,9 @@ int main(int argc, const char * argv[]) {
 
     for (int i = 0; i < humansArray.count; i++) {
         Human *human = [humansArray objectAtIndex:i];
-        if ([human.humanGender  isEqual: @"Male"]) {
+        if (human.humanGender == Male) {
             [human fight];
-        } else if ([human.humanGender  isEqual: @"Female"]) {
+        } else if (human.humanGender == Female) {
             [human giveBirth];
         }
     }
