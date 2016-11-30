@@ -57,4 +57,8 @@
     [[self childrenArray] removeObject:withName];
 }
 
+- (NSArray *)allChildrenArray {
+    return [[self childrenArray] copy];
+}
+
 @end

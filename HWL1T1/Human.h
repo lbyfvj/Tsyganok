@@ -19,7 +19,7 @@ typedef enum {
 @property (nonatomic, assign) Gender humanGender;
 @property (nonatomic, assign) int humanAge;
 @property (nonatomic, assign) double humanWeight;
-@property (nonatomic, assign) NSMutableArray* childrenArray;
+@property (nonatomic, strong) NSMutableArray* childrenArray;
 
 - (id)initWithName:(NSString *)name andGender:(Gender)gender andAge:(int)age andWeight:(double)weight;
 - (void)fight;
@@ -27,5 +27,6 @@ typedef enum {
 - (void)addChild:(Human *)withName;
 - (void)removeChild:(Human *)withName;
 - (void)sayFamilyHello:(Human *)human;
+- (NSArray *)allChildrenArray;
 
 @end

@@ -26,7 +26,6 @@ int main(int argc, const char * argv[]) {
     [human sayFamilyHello:human];
     [human1 sayFamilyHello:human1];
     
-
     for (int i = 0; i < humansArray.count; i++) {
         Human *human = [humansArray objectAtIndex:i];
         if (human.humanGender == Male) {
@@ -39,6 +38,8 @@ int main(int argc, const char * argv[]) {
     [pool drain];
     return 0;
 }
+
+
 
 
 
