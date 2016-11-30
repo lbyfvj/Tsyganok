@@ -12,16 +12,15 @@
 
 @synthesize humanName, humanGender, humanAge, humanWeight, childrenArray;
 
--(id)init{
+-(id)init {
     self = [super init];
     if(self){
         childrenArray = [[NSMutableArray alloc] init];
-    }
-    
+    }    
     return self;
 }
 
-- (id)initWithName:(NSString *)name andGender:(Gender)gender andAge:(int)age andWeight:(double)weight{
+- (id)initWithName:(NSString *)name andGender:(Gender)gender andAge:(int)age andWeight:(double)weight {
     humanName = name;
     humanGender = gender;
     humanAge = age;
@@ -29,31 +28,24 @@
     return self;
 }
 
-- (void)sayFamilyHello:(Human *)human
-{
+- (void)sayFamilyHello:(Human *)human {
     NSMutableArray * elementsInArray = [NSMutableArray array];
     [elementsInArray addObject:human];
-    
-    while([elementsInArray count])
-    {
+    while([elementsInArray count]) {
         Human * current = [elementsInArray objectAtIndex:0];
         NSLog(@"Hello! My name is %@", current.humanName);
-        for(Human * child in current.childrenArray)
-        {
+        for(Human * child in current.childrenArray) {
             [elementsInArray addObject:child];
         }
-        
         [elementsInArray removeObjectAtIndex:0];
     }
 }
 
-- (void)fight
-{
+- (void)fight {
     NSLog(@"Fight!");
 }
 
-- (void)giveBirth
-{
+- (void)giveBirth {
     NSLog(@"Give birth to baby!");
 }
 
