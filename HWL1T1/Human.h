@@ -27,5 +27,6 @@ typedef enum {
 - (void)addChild:(Human *)withName;
 - (void)removeChild:(Human *)withName;
 - (void)sayFamilyHello:(Human *)human;
+- (void)performGenderSpecificOperation;
 
 @end

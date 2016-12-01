@@ -8,13 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "Human.h"
+#import "Men.h"
+#import "Women.h"
+#import "NSObject+Category.h"
 
 int main(int argc, const char * argv[]) {
 
-    NSMutableArray *humansArray = [[NSMutableArray alloc] initWithCapacity:40];
+    
     
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     
+    ////////HWTask1 Implementation
+    NSMutableArray *humansArray = [[NSMutableArray alloc] initWithCapacity:40];
     Human *human = [[[Human alloc]initWithName:@"Ivan" andGender:@"Male" andAge:32 andWeight:65] init];
     Human *human1 = [[[Human alloc]initWithName:@"Lena" andGender:@"Female" andAge:32 andWeight:60] init];
     Human *child = [[[Human alloc]initWithName:@"Baby1" andGender:@"Female" andAge:18 andWeight:50] init];
@@ -34,6 +39,24 @@ int main(int argc, const char * argv[]) {
         } else if ([human.humanGender  isEqual: @"Female"]) {
             [human giveBirth];
         }
+    }
+    
+    ////////HWTask2 Implementation
+    
+    NSMutableArray *peoplesArray = [[NSMutableArray alloc] initWithCapacity:40];
+    Men *men = [[[Men alloc]initWithName:@"Gray"] init];
+    Women *women = [[[Women alloc]initWithName:@"Maredit"] init];
+    
+    //Init with object method from NSObject category
+    Men *superman = [Men object];
+    [superman initWithName:@"Superman"];
+    
+    [humansArray addObject:men];
+    [humansArray addObject:women];
+    [humansArray addObject:superman];
+    
+    for (Human *person in peoplesArray){
+        [person performGenderSpecificOperation];
     }
     
     [pool drain];

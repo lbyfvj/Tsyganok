@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		932112131DEAF26B00622EE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 932112121DEAF26B00622EE1 /* main.m */; };
 		9321121E1DEAF31F00622EE1 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = 9321121D1DEAF31F00622EE1 /* Human.m */; };
+		932112521DF0A3DB00622EE1 /* Men.m in Sources */ = {isa = PBXBuildFile; fileRef = 9321124D1DF0A3DB00622EE1 /* Men.m */; };
+		932112531DF0A3DB00622EE1 /* Women.m in Sources */ = {isa = PBXBuildFile; fileRef = 9321124F1DF0A3DB00622EE1 /* Women.m */; };
+		932112541DF0A3DB00622EE1 /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 932112511DF0A3DB00622EE1 /* NSObject+Category.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +31,12 @@
 		932112121DEAF26B00622EE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9321121C1DEAF31F00622EE1 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Human.h; path = ../HWL1T1/Human.h; sourceTree = "<group>"; };
 		9321121D1DEAF31F00622EE1 /* Human.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Human.m; path = ../HWL1T1/Human.m; sourceTree = "<group>"; };
+		9321124C1DF0A3DB00622EE1 /* Men.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Men.h; sourceTree = "<group>"; };
+		9321124D1DF0A3DB00622EE1 /* Men.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Men.m; sourceTree = "<group>"; };
+		9321124E1DF0A3DB00622EE1 /* Women.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Women.h; sourceTree = "<group>"; };
+		9321124F1DF0A3DB00622EE1 /* Women.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Women.m; sourceTree = "<group>"; };
+		932112501DF0A3DB00622EE1 /* NSObject+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Category.h"; sourceTree = "<group>"; };
+		932112511DF0A3DB00622EE1 /* NSObject+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Category.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +80,12 @@
 			children = (
 				9321121C1DEAF31F00622EE1 /* Human.h */,
 				9321121D1DEAF31F00622EE1 /* Human.m */,
+				9321124C1DF0A3DB00622EE1 /* Men.h */,
+				9321124D1DF0A3DB00622EE1 /* Men.m */,
+				9321124E1DF0A3DB00622EE1 /* Women.h */,
+				9321124F1DF0A3DB00622EE1 /* Women.m */,
+				932112501DF0A3DB00622EE1 /* NSObject+Category.h */,
+				932112511DF0A3DB00622EE1 /* NSObject+Category.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -133,6 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				932112531DF0A3DB00622EE1 /* Women.m in Sources */,
+				932112521DF0A3DB00622EE1 /* Men.m in Sources */,
+				932112541DF0A3DB00622EE1 /* NSObject+Category.m in Sources */,
 				9321121E1DEAF31F00622EE1 /* Human.m in Sources */,
 				932112131DEAF26B00622EE1 /* main.m in Sources */,
 			);

@@ -65,4 +65,8 @@
     [[self childrenArray] removeObject:withName];
 }
 
+- (void)performGenderSpecificOperation {
+    
+}
+
 @end
