@@ -29,7 +29,6 @@ int main(int argc, const char * argv[]) {
     [humansArray addObject:human];
     [humansArray addObject:human1];
     [human sayFamilyHello:human];
-    [human1 sayFamilyHello:human1];
     
 
     for (int i = 0; i < humansArray.count; i++) {

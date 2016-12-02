@@ -69,4 +69,8 @@
     
 }
 
+- (NSArray *)externalChildrenArray {
+    return [[self childrenArray] copy];
+}
+
 @end
