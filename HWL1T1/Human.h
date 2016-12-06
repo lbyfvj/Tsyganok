@@ -16,22 +16,21 @@ typedef enum {
 @interface Human: NSObject
 
 @property (nonatomic, assign) NSString* humanName;
-@property (nonatomic, assign) NSString* humanGender;
+@property (nonatomic, assign) Gender humanGender;
 @property (nonatomic, assign) int humanAge;
 @property (nonatomic, assign) double humanWeight;
 
-- (id)initWithName:(NSString *)name andGender:(NSString*)gender andAge:(int)age andWeight:(double)weight;
+@property (nonatomic, strong) NSMutableArray* childrenArray;
+
+- (id)initWithName:(NSString *)name andGender:(Gender)gender andAge:(int)age andWeight:(double)weight;
 - (void)fight;
 - (void)giveBirth;
 - (void)addChild:(Human *)withName;
 - (void)removeChild:(Human *)withName;
 - (void)sayFamilyHello:(Human *)human;
 - (void)performGenderSpecificOperation;
-- (NSArray *)externalChildrenArray;
+- (NSArray *)allChildrenArray;
 
 @end
 
-@interface Human()
-@property (nonatomic, strong) NSMutableArray * childrenArray;
-@end
 
