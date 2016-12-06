@@ -12,6 +12,7 @@
 		932112521DF0A3DB00622EE1 /* Men.m in Sources */ = {isa = PBXBuildFile; fileRef = 9321124D1DF0A3DB00622EE1 /* Men.m */; };
 		932112531DF0A3DB00622EE1 /* Women.m in Sources */ = {isa = PBXBuildFile; fileRef = 9321124F1DF0A3DB00622EE1 /* Women.m */; };
 		932112541DF0A3DB00622EE1 /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 932112511DF0A3DB00622EE1 /* NSObject+Category.m */; };
+		9390E7DD1DF76BBA00935B78 /* NSString+ITExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9390E7DC1DF76BBA00935B78 /* NSString+ITExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		9321120F1DEAF26B00622EE1 /* HWL1T1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HWL1T1; sourceTree = BUILT_PRODUCTS_DIR; };
-		932112121DEAF26B00622EE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		932112121DEAF26B00622EE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = HWL1T1/main.m; sourceTree = "<group>"; };
 		9321121C1DEAF31F00622EE1 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Human.h; path = ../HWL1T1/Human.h; sourceTree = "<group>"; };
 		9321121D1DEAF31F00622EE1 /* Human.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Human.m; path = ../HWL1T1/Human.m; sourceTree = "<group>"; };
 		9321124C1DF0A3DB00622EE1 /* Men.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Men.h; sourceTree = "<group>"; };
@@ -37,6 +38,8 @@
 		9321124F1DF0A3DB00622EE1 /* Women.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Women.m; sourceTree = "<group>"; };
 		932112501DF0A3DB00622EE1 /* NSObject+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Category.h"; sourceTree = "<group>"; };
 		932112511DF0A3DB00622EE1 /* NSObject+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Category.m"; sourceTree = "<group>"; };
+		9390E7DB1DF76BBA00935B78 /* NSString+ITExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+ITExtensions.h"; path = "Sources/NSString+ITExtensions.h"; sourceTree = "<group>"; };
+		9390E7DC1DF76BBA00935B78 /* NSString+ITExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+ITExtensions.m"; path = "Sources/NSString+ITExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				932112251DEE1B0500622EE1 /* Sources */,
-				932112111DEAF26B00622EE1 /* HWL1T1 */,
+				932112121DEAF26B00622EE1 /* main.m */,
 				932112101DEAF26B00622EE1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,19 +70,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		932112111DEAF26B00622EE1 /* HWL1T1 */ = {
+		932112251DEE1B0500622EE1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				932112121DEAF26B00622EE1 /* main.m */,
+				9390E7D81DF76AD500935B78 /* HWTask1 */,
+				9390E7D91DF76AF100935B78 /* HWTask2 */,
+				9390E7DA1DF76B5500935B78 /* HWTask4 */,
 			);
-			path = HWL1T1;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		932112251DEE1B0500622EE1 /* Sources */ = {
+		9390E7D81DF76AD500935B78 /* HWTask1 */ = {
 			isa = PBXGroup;
 			children = (
 				9321121C1DEAF31F00622EE1 /* Human.h */,
 				9321121D1DEAF31F00622EE1 /* Human.m */,
+			);
+			name = HWTask1;
+			sourceTree = "<group>";
+		};
+		9390E7D91DF76AF100935B78 /* HWTask2 */ = {
+			isa = PBXGroup;
+			children = (
 				9321124C1DF0A3DB00622EE1 /* Men.h */,
 				9321124D1DF0A3DB00622EE1 /* Men.m */,
 				9321124E1DF0A3DB00622EE1 /* Women.h */,
@@ -87,7 +99,17 @@
 				932112501DF0A3DB00622EE1 /* NSObject+Category.h */,
 				932112511DF0A3DB00622EE1 /* NSObject+Category.m */,
 			);
-			path = Sources;
+			name = HWTask2;
+			sourceTree = "<group>";
+		};
+		9390E7DA1DF76B5500935B78 /* HWTask4 */ = {
+			isa = PBXGroup;
+			children = (
+				9390E7DB1DF76BBA00935B78 /* NSString+ITExtensions.h */,
+				9390E7DC1DF76BBA00935B78 /* NSString+ITExtensions.m */,
+			);
+			name = HWTask4;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +172,7 @@
 			files = (
 				932112531DF0A3DB00622EE1 /* Women.m in Sources */,
 				932112521DF0A3DB00622EE1 /* Men.m in Sources */,
+				9390E7DD1DF76BBA00935B78 /* NSString+ITExtensions.m in Sources */,
 				932112541DF0A3DB00622EE1 /* NSObject+Category.m in Sources */,
 				9321121E1DEAF31F00622EE1 /* Human.m in Sources */,
 				932112131DEAF26B00622EE1 /* main.m in Sources */,
