@@ -8,29 +8,56 @@
 
 #import "NSString+ITExtensions.h"
 
-static const NSUInteger defaultRandomStringLength = 30;
-
-static const NSString *defaultCharactersSet = @"abcdferfvvxcsdzcdfbsfgbfgbdfvwedcasczd";
+static const NSUInteger kDefaultRandomStringLength = 30;
 
 @implementation NSString (ITExtensions)
 
-+(NSString *)randomString {
-    return [self randomStringWithLenght:defaultRandomStringLength];
++ (id) numericCharacters {
+    return [self charactersWithUnicodeInRange:NSMakeRange(48, 57 - 48 + 1)];
 }
 
-+(NSString *)randomStringWithLenght:(NSUInteger)lenght {
-    return [self randomStringWithLenght:lenght ofCharacters:defaultCharactersSet];
++ (id) symbolCharacters {
+    return [self charactersWithUnicodeInRange:NSMakeRange(33, 47 - 33 + 1)];
 }
 
-+(NSString *)randomStringWithLenght:(NSUInteger)lenght ofCharacters:(NSString *)characters {
++ (id) capitalizedCharacters {
+    return [self charactersWithUnicodeInRange:NSMakeRange(65, 90 - 65 + 1)];
+}
+
++ (id) lowercaseCharacters {
+    return [self charactersWithUnicodeInRange:NSMakeRange(97, 122 - 97 + 1)];
+}
+
++ (id) characters {
+    NSMutableString *result = [NSMutableString stringWithString: [self capitalizedCharacters]];
+    [result appendString:[self lowercaseCharacters]];
+    [result appendString:[self numericCharacters]];
+    return [self stringWithString:result];
+}
+
++ (id) charactersWithUnicodeInRange: (NSRange)range {
     NSMutableString *result = [NSMutableString string];
-    
-    for (NSUInteger i = 0; i < lenght; i++) {
-        NSUInteger random = arc4random_uniform([characters length]);
-        unichar nextChar = [characters characterAtIndex: random];
-        [result appendFormat:@"%c", nextChar];
+    for(unichar character = range.location; character < NSMaxRange(range); character++) {
+        [result appendFormat:@"%c", character];
     }
-    
+    return [self stringWithString:result];
+}
+
++ (id)randomString {
+    return [self randomStringWithLenght:kDefaultRandomStringLength];
+}
+
++ (id)randomStringWithLenght:(NSUInteger)lenght {
+    return [self randomStringWithLenght:lenght ofCharacters:[self characters]];
+}
+
++ (id)randomStringWithLenght:(NSUInteger)lenght ofCharacters:(NSString *)characters {
+    NSMutableString *result = [NSMutableString string];
+    for (NSUInteger i = 0; i < lenght; i++) {
+        NSUInteger randomCharacter = arc4random_uniform((uint32_t)[characters length]);
+        unichar nextCharacter = [characters characterAtIndex: randomCharacter];
+        [result appendFormat:@"%c", nextCharacter];
+    }
     return [self stringWithString:result];
 }
 

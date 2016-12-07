@@ -10,8 +10,15 @@
 
 @interface NSString (ITExtensions)
 
-+(NSString *)randomString;
-+(NSString *)randomStringWithLenght:(NSUInteger)lenght;
-+(NSString *)randomStringWithLenght:(NSUInteger)lenght ofCharacters:(NSString *)characters;
++ (id) numericCharacters;
++ (id) symbolCharacters;
++ (id) capitalizedCharacters;
++ (id) lowercaseCharacters;
++ (id) characters;
++ (id) charactersWithUnicodeInRange: (NSRange)range;
+
++ (id)randomString;
++ (id)randomStringWithLenght:(NSUInteger)lenght;
++ (id)randomStringWithLenght:(NSUInteger)lenght ofCharacters:(NSString *)characters;
 
 @end

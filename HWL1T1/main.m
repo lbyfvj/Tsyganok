@@ -65,6 +65,11 @@ int main(int argc, const char * argv[]) {
     /////////HWTask4 Implementation
     
     NSLog(@"%@", [NSString randomString]);
+    NSLog(@"%@", [NSString randomStringWithLenght:10]);
+    NSLog(@"%@", [NSString randomStringWithLenght:40 ofCharacters:[NSString characters]]);
+    NSLog(@"%@", [NSString randomStringWithLenght:5 ofCharacters:[NSString numericCharacters]]);
+    NSLog(@"%@", [NSString numericCharacters]);
+    NSLog(@"%@", [NSString randomStringWithLenght:5 ofCharacters:[NSString symbolCharacters]]);
     
     [pool drain];
     return 0;
