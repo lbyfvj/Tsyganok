@@ -10,4 +10,8 @@
 
 @interface NSString (ITExtensions)
 
++(NSString *)randomString;
++(NSString *)randomStringWithLenght:(NSUInteger)lenght;
++(NSString *)randomStringWithLenght:(NSUInteger)lenght ofCharacters:(NSString *)characters;
+
 @end

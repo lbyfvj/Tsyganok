@@ -8,6 +8,30 @@
 
 #import "NSString+ITExtensions.h"
 
+static const NSUInteger defaultRandomStringLength = 30;
+
+static const NSString *defaultCharactersSet = @"abcdferfvvxcsdzcdfbsfgbfgbdfvwedcasczd";
+
 @implementation NSString (ITExtensions)
+
++(NSString *)randomString {
+    return [self randomStringWithLenght:defaultRandomStringLength];
+}
+
++(NSString *)randomStringWithLenght:(NSUInteger)lenght {
+    return [self randomStringWithLenght:lenght ofCharacters:defaultCharactersSet];
+}
+
++(NSString *)randomStringWithLenght:(NSUInteger)lenght ofCharacters:(NSString *)characters {
+    NSMutableString *result = [NSMutableString string];
+    
+    for (NSUInteger i = 0; i < lenght; i++) {
+        NSUInteger random = arc4random_uniform([characters length]);
+        unichar nextChar = [characters characterAtIndex: random];
+        [result appendFormat:@"%c", nextChar];
+    }
+    
+    return [self stringWithString:result];
+}
 
 @end

@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "Human.h"
 #import "Men.h"
 #import "Women.h"
+
 #import "NSObject+Category.h"
+#import "NSString+ITExtensions.h"
 
 int main(int argc, const char * argv[]) {
 
@@ -58,6 +61,10 @@ int main(int argc, const char * argv[]) {
     for (Human *person in peoplesArray){
         [person performGenderSpecificOperation];
     }
+    
+    /////////HWTask4 Implementation
+    
+    NSLog(@"%@", [NSString randomString]);
     
     [pool drain];
     return 0;
