@@ -53,10 +53,14 @@
 #pragma mark Public methods
 
 - (NSUInteger)count {
+    [self doesNotRecognizeSelector:_cmd];
+    
     return 0;
 }
 
 - (NSString *)stringAtIndex:(NSUInteger)index {
+    [self doesNotRecognizeSelector:_cmd];
+    
     return nil;
 }
 
