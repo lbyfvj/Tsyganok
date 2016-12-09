@@ -10,4 +10,8 @@
 
 @implementation ITRangeCharacters
 
+- (id) initWithRange:(NSRange)range {
+    return nil;
+}
+
 @end

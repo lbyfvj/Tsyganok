@@ -7,24 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93D18A6B1DF9EEFB006B7B78 /* ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18A6A1DF9EEFB006B7B78 /* ObjCTests.m */; };
 		93D18B081DFA054C006B7B78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AF91DFA054C006B7B78 /* main.m */; };
 		93D18B0A1DFA054C006B7B78 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AFD1DFA054C006B7B78 /* Human.m */; };
 		93D18B0B1DFA054C006B7B78 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AFD1DFA054C006B7B78 /* Human.m */; };
 		93D18B0C1DFA054C006B7B78 /* Men.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B001DFA054C006B7B78 /* Men.m */; };
 		93D18B0D1DFA054C006B7B78 /* Men.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B001DFA054C006B7B78 /* Men.m */; };
 		93D18B0E1DFA054C006B7B78 /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B021DFA054C006B7B78 /* NSObject+Category.m */; };
-		93D18B0F1DFA054C006B7B78 /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B021DFA054C006B7B78 /* NSObject+Category.m */; };
 		93D18B101DFA054C006B7B78 /* Women.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B041DFA054C006B7B78 /* Women.m */; };
 		93D18B111DFA054C006B7B78 /* Women.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B041DFA054C006B7B78 /* Women.m */; };
 		93D18B121DFA054C006B7B78 /* NSString+ITExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B071DFA054C006B7B78 /* NSString+ITExtensions.m */; };
-		93D18B131DFA054C006B7B78 /* NSString+ITExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B071DFA054C006B7B78 /* NSString+ITExtensions.m */; };
+		93D18B131DFA054C006B7B78 /* NSString+ITExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B071DFA054C006B7B78 /* NSString+ITExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D18B171DFB297F006B7B78 /* ITCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B161DFB297F006B7B78 /* ITCharacters.m */; };
-		93D18B181DFB297F006B7B78 /* ITCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B161DFB297F006B7B78 /* ITCharacters.m */; };
+		93D18B181DFB297F006B7B78 /* ITCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B161DFB297F006B7B78 /* ITCharacters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D18B1C1DFB2BA4006B7B78 /* ITRangeCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B1B1DFB2BA4006B7B78 /* ITRangeCharacters.m */; };
-		93D18B1D1DFB2BA4006B7B78 /* ITRangeCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B1B1DFB2BA4006B7B78 /* ITRangeCharacters.m */; };
+		93D18B1D1DFB2BA4006B7B78 /* ITRangeCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B1B1DFB2BA4006B7B78 /* ITRangeCharacters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D18B201DFB2C55006B7B78 /* ITStringsCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B1F1DFB2C55006B7B78 /* ITStringsCharacters.m */; };
-		93D18B211DFB2C55006B7B78 /* ITStringsCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B1F1DFB2C55006B7B78 /* ITStringsCharacters.m */; };
+		93D18B211DFB2C55006B7B78 /* ITStringsCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B1F1DFB2C55006B7B78 /* ITStringsCharacters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		93D18B231DFB5365006B7B78 /* ITCharactersSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B221DFB5365006B7B78 /* ITCharactersSpec.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E94D6B1F87388FC4DF5B4A9D /* libPods-ObjCTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0708C9A9AAF13802E214E992 /* libPods-ObjCTests.a */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +43,6 @@
 		0708C9A9AAF13802E214E992 /* libPods-ObjCTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ObjCTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9321120F1DEAF26B00622EE1 /* HWL1T1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HWL1T1; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D18A681DF9EEFB006B7B78 /* ObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		93D18A6A1DF9EEFB006B7B78 /* ObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCTests.m; sourceTree = "<group>"; };
 		93D18A6C1DF9EEFB006B7B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93D18AF91DFA054C006B7B78 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93D18AFC1DFA054C006B7B78 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
@@ -63,6 +61,7 @@
 		93D18B1B1DFB2BA4006B7B78 /* ITRangeCharacters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITRangeCharacters.m; sourceTree = "<group>"; };
 		93D18B1E1DFB2C55006B7B78 /* ITStringsCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITStringsCharacters.h; sourceTree = "<group>"; };
 		93D18B1F1DFB2C55006B7B78 /* ITStringsCharacters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITStringsCharacters.m; sourceTree = "<group>"; };
+		93D18B221DFB5365006B7B78 /* ITCharactersSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCharactersSpec.m; sourceTree = "<group>"; };
 		B247B111B8936EA107E4BCB3 /* Pods-ObjCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjCTests/Pods-ObjCTests.release.xcconfig"; sourceTree = "<group>"; };
 		D51C61FB342E3D4BF9D7E74A /* Pods-ObjCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjCTests/Pods-ObjCTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				93D18AF71DF9F7C5006B7B78 /* Specs */,
-				93D18A6A1DF9EEFB006B7B78 /* ObjCTests.m */,
 				93D18A6C1DF9EEFB006B7B78 /* Info.plist */,
 			);
 			path = ObjCTests;
@@ -136,6 +134,7 @@
 		93D18AF71DF9F7C5006B7B78 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				93D18B221DFB5365006B7B78 /* ITCharactersSpec.m */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -375,10 +374,9 @@
 				93D18B111DFA054C006B7B78 /* Women.m in Sources */,
 				93D18B181DFB297F006B7B78 /* ITCharacters.m in Sources */,
 				93D18B0D1DFA054C006B7B78 /* Men.m in Sources */,
+				93D18B231DFB5365006B7B78 /* ITCharactersSpec.m in Sources */,
 				93D18B0B1DFA054C006B7B78 /* Human.m in Sources */,
-				93D18B0F1DFA054C006B7B78 /* NSObject+Category.m in Sources */,
 				93D18B211DFB2C55006B7B78 /* ITStringsCharacters.m in Sources */,
-				93D18A6B1DF9EEFB006B7B78 /* ObjCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

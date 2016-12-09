@@ -10,4 +10,8 @@
 
 @implementation ITStringsCharacters
 
+- (id)initWithStrings:(NSArray *)strings {
+    return nil;
+}
+
 @end
