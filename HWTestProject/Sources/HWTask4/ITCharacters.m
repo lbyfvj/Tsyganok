@@ -9,6 +9,7 @@
 #import "ITCharacters.h"
 #import "ITRangeCharacters.h"
 #import "ITStringsCharacters.h"
+#import "ITClusterCharacters.h"
 
 #import "NSString+ITExtensions.h"
 
@@ -29,10 +30,14 @@
     return [self charactersWithStrings:[string symbols]];
 }
 
++ (id)charactersWithCharacters:(NSArray *)characters {
+    return [[[ITClusterCharacters alloc] initWithCharacters:characters] autorelease];
+}
+
 #pragma mark -
 #pragma mark Initialization
 
-- (id) initWithRange:(NSRange)range {
+- (id)initWithRange:(NSRange)range {
     [self release];
     
     return [[ITRangeCharacters alloc] initWithRange:range];
@@ -45,8 +50,13 @@
 }
 
 - (id)initWithSymbols:(NSString *)string {
-
     return [self initWithStrings:[string symbols]];
+}
+
+- (id)initWithCharacters:(NSArray *)characters {
+    [self release];
+    
+    return [self initWithCharacters:characters];
 }
 
 #pragma mark -
@@ -62,6 +72,10 @@
     [self doesNotRecognizeSelector:_cmd];
     
     return nil;
+}
+
+- (NSString *)objectAtIndexedSubscript:(NSUInteger)index {
+    return [self stringAtIndex:index];
 }
 
 #pragma mark -

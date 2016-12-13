@@ -13,12 +13,16 @@
 + (id)charactersWithRange:(NSRange)range;
 + (id)charactersWithStrings:(NSArray *)strings;
 + (id)charactersWithSymbols:(NSString *)string;
++ (id)charactersWithCharacters:(NSArray *)characters;
 
-- (id) initWithRange:(NSRange)range;
+- (id)initWithRange:(NSRange)range;
 - (id)initWithStrings:(NSArray *)strings;
 - (id)initWithSymbols:(NSString *)string;
+- (id)initWithCharacters:(NSArray *)characters;
 
 - (NSUInteger)count;
 - (NSString *)stringAtIndex:(NSUInteger)index;
+
+- (NSString *)objectAtIndexedSubscript:(NSUInteger)index;
 
 @end

@@ -24,6 +24,8 @@
 		93D18B201DFB2C55006B7B78 /* ITStringsCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B1F1DFB2C55006B7B78 /* ITStringsCharacters.m */; };
 		93D18B211DFB2C55006B7B78 /* ITStringsCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B1F1DFB2C55006B7B78 /* ITStringsCharacters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D18B231DFB5365006B7B78 /* ITCharactersSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B221DFB5365006B7B78 /* ITCharactersSpec.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		93D18B271E008D0E006B7B78 /* ITClusterCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B261E008D0E006B7B78 /* ITClusterCharacters.m */; };
+		93D18B281E008D0E006B7B78 /* ITClusterCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B261E008D0E006B7B78 /* ITClusterCharacters.m */; };
 		E94D6B1F87388FC4DF5B4A9D /* libPods-ObjCTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0708C9A9AAF13802E214E992 /* libPods-ObjCTests.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,8 @@
 		93D18B1E1DFB2C55006B7B78 /* ITStringsCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITStringsCharacters.h; sourceTree = "<group>"; };
 		93D18B1F1DFB2C55006B7B78 /* ITStringsCharacters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITStringsCharacters.m; sourceTree = "<group>"; };
 		93D18B221DFB5365006B7B78 /* ITCharactersSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCharactersSpec.m; sourceTree = "<group>"; };
+		93D18B251E008D0E006B7B78 /* ITClusterCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITClusterCharacters.h; sourceTree = "<group>"; };
+		93D18B261E008D0E006B7B78 /* ITClusterCharacters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITClusterCharacters.m; sourceTree = "<group>"; };
 		B247B111B8936EA107E4BCB3 /* Pods-ObjCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjCTests/Pods-ObjCTests.release.xcconfig"; sourceTree = "<group>"; };
 		D51C61FB342E3D4BF9D7E74A /* Pods-ObjCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjCTests/Pods-ObjCTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +211,8 @@
 			children = (
 				93D18B1A1DFB2BA4006B7B78 /* ITRangeCharacters.h */,
 				93D18B1B1DFB2BA4006B7B78 /* ITRangeCharacters.m */,
+				93D18B251E008D0E006B7B78 /* ITClusterCharacters.h */,
+				93D18B261E008D0E006B7B78 /* ITClusterCharacters.m */,
 				93D18B1E1DFB2C55006B7B78 /* ITStringsCharacters.h */,
 				93D18B1F1DFB2C55006B7B78 /* ITStringsCharacters.m */,
 			);
@@ -364,6 +370,7 @@
 				93D18B1C1DFB2BA4006B7B78 /* ITRangeCharacters.m in Sources */,
 				93D18B0C1DFA054C006B7B78 /* Men.m in Sources */,
 				93D18B081DFA054C006B7B78 /* main.m in Sources */,
+				93D18B271E008D0E006B7B78 /* ITClusterCharacters.m in Sources */,
 				93D18B171DFB297F006B7B78 /* ITCharacters.m in Sources */,
 				93D18B121DFA054C006B7B78 /* NSString+ITExtensions.m in Sources */,
 				93D18B101DFA054C006B7B78 /* Women.m in Sources */,
@@ -382,6 +389,7 @@
 				93D18B111DFA054C006B7B78 /* Women.m in Sources */,
 				93D18B181DFB297F006B7B78 /* ITCharacters.m in Sources */,
 				93D18B0D1DFA054C006B7B78 /* Men.m in Sources */,
+				93D18B281E008D0E006B7B78 /* ITClusterCharacters.m in Sources */,
 				93D18B231DFB5365006B7B78 /* ITCharactersSpec.m in Sources */,
 				93D18B0B1DFA054C006B7B78 /* Human.m in Sources */,
 				93D18B211DFB2C55006B7B78 /* ITStringsCharacters.m in Sources */,

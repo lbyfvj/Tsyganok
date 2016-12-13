@@ -10,12 +10,12 @@
 
 @interface NSString (ITExtensions)
 
-+ (id) numericCharacters;
-+ (id) symbolCharacters;
-+ (id) capitalizedCharacters;
-+ (id) lowercaseCharacters;
-+ (id) characters;
-+ (id) charactersWithUnicodeInRange: (NSRange)range;
++ (id)numericCharacters;
++ (id)symbolCharacters;
++ (id)capitalizedCharacters;
++ (id)lowercaseCharacters;
++ (id)characters;
++ (id)charactersWithUnicodeInRange:(NSRange)range;
 
 + (id)randomString;
 + (id)randomStringWithLenght:(NSUInteger)lenght;

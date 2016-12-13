@@ -8,7 +8,6 @@
 
 #import "NSString+ITExtensions.h"
 
-
 static const NSUInteger kDefaultRandomStringLength = 30;
 
 @implementation NSString (ITExtensions)
@@ -30,17 +29,19 @@ static const NSUInteger kDefaultRandomStringLength = 30;
 }
 
 + (id)characters {
-    NSMutableString *result = [NSMutableString stringWithString: [self capitalizedCharacters]];
+    NSMutableString *result = [NSMutableString stringWithString:[self capitalizedCharacters]];
     [result appendString:[self lowercaseCharacters]];
     [result appendString:[self numericCharacters]];
+    
     return [self stringWithString:result];
 }
 
-+ (id)charactersWithUnicodeInRange: (NSRange)range {
++ (id)charactersWithUnicodeInRange:(NSRange)range {
     NSMutableString *result = [NSMutableString string];
     for(unichar character = range.location; character < NSMaxRange(range); character++) {
         [result appendFormat:@"%c", character];
     }
+    
     return [self stringWithString:result];
 }
 
@@ -59,6 +60,7 @@ static const NSUInteger kDefaultRandomStringLength = 30;
         unichar nextCharacter = [characters characterAtIndex: randomCharacter];
         [result appendFormat:@"%c", nextCharacter];
     }
+    
     return [self stringWithString:result];
 }
 
@@ -69,6 +71,7 @@ static const NSUInteger kDefaultRandomStringLength = 30;
         unichar resultChar = [self characterAtIndex:index];
         [result addObject:[NSString stringWithFormat:@"%c", resultChar]];
     }
+    
     return [[result copy] autorelease];
 }
 
