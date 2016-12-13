@@ -10,8 +10,6 @@
 
 @interface Women : Human
 
-- (id)initWithName:(NSString *)name;
-
 - (void)performGenderSpecificOperation;
 
 @end

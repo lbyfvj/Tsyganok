@@ -10,10 +10,6 @@
 
 @implementation Men
 
-- (id)initWithName:(NSString *)name {
-    name = name;
-    return self;
-}
 - (void)performGenderSpecificOperation {
     [self fight];
 }

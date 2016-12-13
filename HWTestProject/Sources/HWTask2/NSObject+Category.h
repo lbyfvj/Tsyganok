@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (Category)
+@interface NSObject (ITObject)
 
 + (instancetype)object;
 

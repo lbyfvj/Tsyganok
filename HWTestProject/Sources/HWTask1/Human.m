@@ -8,36 +8,36 @@
 
 #import "Human.h"
 
+@interface Human()
+
+@property (nonatomic, assign) NSMutableArray *mutableChildren;
+
+@end
+
 @implementation Human
 
-@synthesize humanName, humanGender, humanAge, humanWeight, childrenArray;
+@dynamic children;
 
--(id)init {
+- (id)initWithName:(NSString *)name gender:(Gender)gender age:(NSUInteger)age weight:(double)weight {
     self = [super init];
-    if(self){
-        childrenArray = [[NSMutableArray alloc] init];
-    }    
+    
+    _name = name;
+    _gender = gender;
+    _age = age;
+    _weight = weight;
+    _mutableChildren = [[[NSMutableArray alloc] init] autorelease];
+    
     return self;
 }
 
-- (id)initWithName:(NSString *)name andGender:(Gender)gender andAge:(int)age andWeight:(double)weight {
-    humanName = name;
-    humanGender = gender;
-    humanAge = age;
-    humanWeight = weight;
-    return self;
+- (NSArray *)children {
+    return [[[self mutableChildren] copy] autorelease];
 }
 
-- (void)sayFamilyHello:(Human *)human {
-    NSMutableArray * elementsInArray = [NSMutableArray array];
-    [elementsInArray addObject:human];
-    while([elementsInArray count]) {
-        Human * current = [elementsInArray objectAtIndex:0];
-        NSLog(@"Hello! My name is %@", current.humanName);
-        for(Human * child in current.childrenArray) {
-            [elementsInArray addObject:child];
-        }
-        [elementsInArray removeObjectAtIndex:0];
+- (void)sayHello {
+    NSLog(@"Hello, my name is %@, I'm %lu years old", self.name, self.age);
+    for (id child in self.children) {
+        [child sayHello];
     }
 }
 
@@ -49,22 +49,18 @@
     NSLog(@"Give birth to baby!");
 }
 
-- (void)addChild:(Human *)withName {
-    [[self childrenArray] addObject:withName];
+- (void)addChild:(Human *)name {
+    [[self mutableChildren] addObject:name];
 }
 
-- (void)removeChild:(Human *)withName {
-    [[self childrenArray] removeObject:withName];
+- (void)removeChild:(Human *)name {    
+    for (NSUInteger i = 0; i < self.mutableChildren.count; i++) {
+        [self.mutableChildren removeObject:name];
+    }
 }
-
 
 - (void)performGenderSpecificOperation {
     
-}
-
-- (NSArray *)allChildrenArray {
-
-    return [[self childrenArray] copy];
 }
 
 @end

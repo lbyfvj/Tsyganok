@@ -155,6 +155,7 @@
 				93D18AFE1DFA054C006B7B78 /* HWTask2 */,
 				93D18B051DFA054C006B7B78 /* HWTask3 */,
 				93D18B141DFB2940006B7B78 /* HWTask4 */,
+				93D18B241DFF1DFD006B7B78 /* HWTask5 */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -210,6 +211,13 @@
 				93D18B1F1DFB2C55006B7B78 /* ITStringsCharacters.m */,
 			);
 			path = Private;
+			sourceTree = "<group>";
+		};
+		93D18B241DFF1DFD006B7B78 /* HWTask5 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HWTask5;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -8,34 +8,35 @@
 
 #import "NSString+ITExtensions.h"
 
+
 static const NSUInteger kDefaultRandomStringLength = 30;
 
 @implementation NSString (ITExtensions)
 
-+ (id) numericCharacters {
++ (id)numericCharacters {
     return [self charactersWithUnicodeInRange:NSMakeRange(48, 57 - 48 + 1)];
 }
 
-+ (id) symbolCharacters {
++ (id)symbolCharacters {
     return [self charactersWithUnicodeInRange:NSMakeRange(33, 47 - 33 + 1)];
 }
 
-+ (id) capitalizedCharacters {
++ (id)capitalizedCharacters {
     return [self charactersWithUnicodeInRange:NSMakeRange(65, 90 - 65 + 1)];
 }
 
-+ (id) lowercaseCharacters {
++ (id)lowercaseCharacters {
     return [self charactersWithUnicodeInRange:NSMakeRange(97, 122 - 97 + 1)];
 }
 
-+ (id) characters {
++ (id)characters {
     NSMutableString *result = [NSMutableString stringWithString: [self capitalizedCharacters]];
     [result appendString:[self lowercaseCharacters]];
     [result appendString:[self numericCharacters]];
     return [self stringWithString:result];
 }
 
-+ (id) charactersWithUnicodeInRange: (NSRange)range {
++ (id)charactersWithUnicodeInRange: (NSRange)range {
     NSMutableString *result = [NSMutableString string];
     for(unichar character = range.location; character < NSMaxRange(range); character++) {
         [result appendFormat:@"%c", character];
@@ -64,12 +65,10 @@ static const NSUInteger kDefaultRandomStringLength = 30;
 - (NSArray *)symbols {
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self length]];
     NSUInteger lenght = [self length];
-    
     for (NSUInteger index = 0; index < lenght; index++) {
         unichar resultChar = [self characterAtIndex:index];
         [result addObject:[NSString stringWithFormat:@"%c", resultChar]];
     }
-    
     return [[result copy] autorelease];
 }
 

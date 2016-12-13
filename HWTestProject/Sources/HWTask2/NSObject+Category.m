@@ -8,7 +8,7 @@
 
 #import "NSObject+Category.h"
 
-@implementation NSObject (Category)
+@implementation NSObject (ITObject)
 
 + (instancetype)object {
     return [[[self alloc] init] autorelease];

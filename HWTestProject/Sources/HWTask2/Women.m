@@ -10,10 +10,6 @@
 
 @implementation Women
 
-- (id)initWithName:(NSString *)name {
-    name = name;
-    return self;
-}
 - (void)performGenderSpecificOperation {
     [self giveBirth];
 }

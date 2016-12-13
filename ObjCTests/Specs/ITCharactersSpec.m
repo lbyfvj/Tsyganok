@@ -55,14 +55,6 @@ describe(@"ITCharacters", ^{
         it(@"should contain @\"B\" at index = 1", ^ {
             [[[characters stringAtIndex:1] should] equal:@"B"];
         });
-        
-        context(@"inner context", ^{
-            it(@"does another thing", ^{
-            });
-            
-            pending(@"something unimplemented", ^{
-            });
-        });
     });
 });
 
