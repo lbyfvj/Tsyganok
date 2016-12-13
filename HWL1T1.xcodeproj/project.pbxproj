@@ -9,12 +9,9 @@
 /* Begin PBXBuildFile section */
 		93D18B081DFA054C006B7B78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AF91DFA054C006B7B78 /* main.m */; };
 		93D18B0A1DFA054C006B7B78 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AFD1DFA054C006B7B78 /* Human.m */; };
-		93D18B0B1DFA054C006B7B78 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AFD1DFA054C006B7B78 /* Human.m */; };
 		93D18B0C1DFA054C006B7B78 /* Men.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B001DFA054C006B7B78 /* Men.m */; };
-		93D18B0D1DFA054C006B7B78 /* Men.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B001DFA054C006B7B78 /* Men.m */; };
 		93D18B0E1DFA054C006B7B78 /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B021DFA054C006B7B78 /* NSObject+Category.m */; };
 		93D18B101DFA054C006B7B78 /* Women.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B041DFA054C006B7B78 /* Women.m */; };
-		93D18B111DFA054C006B7B78 /* Women.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B041DFA054C006B7B78 /* Women.m */; };
 		93D18B121DFA054C006B7B78 /* NSString+ITExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B071DFA054C006B7B78 /* NSString+ITExtensions.m */; };
 		93D18B131DFA054C006B7B78 /* NSString+ITExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B071DFA054C006B7B78 /* NSString+ITExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D18B171DFB297F006B7B78 /* ITCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B161DFB297F006B7B78 /* ITCharacters.m */; };
@@ -386,12 +383,9 @@
 			files = (
 				93D18B1D1DFB2BA4006B7B78 /* ITRangeCharacters.m in Sources */,
 				93D18B131DFA054C006B7B78 /* NSString+ITExtensions.m in Sources */,
-				93D18B111DFA054C006B7B78 /* Women.m in Sources */,
 				93D18B181DFB297F006B7B78 /* ITCharacters.m in Sources */,
-				93D18B0D1DFA054C006B7B78 /* Men.m in Sources */,
 				93D18B281E008D0E006B7B78 /* ITClusterCharacters.m in Sources */,
 				93D18B231DFB5365006B7B78 /* ITCharactersSpec.m in Sources */,
-				93D18B0B1DFA054C006B7B78 /* Human.m in Sources */,
 				93D18B211DFB2C55006B7B78 /* ITStringsCharacters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,7 +401,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -454,7 +448,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -515,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D51C61FB342E3D4BF9D7E74A /* Pods-ObjCTests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ObjCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -527,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B247B111B8936EA107E4BCB3 /* Pods-ObjCTests.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ObjCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";

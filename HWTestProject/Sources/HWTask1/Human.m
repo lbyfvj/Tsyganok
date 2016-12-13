@@ -8,8 +8,7 @@
 
 #import "Human.h"
 
-@interface Human()
-
+@interface Human ()
 @property (nonatomic, assign) NSMutableArray *mutableChildren;
 
 @end
@@ -20,7 +19,6 @@
 
 - (id)initWithName:(NSString *)name gender:(Gender)gender age:(NSUInteger)age weight:(double)weight {
     self = [super init];
-    
     _name = name;
     _gender = gender;
     _age = age;
@@ -28,6 +26,10 @@
     _mutableChildren = [[[NSMutableArray alloc] init] autorelease];
     
     return self;
+}
+
+- (void)dealloc {
+    [super dealloc];
 }
 
 - (NSArray *)children {

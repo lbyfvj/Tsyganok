@@ -14,7 +14,6 @@ typedef enum {
 } Gender;
 
 @interface Human: NSObject
-
 @property (nonatomic, assign) NSString *name;
 @property (nonatomic, assign) Gender gender;
 @property (nonatomic, assign) NSUInteger age;

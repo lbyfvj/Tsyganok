@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+extern
+NSRange ITMakeCharactersRange(unichar value1, unichar value2);
+
 @interface ITCharacters : NSObject <NSFastEnumeration>
 
 + (id)charactersWithRange:(NSRange)range;
@@ -24,5 +27,7 @@
 - (NSString *)stringAtIndex:(NSUInteger)index;
 
 - (NSString *)objectAtIndexedSubscript:(NSUInteger)index;
+
+- (NSString *)string;
 
 @end

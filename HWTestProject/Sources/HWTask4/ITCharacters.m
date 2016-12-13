@@ -7,11 +7,21 @@
 //
 
 #import "ITCharacters.h"
+
+#import "math.h"
+
 #import "ITRangeCharacters.h"
 #import "ITStringsCharacters.h"
 #import "ITClusterCharacters.h"
 
 #import "NSString+ITExtensions.h"
+
+NSRange ITMakeCharactersRange(unichar value1, unichar value2) {
+    unichar minValue = MIN(value1, value2);
+    unichar maxValue = MAX(value1, value2);
+    
+    return NSMakeRange(minValue, maxValue - minValue +1);
+}
 
 @implementation ITCharacters
 
@@ -35,7 +45,7 @@
 }
 
 #pragma mark -
-#pragma mark Initialization
+#pragma mark Initialization and Deallocations
 
 - (id)initWithRange:(NSRange)range {
     [self release];
@@ -78,13 +88,33 @@
     return [self stringAtIndex:index];
 }
 
+- (NSString *)string {
+    NSMutableString *string = [NSMutableString stringWithCapacity:[self count]];
+    for(NSString *symbol in self) {
+        [string appendString:symbol];
+    }
+    
+    return [[string copy] autorelease];
+}
+
 #pragma mark -
 #pragma mark NSFastEnumeration methods
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
                                   objects:(id  _Nullable [])buffer
-                                    count:(NSUInteger)len {
-    return 0;
+                                    count:(NSUInteger)resultLength {
+    state->mutationsPtr = (unsigned long *)self;
+    
+    NSUInteger length = MIN(state->state + resultLength, [self count]);
+    resultLength = length - state->state;
+    
+    for (NSUInteger index = state->state; index < length; index++) {
+        buffer[index] = self[index];
+    }
+    
+    state->state += resultLength;
+    
+    return resultLength;
 }
 
 @end

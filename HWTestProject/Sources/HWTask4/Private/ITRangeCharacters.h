@@ -9,6 +9,7 @@
 #import "ITCharacters.h"
 
 @interface ITRangeCharacters : ITCharacters
+@property (nonatomic, readonly) NSRange range;
 
 - (id) initWithRange:(NSRange)range;
 

@@ -29,15 +29,13 @@ describe(@"ITCharacters", ^{
 //    - (NSUInteger)count;
 //    - (NSString *)stringAtIndex:(NSUInteger)index;
     
-    
+    afterAll(^{
+        characters = nil;
+    });
     
     context(@"when initializated with (id)charactersWithRange: 'A', 'B' - 'A'", ^{
         beforeAll(^{
-            characters = [ITCharacters charactersWithRange:NSMakeRange('A', 'B' - 'A')];
-        });
-        
-        afterAll(^{
-            characters = nil;
+            characters = [ITCharacters charactersWithRange:ITMakeCharactersRange('A', 'B')];
         });
         
         it(@"should be of class ITRangeCharacters", ^ {
@@ -54,6 +52,26 @@ describe(@"ITCharacters", ^{
         
         it(@"should contain @\"B\" at index = 1", ^ {
             [[[characters stringAtIndex:1] should] equal:@"B"];
+        });
+        
+        it(@"should raise when request object at index = 3", ^ {
+            [[theBlock(^{
+                [characters stringAtIndex:3];
+            }) should] raise];
+        });
+        
+        it(@"should return @\"AB\" from string", ^ {
+            [[[characters string] should] equal:@"AB"];
+        });
+    });
+    
+    context(@"when initialized with initWithRange: 'A', 'B' - 'A'", ^{
+        beforeAll(^{
+            characters = [[ITCharacters alloc] initWithRange:NSMakeRange('A', 'B' - 'A')];
+        });
+        
+        it(@"should be of class ITRangeCharacters", ^ {
+            [[characters should] beKindOfClass:[ITRangeCharacters class]];
         });
     });
 });
