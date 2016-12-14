@@ -18,7 +18,7 @@
 #pragma mark -
 #pragma mark Initialization and Deallocations
 
-- (id) initWithRange:(NSRange)range {
+- (id)initWithRange:(NSRange)range {
     self = [super init];
     if (self) {
         self.range = range;

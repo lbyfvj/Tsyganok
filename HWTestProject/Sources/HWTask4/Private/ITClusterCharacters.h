@@ -9,6 +9,7 @@
 #import "ITCharacters.h"
 
 @interface ITClusterCharacters : ITCharacters
+@property (nonatomic, readonly)   NSArray   *characters;
 
 - (id)initWithCharacters:(NSArray *)characters;
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93971EA01E01ED4500EBBE01 /* ITClusterCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B261E008D0E006B7B78 /* ITClusterCharacters.m */; };
 		93D18B081DFA054C006B7B78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AF91DFA054C006B7B78 /* main.m */; };
 		93D18B0A1DFA054C006B7B78 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AFD1DFA054C006B7B78 /* Human.m */; };
 		93D18B0C1DFA054C006B7B78 /* Men.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B001DFA054C006B7B78 /* Men.m */; };
@@ -22,7 +23,6 @@
 		93D18B211DFB2C55006B7B78 /* ITStringsCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B1F1DFB2C55006B7B78 /* ITStringsCharacters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D18B231DFB5365006B7B78 /* ITCharactersSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B221DFB5365006B7B78 /* ITCharactersSpec.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D18B271E008D0E006B7B78 /* ITClusterCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B261E008D0E006B7B78 /* ITClusterCharacters.m */; };
-		93D18B281E008D0E006B7B78 /* ITClusterCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B261E008D0E006B7B78 /* ITClusterCharacters.m */; };
 		E94D6B1F87388FC4DF5B4A9D /* libPods-ObjCTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0708C9A9AAF13802E214E992 /* libPods-ObjCTests.a */; };
 /* End PBXBuildFile section */
 
@@ -384,9 +384,9 @@
 				93D18B1D1DFB2BA4006B7B78 /* ITRangeCharacters.m in Sources */,
 				93D18B131DFA054C006B7B78 /* NSString+ITExtensions.m in Sources */,
 				93D18B181DFB297F006B7B78 /* ITCharacters.m in Sources */,
-				93D18B281E008D0E006B7B78 /* ITClusterCharacters.m in Sources */,
 				93D18B231DFB5365006B7B78 /* ITCharactersSpec.m in Sources */,
 				93D18B211DFB2C55006B7B78 /* ITStringsCharacters.m in Sources */,
+				93971EA01E01ED4500EBBE01 /* ITClusterCharacters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,7 +509,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D51C61FB342E3D4BF9D7E74A /* Pods-ObjCTests.debug.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ObjCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -522,7 +522,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B247B111B8936EA107E4BCB3 /* Pods-ObjCTests.release.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ObjCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";

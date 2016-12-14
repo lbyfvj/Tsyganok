@@ -90,7 +90,7 @@ NSRange ITMakeCharactersRange(unichar value1, unichar value2) {
 
 - (NSString *)string {
     NSMutableString *string = [NSMutableString stringWithCapacity:[self count]];
-    for(NSString *symbol in self) {
+    for (NSString *symbol in self) {
         [string appendString:symbol];
     }
     
@@ -98,19 +98,21 @@ NSRange ITMakeCharactersRange(unichar value1, unichar value2) {
 }
 
 #pragma mark -
-#pragma mark NSFastEnumeration methods
+#pragma mark NSFastEnumeration
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
-                                  objects:(id  _Nullable [])buffer
+                                  objects:(id [])buffer
                                     count:(NSUInteger)resultLength {
     state->mutationsPtr = (unsigned long *)self;
     
     NSUInteger length = MIN(state->state + resultLength, [self count]);
     resultLength = length - state->state;
     
-    for (NSUInteger index = state->state; index < length; index++) {
-        buffer[index] = self[index];
+    for (NSUInteger index = 0; index < resultLength; index++) {
+        buffer[index] = self[index + state->state];
     }
+    
+    state->itemsPtr = buffer;
     
     state->state += resultLength;
     

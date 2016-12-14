@@ -9,6 +9,7 @@
 #import "ITCharacters.h"
 
 @interface ITStringsCharacters : ITCharacters
+@property (nonatomic, readonly) NSArray *strings;
 
 - (id)initWithStrings:(NSArray *)strings;
 
