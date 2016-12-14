@@ -11,6 +11,7 @@
 #import "ITCharacters.h"
 #import "ITRangeCharacters.h"
 #import "ITStringsCharacters.h"
+#import "ITClusterCharacters.h"
 
 SPEC_BEGIN(ITCharactersSpec)
 
@@ -32,6 +33,8 @@ describe(@"ITCharacters", ^{
     afterAll(^{
         characters = nil;
     });
+    
+    // ITRangeCharacters Tests
     
     context(@"when initializated with charactersWithRange: 'A', 'B'", ^{
         beforeAll(^{
@@ -113,6 +116,8 @@ describe(@"ITCharacters", ^{
         });
     });
     
+    // ITStringsCharacters Tests
+    
     context(@"when initializated with charactersWithStrings: @[@\"a\", @\"b\"]", ^{
         beforeAll(^{
             characters = [ITCharacters charactersWithStrings:@[@"a", @"b"]];
@@ -152,7 +157,7 @@ describe(@"ITCharacters", ^{
     
     context(@"when initialized with initWithStrings: @[@\"a\", @\"b\"]", ^{
         beforeAll(^{
-            characters = [[ITCharacters alloc] initWithStrings:@[@"a", @"b"]];
+            characters = [[ITStringsCharacters alloc] initWithStrings:@[@"a", @"b"]];
         });
         
         it(@"should be of class ITStringsCharacters", ^ {
@@ -194,6 +199,104 @@ describe(@"ITCharacters", ^{
             for (NSString *symbol in characters) {
                 [[symbol should] equal:[NSString stringWithFormat:@"%c", character]];
                 character++;
+            }
+        });
+    });
+    
+    // ITClusterCharacters Tests
+    
+    context(@"when initializated with charactersWithCharacters with characters in range 'A' - 'Z' and 'a' - 'z'", ^{
+        ITCharacters *capitalizedCharacters = [ITCharacters charactersWithRange:ITMakeCharactersRange('A', 'Z')];
+        ITCharacters *lowercasedCharacters = [ITCharacters charactersWithRange:ITMakeCharactersRange('a', 'z')];
+        
+        beforeAll(^{
+            characters = [ITCharacters charactersWithCharacters:@[capitalizedCharacters, lowercasedCharacters]];
+        });
+        
+        it(@"should be of class ITClusterCharacters", ^ {
+            [[characters should] beKindOfClass:[ITClusterCharacters class]];
+        });
+        
+        it(@"should be count of 52", ^ {
+            [[characters should] haveCountOf:52];
+        });
+        
+        it(@"should contain @\"a\" at index = 0", ^ {
+            [[[characters stringAtIndex:0] should] equal:@"A"];
+        });
+        
+        it(@"should contain @\"z\" at index = 51", ^ {
+            [[[characters stringAtIndex:51] should] equal:@"z"];
+        });
+        
+        it(@"should raise when request object at index = 53", ^ {
+            [[theBlock(^{
+                [characters stringAtIndex:53];
+            }) should] raise];
+            
+            [[theBlock(^{
+                id a = characters[53];
+                [a description];
+            }) should] raise];
+        });
+        
+        it(@"should return @\"A-Za-z\" from string", ^ {
+            NSString *string = [NSString stringWithFormat:@"%@%@",
+                                [capitalizedCharacters string],
+                                [lowercasedCharacters string]];
+            [[[characters string] should] equal:string];
+        });
+    });
+    
+    context(@"when initialized with charactersWithCharacters with characters in range 'A' - 'Z' and 'a' - 'z'", ^{
+        ITCharacters *capitalizedCharacters = [ITCharacters charactersWithRange:ITMakeCharactersRange('A', 'Z')];
+        ITCharacters *lowercasedCharacters = [ITCharacters charactersWithRange:ITMakeCharactersRange('a', 'z')];
+        
+        beforeAll(^{
+            characters = [[ITClusterCharacters alloc] initWithCharacters:@[capitalizedCharacters, lowercasedCharacters]];
+        });
+        
+        it(@"should be of class ITClusterCharacters", ^ {
+            [[characters should] beKindOfClass:[ITClusterCharacters class]];
+        });
+    });
+    
+    context(@"when initializated with array containing: 'A' - 'z' when enumerated", ^{
+        NSRange capitalizedRange = ITMakeCharactersRange('A', 'Z');
+        NSRange lowercasedRange = ITMakeCharactersRange('a', 'z');
+        ITCharacters *capitalizedCharacters = [ITCharacters charactersWithRange:capitalizedRange];
+        ITCharacters *lowercasedCharacters = [ITCharacters charactersWithRange:lowercasedRange];
+        
+        beforeAll(^{
+            characters = [[ITClusterCharacters alloc] initWithCharacters:@[capitalizedCharacters, lowercasedCharacters]];
+        });
+        
+        it(@"shouldn't raise", ^ {
+            [[theBlock(^{
+                for (id symbol in characters) {
+                    [symbol description];
+                }
+            }) shouldNot] raise];
+        });
+        
+        it(@"should return count of symbols equel to range 'A'-'Z', 'a'-'z'", ^{
+            NSUInteger count = 0;
+            for (NSString *symbol in characters) {
+                [symbol description];
+                count++;
+            }
+            [[theValue(count) should] equal:@([capitalizedCharacters count] + [lowercasedCharacters count])];
+        });
+        
+        it(@"should return symbols in range 'A'-'Z', 'a'-'z'", ^{
+            NSMutableString *string = [NSMutableString stringWithString:[capitalizedCharacters string]];
+            [string appendString:[lowercasedCharacters string]];
+            
+            NSUInteger index = 0;
+            
+            for (NSString *symbol in characters) {
+                [[symbol should] equal:[NSString stringWithFormat:@"%c", [string characterAtIndex:index]]];
+                index++;
             }
         });
     });

@@ -45,20 +45,26 @@
     
     NSAssert(index < count, NSRangeException);
     
-    NSUInteger iterator = 0;
-    
-    for (ITCharacters *characterSet in self.characters) {
-        if (iterator >= index) {
-            return characterSet[iteratedIndex];
+    for (ITCharacters *charactersSet in self.characters) {
+        count = [charactersSet count];
+        
+        if (iteratedIndex < count) {
+            return charactersSet[iteratedIndex];
         }
         
-        count = [characterSet count];
-        iterator += count;
         iteratedIndex -= count;
-        
     }
     
     return nil;
+}
+
+- (NSString *)string {
+    NSMutableString *string = [NSMutableString stringWithCapacity:[self count]];
+    for (ITCharacters *charactersSet in self.characters) {
+        [string appendString:[charactersSet string]];
+    }
+    
+    return [[string copy] autorelease];
 }
 
 #pragma mark -
@@ -74,17 +80,6 @@
     return count;
 }
 
-#pragma mark -
-#pragma mark NSFastEnumeration
 
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
-                                  objects:(id [])buffer
-                                    count:(NSUInteger)resultLength {
-
-
-    return [super countByEnumeratingWithState:state
-                                             objects:buffer
-                                               count:resultLength];
-}
 
 @end
