@@ -10,4 +10,9 @@
 
 @implementation ITWasher
 
+- (void)performWorkWithObject:(ITCar *)car {
+    NSLog(@"%@: Wash the car!", [self class]);
+    [car changeState:car];
+}
+
 @end

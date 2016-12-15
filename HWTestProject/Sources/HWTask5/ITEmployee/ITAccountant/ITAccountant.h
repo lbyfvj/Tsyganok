@@ -7,7 +7,12 @@
 //
 
 #import "ITEmployee.h"
+#import "ITWasher.h"
 
 @interface ITAccountant : ITEmployee
+@property (nonatomic, assign) NSUInteger  revenue;
+
+- (void)performWorkWithObject:(ITWasher *)washer;
+- (void)calculateRevenue;
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import "ITEmployee.h"
+#import "ITCar.h"
 
 @interface ITWasher : ITEmployee
+
+- (void)performWorkWithObject:(ITCar *)car;
 
 @end

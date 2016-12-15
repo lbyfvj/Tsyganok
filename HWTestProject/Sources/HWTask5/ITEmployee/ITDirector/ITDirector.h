@@ -7,7 +7,10 @@
 //
 
 #import "ITEmployee.h"
+#import "ITAccountant.h"
 
 @interface ITDirector : ITEmployee
+
+- (void)performWorkWithObject:(ITAccountant *)accountant;
 
 @end

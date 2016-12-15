@@ -10,4 +10,12 @@
 
 @implementation ITAccountant
 
+- (void)performWorkWithObject:(ITWasher *)washer {
+    NSLog(@"%@: Take moneys from washer!", [self class]);
+}
+
+- (void)calculateRevenue {
+    
+}
+
 @end

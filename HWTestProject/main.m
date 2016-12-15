@@ -8,13 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ITHuman.h"
 #import "ITMen.h"
 #import "ITWomen.h"
 
 #import "NSObject+Category.h"
 #import "NSString+ITExtensions.h"
 #import "ITCharacters.h"
+
+#import "ITCarWash.h"
+#import "ITCar.h"
 
 int main(int argc, const char * argv[]) {
 
@@ -67,6 +69,15 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%@", [NSString randomString]);
         NSLog(@"%@", [NSString randomStringWithLenght:10]);
         NSLog(@"%@", [NSString randomStringWithLenght:40 ofCharacters:[ITCharacters characters]]);
+        
+        /////////CarWash initialization
+        
+        ITCar *mazda = [[ITCar alloc] initWithName:@"Mazda3" state:Dirty];        
+        ITCarWash *carWash = [ITCarWash object];
+        ITWasher *washer = [ITWasher object];
+        [washer performWorkWithObject:mazda];
+        
+    
     }
 
     return 0;

@@ -11,9 +11,15 @@
 typedef enum {
     Clean,
     Dirty
-} ITState;
+} ITCarState;
 
 @interface ITCar : NSObject
-@property (nonatomic, assign) BOOL cash;
+@property (nonatomic, assign) NSString      *name;
+@property (nonatomic, assign) BOOL          cash;
+@property (nonatomic, assign) ITCarState    state;
+
+- (id)initWithName:(NSString *)name state:(ITCarState)state;
+- (void)changeState:(ITCar *)car;
+
 
 @end

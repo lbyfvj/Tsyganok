@@ -10,4 +10,18 @@
 
 @implementation ITCar
 
+- (id)initWithName:(NSString *)name state:(ITCarState)state {
+    self = [super init];
+    _name = name;
+    _state = state;
+    _cash = YES;
+    
+    return self;
+}
+
+- (void)changeState:(ITCar *)car {
+    car.state = Clean;
+    NSLog(@"%@: Car washed!", [self class]);    
+}
+
 @end

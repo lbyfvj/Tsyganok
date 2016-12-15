@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ITWasher.h"
 
 @interface ITCarWash : NSObject
+@property (nonatomic, copy, readonly)   NSArray     *stuff;
 
+- (void)hireStuff:(ITEmployee *)employee;
+- (void)fireStuff:(ITEmployee *)employee;
 - (void)performWork;
 
 @end

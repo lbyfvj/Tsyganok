@@ -10,4 +10,8 @@
 
 @implementation ITDirector
 
+- (void)performWorkWithObject:(ITAccountant *)accountant {
+    NSLog(@"%@: Take moneys from Accountant!", [self class]);
+}
+
 @end

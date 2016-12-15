@@ -9,13 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "ITHuman.h"
 
-
-typedef enum {
-    Wash,
-    Calculate,
-    MakeProfit
-} ITWorkType;
-
 @interface ITEmployee : ITHuman
 
 - (void)performWorkWithObject:(NSObject *)object;
