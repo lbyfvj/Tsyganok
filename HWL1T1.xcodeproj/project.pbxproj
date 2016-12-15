@@ -15,10 +15,10 @@
 		93971EBB1E03179800EBBE01 /* ITDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EBA1E03179800EBBE01 /* ITDirector.m */; };
 		93971EBE1E0317A800EBBE01 /* ITWasher.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EBD1E0317A800EBBE01 /* ITWasher.m */; };
 		93D18B081DFA054C006B7B78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AF91DFA054C006B7B78 /* main.m */; };
-		93D18B0A1DFA054C006B7B78 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AFD1DFA054C006B7B78 /* Human.m */; };
-		93D18B0C1DFA054C006B7B78 /* Men.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B001DFA054C006B7B78 /* Men.m */; };
+		93D18B0A1DFA054C006B7B78 /* ITHuman.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AFD1DFA054C006B7B78 /* ITHuman.m */; };
+		93D18B0C1DFA054C006B7B78 /* ITMen.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B001DFA054C006B7B78 /* ITMen.m */; };
 		93D18B0E1DFA054C006B7B78 /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B021DFA054C006B7B78 /* NSObject+Category.m */; };
-		93D18B101DFA054C006B7B78 /* Women.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B041DFA054C006B7B78 /* Women.m */; };
+		93D18B101DFA054C006B7B78 /* ITWomen.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B041DFA054C006B7B78 /* ITWomen.m */; };
 		93D18B121DFA054C006B7B78 /* NSString+ITExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B071DFA054C006B7B78 /* NSString+ITExtensions.m */; };
 		93D18B131DFA054C006B7B78 /* NSString+ITExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B071DFA054C006B7B78 /* NSString+ITExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D18B171DFB297F006B7B78 /* ITCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B161DFB297F006B7B78 /* ITCharacters.m */; };
@@ -62,14 +62,14 @@
 		93D18A681DF9EEFB006B7B78 /* ObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D18A6C1DF9EEFB006B7B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93D18AF91DFA054C006B7B78 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		93D18AFC1DFA054C006B7B78 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
-		93D18AFD1DFA054C006B7B78 /* Human.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Human.m; sourceTree = "<group>"; };
-		93D18AFF1DFA054C006B7B78 /* Men.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Men.h; sourceTree = "<group>"; };
-		93D18B001DFA054C006B7B78 /* Men.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Men.m; sourceTree = "<group>"; };
+		93D18AFC1DFA054C006B7B78 /* ITHuman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITHuman.h; sourceTree = "<group>"; };
+		93D18AFD1DFA054C006B7B78 /* ITHuman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITHuman.m; sourceTree = "<group>"; };
+		93D18AFF1DFA054C006B7B78 /* ITMen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITMen.h; sourceTree = "<group>"; };
+		93D18B001DFA054C006B7B78 /* ITMen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITMen.m; sourceTree = "<group>"; };
 		93D18B011DFA054C006B7B78 /* NSObject+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Category.h"; sourceTree = "<group>"; };
 		93D18B021DFA054C006B7B78 /* NSObject+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Category.m"; sourceTree = "<group>"; };
-		93D18B031DFA054C006B7B78 /* Women.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Women.h; sourceTree = "<group>"; };
-		93D18B041DFA054C006B7B78 /* Women.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Women.m; sourceTree = "<group>"; };
+		93D18B031DFA054C006B7B78 /* ITWomen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITWomen.h; sourceTree = "<group>"; };
+		93D18B041DFA054C006B7B78 /* ITWomen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITWomen.m; sourceTree = "<group>"; };
 		93D18B061DFA054C006B7B78 /* NSString+ITExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ITExtensions.h"; sourceTree = "<group>"; };
 		93D18B071DFA054C006B7B78 /* NSString+ITExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ITExtensions.m"; sourceTree = "<group>"; };
 		93D18B151DFB297F006B7B78 /* ITCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCharacters.h; sourceTree = "<group>"; };
@@ -230,8 +230,8 @@
 		93D18AFB1DFA054C006B7B78 /* HWTask1 */ = {
 			isa = PBXGroup;
 			children = (
-				93D18AFC1DFA054C006B7B78 /* Human.h */,
-				93D18AFD1DFA054C006B7B78 /* Human.m */,
+				93D18AFC1DFA054C006B7B78 /* ITHuman.h */,
+				93D18AFD1DFA054C006B7B78 /* ITHuman.m */,
 			);
 			path = HWTask1;
 			sourceTree = "<group>";
@@ -239,12 +239,12 @@
 		93D18AFE1DFA054C006B7B78 /* HWTask2 */ = {
 			isa = PBXGroup;
 			children = (
-				93D18AFF1DFA054C006B7B78 /* Men.h */,
-				93D18B001DFA054C006B7B78 /* Men.m */,
+				93D18AFF1DFA054C006B7B78 /* ITMen.h */,
+				93D18B001DFA054C006B7B78 /* ITMen.m */,
 				93D18B011DFA054C006B7B78 /* NSObject+Category.h */,
 				93D18B021DFA054C006B7B78 /* NSObject+Category.m */,
-				93D18B031DFA054C006B7B78 /* Women.h */,
-				93D18B041DFA054C006B7B78 /* Women.m */,
+				93D18B031DFA054C006B7B78 /* ITWomen.h */,
+				93D18B041DFA054C006B7B78 /* ITWomen.m */,
 			);
 			path = HWTask2;
 			sourceTree = "<group>";
@@ -436,7 +436,7 @@
 			files = (
 				93971EB81E03178700EBBE01 /* ITAccountant.m in Sources */,
 				93D18B1C1DFB2BA4006B7B78 /* ITRangeCharacters.m in Sources */,
-				93D18B0C1DFA054C006B7B78 /* Men.m in Sources */,
+				93D18B0C1DFA054C006B7B78 /* ITMen.m in Sources */,
 				93971EB51E03133B00EBBE01 /* ITEmployee.m in Sources */,
 				93D18B081DFA054C006B7B78 /* main.m in Sources */,
 				93D18B271E008D0E006B7B78 /* ITClusterCharacters.m in Sources */,
@@ -444,8 +444,8 @@
 				93D18B171DFB297F006B7B78 /* ITCharacters.m in Sources */,
 				93971EAA1E0311A000EBBE01 /* ITCarWash.m in Sources */,
 				93D18B121DFA054C006B7B78 /* NSString+ITExtensions.m in Sources */,
-				93D18B101DFA054C006B7B78 /* Women.m in Sources */,
-				93D18B0A1DFA054C006B7B78 /* Human.m in Sources */,
+				93D18B101DFA054C006B7B78 /* ITWomen.m in Sources */,
+				93D18B0A1DFA054C006B7B78 /* ITHuman.m in Sources */,
 				93971EBE1E0317A800EBBE01 /* ITWasher.m in Sources */,
 				93971EB21E0312E900EBBE01 /* ITCar.m in Sources */,
 				93D18B201DFB2C55006B7B78 /* ITStringsCharacters.m in Sources */,

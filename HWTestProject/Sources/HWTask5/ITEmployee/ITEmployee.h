@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ITHuman.h"
+
 
 typedef enum {
     Wash,
@@ -14,9 +16,8 @@ typedef enum {
     MakeProfit
 } ITWorkType;
 
-@interface ITEmployee : NSObject
+@interface ITEmployee : ITHuman
 
 - (void)performWorkWithObject:(NSObject *)object;
-
 
 @end

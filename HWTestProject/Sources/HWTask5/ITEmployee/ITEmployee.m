@@ -10,4 +10,8 @@
 
 @implementation ITEmployee
 
+- (void)performWorkWithObject:(NSObject *)object {
+    
+}
+
 @end

@@ -13,6 +13,12 @@ NSRange ITMakeCharactersRange(unichar value1, unichar value2);
 
 @interface ITCharacters : NSObject <NSFastEnumeration>
 
++ (id)numericCharacters;
++ (id)symbolCharacters;
++ (id)capitalizedCharacters;
++ (id)lowercaseCharacters;
++ (id)characters;
+
 + (id)charactersWithRange:(NSRange)range;
 + (id)charactersWithStrings:(NSArray *)strings;
 + (id)charactersWithSymbols:(NSString *)string;

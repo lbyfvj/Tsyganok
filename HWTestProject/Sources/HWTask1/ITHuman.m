@@ -1,23 +1,23 @@
 //
-//  Human.m
+//  ITHuman.m
 //  HWL1T1
 //
 //  Created by Ivan Tsyganok on 27.11.16.
 //  Copyright © 2016 Ivan Tsyganok. All rights reserved.
 //
 
-#import "Human.h"
+#import "ITHuman.h"
 
-@interface Human ()
+@interface ITHuman ()
 @property (nonatomic, assign) NSMutableArray *mutableChildren;
 
 @end
 
-@implementation Human
+@implementation ITHuman
 
 @dynamic children;
 
-- (id)initWithName:(NSString *)name gender:(Gender)gender age:(NSUInteger)age weight:(double)weight {
+- (id)initWithName:(NSString *)name gender:(ITGender)gender age:(NSUInteger)age weight:(double)weight {
     self = [super init];
     _name = name;
     _gender = gender;
@@ -51,11 +51,11 @@
     NSLog(@"Give birth to baby!");
 }
 
-- (void)addChild:(Human *)name {
+- (void)addChild:(ITHuman *)name {
     [[self mutableChildren] addObject:name];
 }
 
-- (void)removeChild:(Human *)name {    
+- (void)removeChild:(ITHuman *)name {
     for (NSUInteger i = 0; i < self.mutableChildren.count; i++) {
         [self.mutableChildren removeObject:name];
     }

@@ -7,19 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ITCharacters.h"
 
 @interface NSString (ITExtensions)
 
-+ (id)numericCharacters;
-+ (id)symbolCharacters;
-+ (id)capitalizedCharacters;
-+ (id)lowercaseCharacters;
-+ (id)characters;
-+ (id)charactersWithUnicodeInRange:(NSRange)range;
-
 + (id)randomString;
 + (id)randomStringWithLenght:(NSUInteger)lenght;
-+ (id)randomStringWithLenght:(NSUInteger)lenght ofCharacters:(NSString *)characters;
++ (id)randomStringWithLenght:(NSUInteger)lenght ofCharacters:(ITCharacters *)characters;
 
 - (NSArray *)symbols;
 

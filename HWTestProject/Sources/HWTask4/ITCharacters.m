@@ -28,6 +28,29 @@ NSRange ITMakeCharactersRange(unichar value1, unichar value2) {
 #pragma mark -
 #pragma mark Class methods
 
++ (id)numericCharacters {
+    return [self charactersWithRange:ITMakeCharactersRange('0', '9')];
+}
+
++ (id)symbolCharacters {
+    return [self charactersWithRange:ITMakeCharactersRange(33, 47)];
+}
+
++ (id)capitalizedCharacters {
+    return [self charactersWithRange:ITMakeCharactersRange('A', 'Z')];
+}
+
++ (id)lowercaseCharacters {
+    return [self charactersWithRange:ITMakeCharactersRange('a', 'z')];
+}
+
++ (id)characters {
+    return [self charactersWithCharacters:@[[self numericCharacters],
+                                            [self symbolCharacters],
+                                            [self capitalizedCharacters],
+                                            [self lowercaseCharacters]]];
+}
+    
 + (id)charactersWithRange:(NSRange)range {
     return [[[ITRangeCharacters alloc] initWithRange:range] autorelease];
 }

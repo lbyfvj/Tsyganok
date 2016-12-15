@@ -1,14 +1,14 @@
 //
-//  Women.m
+//  ITWomen.m
 //  HWL1T2
 //
 //  Created by Ivan Tsyganok on 30.11.16.
 //  Copyright © 2016 Ivan Tsyganok. All rights reserved.
 //
 
-#import "Women.h"
+#import "ITWomen.h"
 
-@implementation Women
+@implementation ITWomen
 
 - (void)performGenderSpecificOperation {
     [self giveBirth];

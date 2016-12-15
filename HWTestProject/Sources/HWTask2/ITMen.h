@@ -1,14 +1,14 @@
 //
-//  Women.h
+//  ITMen.h
 //  HWL1T2
 //
 //  Created by Ivan Tsyganok on 30.11.16.
 //  Copyright © 2016 Ivan Tsyganok. All rights reserved.
 //
 
-#import "Human.h"
+#import "ITHuman.h"
 
-@interface Women : Human
+@interface ITMen : ITHuman
 
 - (void)performGenderSpecificOperation;
 
