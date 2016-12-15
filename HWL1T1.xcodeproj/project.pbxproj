@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		93971EA01E01ED4500EBBE01 /* ITClusterCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B261E008D0E006B7B78 /* ITClusterCharacters.m */; };
+		93971EAA1E0311A000EBBE01 /* ITCarWash.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EA91E0311A000EBBE01 /* ITCarWash.m */; };
+		93971EB21E0312E900EBBE01 /* ITCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EB11E0312E900EBBE01 /* ITCar.m */; };
+		93971EB51E03133B00EBBE01 /* ITEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EB41E03133B00EBBE01 /* ITEmployee.m */; };
+		93971EB81E03178700EBBE01 /* ITAccountant.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EB71E03178700EBBE01 /* ITAccountant.m */; };
+		93971EBB1E03179800EBBE01 /* ITDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EBA1E03179800EBBE01 /* ITDirector.m */; };
+		93971EBE1E0317A800EBBE01 /* ITWasher.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EBD1E0317A800EBBE01 /* ITWasher.m */; };
 		93D18B081DFA054C006B7B78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AF91DFA054C006B7B78 /* main.m */; };
 		93D18B0A1DFA054C006B7B78 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AFD1DFA054C006B7B78 /* Human.m */; };
 		93D18B0C1DFA054C006B7B78 /* Men.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B001DFA054C006B7B78 /* Men.m */; };
@@ -41,6 +47,18 @@
 /* Begin PBXFileReference section */
 		0708C9A9AAF13802E214E992 /* libPods-ObjCTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ObjCTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9321120F1DEAF26B00622EE1 /* HWL1T1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HWL1T1; sourceTree = BUILT_PRODUCTS_DIR; };
+		93971EA81E0311A000EBBE01 /* ITCarWash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITCarWash.h; path = HWTestProject/Sources/HWTask5/ITCarWash.h; sourceTree = SOURCE_ROOT; };
+		93971EA91E0311A000EBBE01 /* ITCarWash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCarWash.m; sourceTree = "<group>"; };
+		93971EB01E0312E900EBBE01 /* ITCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCar.h; sourceTree = "<group>"; };
+		93971EB11E0312E900EBBE01 /* ITCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCar.m; sourceTree = "<group>"; };
+		93971EB31E03133B00EBBE01 /* ITEmployee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITEmployee.h; sourceTree = "<group>"; };
+		93971EB41E03133B00EBBE01 /* ITEmployee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITEmployee.m; sourceTree = "<group>"; };
+		93971EB61E03178700EBBE01 /* ITAccountant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITAccountant.h; sourceTree = "<group>"; };
+		93971EB71E03178700EBBE01 /* ITAccountant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITAccountant.m; sourceTree = "<group>"; };
+		93971EB91E03179800EBBE01 /* ITDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITDirector.h; sourceTree = "<group>"; };
+		93971EBA1E03179800EBBE01 /* ITDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITDirector.m; sourceTree = "<group>"; };
+		93971EBC1E0317A800EBBE01 /* ITWasher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITWasher.h; sourceTree = "<group>"; };
+		93971EBD1E0317A800EBBE01 /* ITWasher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITWasher.m; sourceTree = "<group>"; };
 		93D18A681DF9EEFB006B7B78 /* ObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D18A6C1DF9EEFB006B7B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93D18AF91DFA054C006B7B78 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +139,54 @@
 				93D18A681DF9EEFB006B7B78 /* ObjCTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		93971EAB1E0312B100EBBE01 /* ITEmployee */ = {
+			isa = PBXGroup;
+			children = (
+				93971EAC1E0312B100EBBE01 /* ITAccountant */,
+				93971EAD1E0312B100EBBE01 /* ITDirector */,
+				93971EAE1E0312B100EBBE01 /* ITWasher */,
+				93971EB31E03133B00EBBE01 /* ITEmployee.h */,
+				93971EB41E03133B00EBBE01 /* ITEmployee.m */,
+			);
+			path = ITEmployee;
+			sourceTree = "<group>";
+		};
+		93971EAC1E0312B100EBBE01 /* ITAccountant */ = {
+			isa = PBXGroup;
+			children = (
+				93971EB61E03178700EBBE01 /* ITAccountant.h */,
+				93971EB71E03178700EBBE01 /* ITAccountant.m */,
+			);
+			path = ITAccountant;
+			sourceTree = "<group>";
+		};
+		93971EAD1E0312B100EBBE01 /* ITDirector */ = {
+			isa = PBXGroup;
+			children = (
+				93971EB91E03179800EBBE01 /* ITDirector.h */,
+				93971EBA1E03179800EBBE01 /* ITDirector.m */,
+			);
+			path = ITDirector;
+			sourceTree = "<group>";
+		};
+		93971EAE1E0312B100EBBE01 /* ITWasher */ = {
+			isa = PBXGroup;
+			children = (
+				93971EBC1E0317A800EBBE01 /* ITWasher.h */,
+				93971EBD1E0317A800EBBE01 /* ITWasher.m */,
+			);
+			path = ITWasher;
+			sourceTree = "<group>";
+		};
+		93971EAF1E0312BC00EBBE01 /* ITCar */ = {
+			isa = PBXGroup;
+			children = (
+				93971EB01E0312E900EBBE01 /* ITCar.h */,
+				93971EB11E0312E900EBBE01 /* ITCar.m */,
+			);
+			path = ITCar;
 			sourceTree = "<group>";
 		};
 		93D18A691DF9EEFB006B7B78 /* ObjCTests */ = {
@@ -219,6 +285,10 @@
 		93D18B241DFF1DFD006B7B78 /* HWTask5 */ = {
 			isa = PBXGroup;
 			children = (
+				93971EAB1E0312B100EBBE01 /* ITEmployee */,
+				93971EAF1E0312BC00EBBE01 /* ITCar */,
+				93971EA81E0311A000EBBE01 /* ITCarWash.h */,
+				93971EA91E0311A000EBBE01 /* ITCarWash.m */,
 			);
 			path = HWTask5;
 			sourceTree = "<group>";
@@ -364,14 +434,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93971EB81E03178700EBBE01 /* ITAccountant.m in Sources */,
 				93D18B1C1DFB2BA4006B7B78 /* ITRangeCharacters.m in Sources */,
 				93D18B0C1DFA054C006B7B78 /* Men.m in Sources */,
+				93971EB51E03133B00EBBE01 /* ITEmployee.m in Sources */,
 				93D18B081DFA054C006B7B78 /* main.m in Sources */,
 				93D18B271E008D0E006B7B78 /* ITClusterCharacters.m in Sources */,
+				93971EBB1E03179800EBBE01 /* ITDirector.m in Sources */,
 				93D18B171DFB297F006B7B78 /* ITCharacters.m in Sources */,
+				93971EAA1E0311A000EBBE01 /* ITCarWash.m in Sources */,
 				93D18B121DFA054C006B7B78 /* NSString+ITExtensions.m in Sources */,
 				93D18B101DFA054C006B7B78 /* Women.m in Sources */,
 				93D18B0A1DFA054C006B7B78 /* Human.m in Sources */,
+				93971EBE1E0317A800EBBE01 /* ITWasher.m in Sources */,
+				93971EB21E0312E900EBBE01 /* ITCar.m in Sources */,
 				93D18B201DFB2C55006B7B78 /* ITStringsCharacters.m in Sources */,
 				93D18B0E1DFA054C006B7B78 /* NSObject+Category.m in Sources */,
 			);
