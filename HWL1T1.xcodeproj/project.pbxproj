@@ -14,6 +14,8 @@
 		93971EB81E03178700EBBE01 /* ITAccountant.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EB71E03178700EBBE01 /* ITAccountant.m */; };
 		93971EBB1E03179800EBBE01 /* ITDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EBA1E03179800EBBE01 /* ITDirector.m */; };
 		93971EBE1E0317A800EBBE01 /* ITWasher.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EBD1E0317A800EBBE01 /* ITWasher.m */; };
+		93971EC21E04893500EBBE01 /* ITObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EC11E04893500EBBE01 /* ITObservableObject.m */; };
+		93971EC31E04893500EBBE01 /* ITObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EC11E04893500EBBE01 /* ITObservableObject.m */; };
 		93D18B081DFA054C006B7B78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AF91DFA054C006B7B78 /* main.m */; };
 		93D18B0A1DFA054C006B7B78 /* ITHuman.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AFD1DFA054C006B7B78 /* ITHuman.m */; };
 		93D18B0C1DFA054C006B7B78 /* ITMen.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B001DFA054C006B7B78 /* ITMen.m */; };
@@ -59,6 +61,8 @@
 		93971EBA1E03179800EBBE01 /* ITDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITDirector.m; sourceTree = "<group>"; };
 		93971EBC1E0317A800EBBE01 /* ITWasher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITWasher.h; sourceTree = "<group>"; };
 		93971EBD1E0317A800EBBE01 /* ITWasher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITWasher.m; sourceTree = "<group>"; };
+		93971EC01E04893500EBBE01 /* ITObservableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITObservableObject.h; sourceTree = "<group>"; };
+		93971EC11E04893500EBBE01 /* ITObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITObservableObject.m; sourceTree = "<group>"; };
 		93D18A681DF9EEFB006B7B78 /* ObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D18A6C1DF9EEFB006B7B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93D18AF91DFA054C006B7B78 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -189,6 +193,15 @@
 			path = ITCar;
 			sourceTree = "<group>";
 		};
+		93971EBF1E04891100EBBE01 /* ITObservableObject */ = {
+			isa = PBXGroup;
+			children = (
+				93971EC01E04893500EBBE01 /* ITObservableObject.h */,
+				93971EC11E04893500EBBE01 /* ITObservableObject.m */,
+			);
+			path = ITObservableObject;
+			sourceTree = "<group>";
+		};
 		93D18A691DF9EEFB006B7B78 /* ObjCTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +298,7 @@
 		93D18B241DFF1DFD006B7B78 /* HWTask5 */ = {
 			isa = PBXGroup;
 			children = (
+				93971EBF1E04891100EBBE01 /* ITObservableObject */,
 				93971EAB1E0312B100EBBE01 /* ITEmployee */,
 				93971EAF1E0312BC00EBBE01 /* ITCar */,
 				93971EA81E0311A000EBBE01 /* ITCarWash.h */,
@@ -434,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93971EC21E04893500EBBE01 /* ITObservableObject.m in Sources */,
 				93971EB81E03178700EBBE01 /* ITAccountant.m in Sources */,
 				93D18B1C1DFB2BA4006B7B78 /* ITRangeCharacters.m in Sources */,
 				93D18B0C1DFA054C006B7B78 /* ITMen.m in Sources */,
@@ -463,6 +478,7 @@
 				93D18B231DFB5365006B7B78 /* ITCharactersSpec.m in Sources */,
 				93D18B211DFB2C55006B7B78 /* ITStringsCharacters.m in Sources */,
 				93971EA01E01ED4500EBBE01 /* ITClusterCharacters.m in Sources */,
+				93971EC31E04893500EBBE01 /* ITObservableObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

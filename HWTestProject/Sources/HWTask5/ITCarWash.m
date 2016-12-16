@@ -9,33 +9,39 @@
 #import "ITCarWash.h"
 
 @interface ITCarWash ()
-@property (nonatomic, assign) NSMutableArray *employees;
+@property (nonatomic, assign) NSMutableArray *mutableStuff;
 
 @end
 
 @implementation ITCarWash
 
+@dynamic stuff;
+
+- (void)dealloc {
+    self.mutableStuff = nil;
+    
+    [super dealloc];
+}
+
 - (instancetype)init {
     self = [super init];
+    
+    self.mutableStuff = [[[NSMutableArray alloc] init] autorelease];
     
     return self;
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
-
 - (NSArray *)stuff {
-    return [[[self employees] copy] autorelease];
+    return [[[self mutableStuff] copy] autorelease];
 }
 
 - (void)hireStuff:(ITEmployee *)employee {
-    [[self employees] addObject:employee];
+    [[self mutableStuff] addObject:employee];
 }
 
 - (void)fireStuff:(ITEmployee *)employee {
-    for (NSUInteger i = 0; i < self.employees.count; i++) {
-        [self.employees removeObject:employee];
+    for (NSUInteger i = 0; i < self.mutableStuff.count; i++) {
+        [self.mutableStuff removeObject:employee];
     }
 }
 

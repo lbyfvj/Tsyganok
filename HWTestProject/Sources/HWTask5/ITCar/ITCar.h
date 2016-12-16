@@ -7,19 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ITObservableObject.h"
 
-typedef enum {
-    Clean,
-    Dirty
-} ITCarState;
+@class ITCar;
 
-@interface ITCar : NSObject
+typedef NS_ENUM(NSUInteger, ITCarState) {
+    ITClean,
+    ITDirty
+};
+
+@protocol ITCarObserver <NSObject>
+
+@optional
+- (void)carDidBecomeClean:(ITCar *)car;
+- (void)carDidBecomeDirty:(ITCar *)car;
+
+@end
+
+@interface ITCar : ITObservableObject
 @property (nonatomic, assign) NSString      *name;
-@property (nonatomic, assign) BOOL          cash;
-@property (nonatomic, assign) ITCarState    state;
+@property (nonatomic, assign) NSUInteger    money;
 
-- (id)initWithName:(NSString *)name state:(ITCarState)state;
-- (void)changeState:(ITCar *)car;
-
+//- (id)initWithName:(NSString *)name state:(ITCarState)state;
+//- (void)changeState:(ITCar *)car;
 
 @end

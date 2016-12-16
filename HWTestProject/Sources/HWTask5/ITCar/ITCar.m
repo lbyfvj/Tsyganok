@@ -10,18 +10,42 @@
 
 @implementation ITCar
 
-- (id)initWithName:(NSString *)name state:(ITCarState)state {
-    self = [super init];
-    _name = name;
-    _state = state;
-    _cash = YES;
+#pragma mark -
+#pragma mark - Accessors
+
+- (void)setState:(NSUInteger)state {
     
-    return self;
 }
 
-- (void)changeState:(ITCar *)car {
-    car.state = Clean;
-    NSLog(@"%@: Car washed!", [self class]);    
+#pragma mark -
+#pragma mark - Overloaded Methods
+
+- (SEL)selectorForState:(NSUInteger)state {
+    switch (state) {
+        case ITClean:
+            return @selector(carDidBecomeClean:);
+        case ITDirty:
+            return @selector(carDidBecomeDirty:);
+            
+        default:
+            return [super selectorForState:state];
+    }
 }
+
+
+
+//- (id)initWithName:(NSString *)name state:(ITCarState)state {
+//    self = [super init];
+//    _name = name;
+//    _state = state;
+//    _cash = YES;
+//    
+//    return self;
+//}
+//
+//- (void)changeState:(ITCar *)car {
+//    car.state = Clean;
+//    NSLog(@"%@: Car washed!", [self class]);    
+//}
 
 @end

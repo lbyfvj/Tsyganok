@@ -17,20 +17,28 @@
 
 @dynamic children;
 
+#pragma mark - 
+#pragma mark - Initialization and Deallocation
+
+- (void)dealloc {
+    self.mutableChildren = nil;
+    
+    [super dealloc];
+}
+
 - (id)initWithName:(NSString *)name gender:(ITGender)gender age:(NSUInteger)age weight:(double)weight {
     self = [super init];
-    _name = name;
-    _gender = gender;
-    _age = age;
-    _weight = weight;
-    _mutableChildren = [[[NSMutableArray alloc] init] autorelease];
+    self.name = name;
+    self.gender = gender;
+    self.age = age;
+    self.weight = weight;
+    self.mutableChildren = [[NSMutableArray new] autorelease];
     
     return self;
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
+#pragma mark -
+#pragma mark - Accessors
 
 - (NSArray *)children {
     return [[[self mutableChildren] copy] autorelease];
