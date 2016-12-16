@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		932A94761E049B0B00AAE886 /* ITCarSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 932A94751E049B0B00AAE886 /* ITCarSpec.m */; };
-		93971EA01E01ED4500EBBE01 /* ITClusterCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B261E008D0E006B7B78 /* ITClusterCharacters.m */; };
+		932A94761E049B0B00AAE886 /* ITCarSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 932A94751E049B0B00AAE886 /* ITCarSpec.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		93971EA01E01ED4500EBBE01 /* ITClusterCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B261E008D0E006B7B78 /* ITClusterCharacters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93971EAA1E0311A000EBBE01 /* ITCarWash.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EA91E0311A000EBBE01 /* ITCarWash.m */; };
 		93971EB21E0312E900EBBE01 /* ITCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EB11E0312E900EBBE01 /* ITCar.m */; };
 		93971EB51E03133B00EBBE01 /* ITEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EB41E03133B00EBBE01 /* ITEmployee.m */; };
@@ -16,7 +16,7 @@
 		93971EBB1E03179800EBBE01 /* ITDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EBA1E03179800EBBE01 /* ITDirector.m */; };
 		93971EBE1E0317A800EBBE01 /* ITWasher.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EBD1E0317A800EBBE01 /* ITWasher.m */; };
 		93971EC21E04893500EBBE01 /* ITObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EC11E04893500EBBE01 /* ITObservableObject.m */; };
-		93971EC31E04893500EBBE01 /* ITObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EC11E04893500EBBE01 /* ITObservableObject.m */; };
+		93971EC31E04893500EBBE01 /* ITObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EC11E04893500EBBE01 /* ITObservableObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D18B081DFA054C006B7B78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AF91DFA054C006B7B78 /* main.m */; };
 		93D18B0A1DFA054C006B7B78 /* ITHuman.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18AFD1DFA054C006B7B78 /* ITHuman.m */; };
 		93D18B0C1DFA054C006B7B78 /* ITMen.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B001DFA054C006B7B78 /* ITMen.m */; };
@@ -356,7 +356,7 @@
 		932112071DEAF26B00622EE1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Ivan Tsyganok";
 				TargetAttributes = {
 					9321120E1DEAF26B00622EE1 = {
@@ -507,6 +507,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -554,6 +555,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
