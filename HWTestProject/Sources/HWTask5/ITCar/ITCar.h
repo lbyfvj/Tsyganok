@@ -26,6 +26,7 @@ typedef NS_ENUM(NSUInteger, ITCarState) {
 
 @interface ITCar : ITObservableObject
 @property (nonatomic, assign) NSString      *name;
+@property (nonatomic, assign) NSUInteger    carState;
 @property (nonatomic, assign) NSUInteger    money;
 
 //- (id)initWithName:(NSString *)name state:(ITCarState)state;

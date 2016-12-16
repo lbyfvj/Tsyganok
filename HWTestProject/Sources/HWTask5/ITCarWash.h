@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "ITWasher.h"
+#import "ITCar.h"
 
-@interface ITCarWash : NSObject
+@interface ITCarWash : NSObject <ITCarObserver>
 @property (nonatomic, copy, readonly)   NSArray     *stuff;
 
 - (void)hireStuff:(ITEmployee *)employee;

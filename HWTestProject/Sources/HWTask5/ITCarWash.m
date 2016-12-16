@@ -26,9 +26,17 @@
 - (instancetype)init {
     self = [super init];
     
-    self.mutableStuff = [[[NSMutableArray alloc] init] autorelease];
+    self.mutableStuff = [[NSMutableArray new] autorelease];
     
     return self;
+}
+
+- (void)carDidBecomeClean:(ITCar *)car {
+    NSLog(@"Car %@ is clean", car);
+}
+
+- (void)carDidBecomeDirty:(ITCar *)car {
+    NSLog(@"Car %@ is dirty", car);
 }
 
 - (NSArray *)stuff {

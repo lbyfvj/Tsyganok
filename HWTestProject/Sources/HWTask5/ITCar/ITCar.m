@@ -14,7 +14,11 @@
 #pragma mark - Accessors
 
 - (void)setState:(NSUInteger)state {
-    
+    if (state != _carState) {
+        _carState = state;
+        
+        self.state = (0 == state) ? ITClean : ITDirty;
+    }
 }
 
 #pragma mark -

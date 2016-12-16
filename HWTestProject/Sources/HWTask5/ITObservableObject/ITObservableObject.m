@@ -53,6 +53,21 @@
 }
 
 #pragma mark -
+#pragma mark - Public
+
+- (void)addObserver:(id)observer {
+    [self.mutableObserverSet addObject:observer];
+}
+
+- (void)removeObserver:(id)observer {
+    [self.mutableObserverSet removeObject:observer];
+}
+
+- (BOOL)isObserverByObject:(id)observer {
+    return [self.mutableObserverSet containsObject:observer];
+}
+
+#pragma mark -
 #pragma mark - Private
 
 - (SEL)selectorForState:(NSUInteger)state {
