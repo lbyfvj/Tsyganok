@@ -19,17 +19,6 @@ describe(@"ITCharacters", ^{
     
     __block ITCharacters *characters = nil;
     
-//    + (id)charactersWithRange:(NSRange)range;
-//    + (id)charactersWithStrings:(NSArray *)strings;
-//    + (id)charactersWithSymbols:(NSString *)string;
-//    
-//    - (id) initWithRange:(NSRange)range;
-//    - (id)initWithStrings:(NSArray *)strings;
-//    - (id)initWithSymbols:(NSString *)string;
-//    
-//    - (NSUInteger)count;
-//    - (NSString *)stringAtIndex:(NSUInteger)index;
-    
     afterAll(^{
         characters = nil;
     });

@@ -17,26 +17,35 @@
 
 @dynamic stuff;
 
+#pragma mark -
+#pragma mark - Initialization and Deallocation
+
 - (void)dealloc {
     self.mutableStuff = nil;
+    self.car = nil;
     
     [super dealloc];
 }
 
 - (instancetype)init {
     self = [super init];
-    
     self.mutableStuff = [[NSMutableArray new] autorelease];
     
     return self;
 }
 
-- (void)carDidBecomeClean:(ITCar *)car {
-    NSLog(@"Car %@ is clean", car);
-}
+#pragma mark -
+#pragma mark - Accessors
 
-- (void)carDidBecomeDirty:(ITCar *)car {
-    NSLog(@"Car %@ is dirty", car);
+- (void)setCar:(ITCar *)car {
+    if (_car != car) {
+        [_car removeObserver:self];
+        
+        [_car release];
+        _car = [_car retain];
+        
+        [car addObserver:self];
+    }
 }
 
 - (NSArray *)stuff {
@@ -55,6 +64,21 @@
 
 - (void)performWork {
     
+}
+
+#pragma mark -
+#pragma mark - ITCarObserver
+
+- (void)carDidBecomeClean:(ITCar *)car {
+    if (self.car == car) {
+        NSLog(@"Car %@ is clean", car);
+    }
+}
+
+- (void)carDidBecomeDirty:(ITCar *)car {
+    if (self.car == car) {
+        NSLog(@"Car %@ is dirty", car);
+    }
 }
 
 @end
