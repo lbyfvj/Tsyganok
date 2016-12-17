@@ -60,7 +60,7 @@
 }
 
 - (void)addChild:(ITHuman *)name {
-    [[self mutableChildren] addObject:name];
+    [self.mutableChildren addObject:name];
 }
 
 - (void)removeChild:(ITHuman *)name {
