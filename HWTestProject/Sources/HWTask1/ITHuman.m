@@ -64,9 +64,8 @@
 }
 
 - (void)removeChild:(ITHuman *)name {
-    for (NSUInteger i = 0; i < self.mutableChildren.count; i++) {
-        [self.mutableChildren removeObject:name];
-    }
+    [self.mutableChildren removeObject:name];
+
 }
 
 - (void)performGenderSpecificOperation {
