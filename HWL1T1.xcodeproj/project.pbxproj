@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		932A94761E049B0B00AAE886 /* ITCarSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 932A94751E049B0B00AAE886 /* ITCarSpec.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		932A94771E052FFE00AAE886 /* ITCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EB11E0312E900EBBE01 /* ITCar.m */; };
+		932A94781E05300300AAE886 /* ITCarWash.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EA91E0311A000EBBE01 /* ITCarWash.m */; };
 		93971EA01E01ED4500EBBE01 /* ITClusterCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D18B261E008D0E006B7B78 /* ITClusterCharacters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93971EAA1E0311A000EBBE01 /* ITCarWash.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EA91E0311A000EBBE01 /* ITCarWash.m */; };
 		93971EB21E0312E900EBBE01 /* ITCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93971EB11E0312E900EBBE01 /* ITCar.m */; };
@@ -478,8 +480,10 @@
 				93D18B1D1DFB2BA4006B7B78 /* ITRangeCharacters.m in Sources */,
 				93D18B131DFA054C006B7B78 /* NSString+ITExtensions.m in Sources */,
 				93D18B181DFB297F006B7B78 /* ITCharacters.m in Sources */,
+				932A94771E052FFE00AAE886 /* ITCar.m in Sources */,
 				93D18B231DFB5365006B7B78 /* ITCharactersSpec.m in Sources */,
 				932A94761E049B0B00AAE886 /* ITCarSpec.m in Sources */,
+				932A94781E05300300AAE886 /* ITCarWash.m in Sources */,
 				93D18B211DFB2C55006B7B78 /* ITStringsCharacters.m in Sources */,
 				93971EA01E01ED4500EBBE01 /* ITClusterCharacters.m in Sources */,
 				93971EC31E04893500EBBE01 /* ITObservableObject.m in Sources */,
