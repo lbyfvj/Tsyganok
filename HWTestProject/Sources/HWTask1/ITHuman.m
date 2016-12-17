@@ -65,7 +65,6 @@
 
 - (void)removeChild:(ITHuman *)name {
     [self.mutableChildren removeObject:name];
-
 }
 
 - (void)performGenderSpecificOperation {
