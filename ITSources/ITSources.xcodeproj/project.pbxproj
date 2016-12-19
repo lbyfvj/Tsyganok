@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		9300AFA01E072BFA00B34763 /* ITSources.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AF9E1E072BFA00B34763 /* ITSources.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9300AFA81E072C3E00B34763 /* NSObject+ITObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFA61E072C3E00B34763 /* NSObject+ITObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9300AFA91E072C3E00B34763 /* NSObject+ITObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AFA71E072C3E00B34763 /* NSObject+ITObject.m */; };
+		9300AFB81E0894DE00B34763 /* NSObject+ITObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFB61E0894DE00B34763 /* NSObject+ITObject.h */; };
+		9300AFB91E0894DE00B34763 /* NSObject+ITObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AFB71E0894DE00B34763 /* NSObject+ITObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9300AF9B1E072BFA00B34763 /* ITSources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ITSources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9300AF9E1E072BFA00B34763 /* ITSources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITSources.h; sourceTree = "<group>"; };
 		9300AF9F1E072BFA00B34763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9300AFA61E072C3E00B34763 /* NSObject+ITObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ITObject.h"; sourceTree = "<group>"; };
-		9300AFA71E072C3E00B34763 /* NSObject+ITObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ITObject.m"; sourceTree = "<group>"; };
+		9300AFB61E0894DE00B34763 /* NSObject+ITObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ITObject.h"; sourceTree = "<group>"; };
+		9300AFB71E0894DE00B34763 /* NSObject+ITObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ITObject.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,12 +50,20 @@
 		9300AF9D1E072BFA00B34763 /* ITSources */ = {
 			isa = PBXGroup;
 			children = (
+				9300AFB51E0894DE00B34763 /* ITObject */,
 				9300AF9E1E072BFA00B34763 /* ITSources.h */,
-				9300AFA61E072C3E00B34763 /* NSObject+ITObject.h */,
-				9300AFA71E072C3E00B34763 /* NSObject+ITObject.m */,
 				9300AF9F1E072BFA00B34763 /* Info.plist */,
 			);
 			path = ITSources;
+			sourceTree = "<group>";
+		};
+		9300AFB51E0894DE00B34763 /* ITObject */ = {
+			isa = PBXGroup;
+			children = (
+				9300AFB61E0894DE00B34763 /* NSObject+ITObject.h */,
+				9300AFB71E0894DE00B34763 /* NSObject+ITObject.m */,
+			);
+			path = ITObject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,7 +73,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9300AFA81E072C3E00B34763 /* NSObject+ITObject.h in Headers */,
+				9300AFB81E0894DE00B34763 /* NSObject+ITObject.h in Headers */,
 				9300AFA01E072BFA00B34763 /* ITSources.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9300AFA91E072C3E00B34763 /* NSObject+ITObject.m in Sources */,
+				9300AFB91E0894DE00B34763 /* NSObject+ITObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
