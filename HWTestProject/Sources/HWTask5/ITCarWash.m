@@ -9,19 +9,19 @@
 #import "ITCarWash.h"
 
 @interface ITCarWash ()
-@property (nonatomic, assign) NSMutableArray *mutableStuff;
+@property (nonatomic, assign) NSMutableArray *mutableStaff;
 
 @end
 
 @implementation ITCarWash
 
-@dynamic stuff;
+@dynamic staff;
 
 #pragma mark -
 #pragma mark - Initialization and Deallocation
 
 - (void)dealloc {
-    self.mutableStuff = nil;
+    self.mutableStaff = nil;
     self.car = nil;
     
     [super dealloc];
@@ -29,7 +29,7 @@
 
 - (instancetype)init {
     self = [super init];
-    self.mutableStuff = [[NSMutableArray new] autorelease];
+    self.mutableStaff = [[NSMutableArray new] autorelease];
     
     return self;
 }
@@ -49,17 +49,16 @@
 }
 
 - (NSArray *)stuff {
-    return [[[self mutableStuff] copy] autorelease];
+    return [[[self mutableStaff] copy] autorelease];
 }
 
 - (void)hireStuff:(ITEmployee *)employee {
-    [[self mutableStuff] addObject:employee];
+    [self.mutableStaff addObject:employee];
 }
 
 - (void)fireStuff:(ITEmployee *)employee {
-    for (NSUInteger i = 0; i < self.mutableStuff.count; i++) {
-        [self.mutableStuff removeObject:employee];
-    }
+    [self.mutableStaff removeObject:employee];
+
 }
 
 - (void)performWork {

@@ -7,10 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ITHuman.h"
+#import "ITObservableObject.h"
+#import "ITMoneyChainProtocol.h"
 
-@interface ITEmployee : ITHuman
+@class ITEmployee;
 
-- (void)performWorkWithObject:(NSObject *)object;
+typedef NS_ENUM(NSUInteger, ITEmployeeState) {
+    ITEmployeeDidFinishWork,
+    ITEmployeeDidBeginWork,
+    ITEmployeeDidPerformWorkWithObject
+};
+
+@interface ITEmployee : ITObservableObject <ITMoneyChainProtocol>
+
+- (instancetype)initWithMoney:(NSDecimalNumber *)money;
+
+- (void)performWorkWithObject:(id)object;
 
 @end

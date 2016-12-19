@@ -10,6 +10,7 @@
 #import "ITWasher.h"
 
 @interface ITAccountant : ITEmployee
+@property (nonatomic, readonly) NSDecimalNumber *price;
 @property (nonatomic, assign) NSUInteger  revenue;
 
 - (void)performWorkWithObject:(ITWasher *)washer;

@@ -1,8 +1,8 @@
 //
 //  ITHuman.m
-//  HWL1T1
+//  ITHuman
 //
-//  Created by Ivan Tsyganok on 27.11.16.
+//  Created by Ivan Tsyganok on 18.12.16.
 //  Copyright © 2016 Ivan Tsyganok. All rights reserved.
 //
 
@@ -17,7 +17,7 @@
 
 @dynamic children;
 
-#pragma mark - 
+#pragma mark -
 #pragma mark - Initialization and Deallocation
 
 - (void)dealloc {
@@ -27,13 +27,14 @@
     [super dealloc];
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
+    
     if (self) {
         self.name = _name;
         self.mutableChildren = [[NSMutableArray new] autorelease];
     }
+    
     return self;
 }
 
@@ -51,7 +52,7 @@
     }
 }
 
-- (void)fight {
+- (void)goFight {
     NSLog(@"Fight!");
 }
 
@@ -59,12 +60,12 @@
     NSLog(@"Give birth to baby!");
 }
 
-- (void)addChild:(ITHuman *)name {
-    [self.mutableChildren addObject:name];
+- (void)addChild:(ITHuman *)child {
+    [self.mutableChildren addObject:child];
 }
 
-- (void)removeChild:(ITHuman *)name {
-    [self.mutableChildren removeObject:name];
+- (void)removeChild:(ITHuman *)child {
+    [self.mutableChildren removeObject:child];
 }
 
 - (void)performGenderSpecificOperation {

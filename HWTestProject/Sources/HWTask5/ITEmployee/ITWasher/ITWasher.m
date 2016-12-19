@@ -8,10 +8,30 @@
 
 #import "ITWasher.h"
 
+static const NSString *kDefaultCarWashPrice = @"1";
+
+@interface ITWasher ()
+
+- (void)washCar:(ITCar *)car;
+
+@end
+
 @implementation ITWasher
 
-- (void)performWorkWithObject:(ITCar *)car {
-    NSLog(@"%@: Wash the car!", [self class]);
+@dynamic price;
+
+- (NSDecimalNumber *)price {
+    return [NSDecimalNumber decimalNumberWithString:(NSString *)kDefaultCarWashPrice];
+}
+
+- (void)performWorkWithObject:(id<ITMoneyChainProtocol> )object {
+    [self takeMoney:self.price fromObject:object];
+    NSLog(@"Employee %@ started work with %@", [self class], [object class]);
+    [self washCar:object];
+}
+
+- (void)washCar:(ITCar *)car {
+    car.clean = YES;
 }
 
 @end

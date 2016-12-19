@@ -7,28 +7,34 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ITObservableObject.h"
 
-@class ITCar;
+#import "ITMoneyChainProtocol.h"
+//#import "ITObservableObject.h"
 
-typedef NS_ENUM(NSUInteger, ITCarState) {
-    ITClean,
-    ITDirty
-};
+//@class ITCar;
 
-@protocol ITCarObserver <NSObject>
+//typedef NS_ENUM(NSUInteger, ITCarState) {
+//    ITClean,
+//    ITDirty
+//};
+//
+//@protocol ITCarObserver <NSObject>
+//
+//@optional
+//- (void)carDidBecomeClean:(ITCar *)car;
+//- (void)carDidBecomeDirty:(ITCar *)car;
+//
+//@end
 
-@optional
-- (void)carDidBecomeClean:(ITCar *)car;
-- (void)carDidBecomeDirty:(ITCar *)car;
+//@interface ITCar : ITObservableObject
+@interface ITCar : NSObject  <ITMoneyChainProtocol>
+@property (nonatomic, assign, getter=isClean)   BOOL    clean;
 
-@end
-
-@interface ITCar : ITObservableObject
-@property (nonatomic, assign) NSString      *name;
-@property (nonatomic, assign) NSUInteger    carState;
-@property (nonatomic, assign) NSUInteger    money;
-
+- (instancetype)initWithMoney:(NSDecimalNumber *)money;
+//@property (nonatomic, assign) NSString      *name;
+//@property (nonatomic, assign) NSUInteger    carState;
+//@property (nonatomic, assign) NSUInteger    money;
+//
 //- (id)initWithName:(NSString *)name state:(ITCarState)state;
 //- (void)changeState:(ITCar *)car;
 

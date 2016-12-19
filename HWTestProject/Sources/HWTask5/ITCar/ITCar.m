@@ -10,33 +10,56 @@
 
 @implementation ITCar
 
-#pragma mark -
-#pragma mark - Accessors
-
-- (void)setState:(NSUInteger)state {
-    if (state != _carState) {
-        _carState = state;
-        
-        self.state = (0 == state) ? ITClean : ITDirty;
-    }
-}
+@synthesize money = _money;
 
 #pragma mark -
-#pragma mark - Overloaded Methods
+#pragma mark Initializations and Deallocations
 
-- (SEL)selectorForState:(NSUInteger)state {
-    switch (state) {
-        case ITClean:
-            return @selector(carDidBecomeClean:);
-        case ITDirty:
-            return @selector(carDidBecomeDirty:);
-            
-        default:
-            return [super selectorForState:state];
-    }
+- (void)dealloc {
+    self.money = nil;
+    
+    [super dealloc];
 }
 
+- (instancetype)init {
+    return [self initWithMoney:[NSDecimalNumber zero]];
+}
 
+- (instancetype)initWithMoney:(NSDecimalNumber *)money {
+    self = [super init];
+    if (self) {
+        self.money = money;
+    }
+    
+    return self;
+}
+//#pragma mark -
+//#pragma mark - Accessors
+//
+//- (void)setState:(NSUInteger)state {
+//    if (state != _carState) {
+//        _carState = state;
+//        
+//        self.state = (0 == state) ? ITClean : ITDirty;
+//    }
+//}
+//
+//#pragma mark -
+//#pragma mark - Overloaded Methods
+//
+//- (SEL)selectorForState:(NSUInteger)state {
+//    switch (state) {
+//        case ITClean:
+//            return @selector(carDidBecomeClean:);
+//        case ITDirty:
+//            return @selector(carDidBecomeDirty:);
+//            
+//        default:
+//            return [super selectorForState:state];
+//    }
+//}
+//
+//
 
 //- (id)initWithName:(NSString *)name state:(ITCarState)state {
 //    self = [super init];

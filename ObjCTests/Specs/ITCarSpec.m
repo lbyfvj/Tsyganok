@@ -18,7 +18,7 @@ describe(@"ITCar", ^{
     __block ITCar *car = nil;
     
     beforeAll(^{
-        [ITCar new];
+        car = [ITCar new];
     });
     
     context(@"when observing with ITCarWash", ^{
@@ -32,8 +32,7 @@ describe(@"ITCar", ^{
         
         context(@"ITCar observing", ^{
             it(@"observer should receive carDidBecomeDirty", ^ {
-                car.state = 0;
-                
+                car.state = 0;                
                 [[observer should] receive:@selector(carDidBecomeDirty:)];
                 
                 car.state = 1;

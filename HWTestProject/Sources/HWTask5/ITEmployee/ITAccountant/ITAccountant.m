@@ -10,8 +10,9 @@
 
 @implementation ITAccountant
 
-- (void)performWorkWithObject:(ITWasher *)washer {
-    NSLog(@"%@: Take moneys from washer!", [self class]);
+- (void)performWorkWithObject:(id<ITMoneyChainProtocol> )object  {
+    [self takeMoney:self.price fromObject:object];
+    NSLog(@"Employee %@ started work with %@", [self class], [object class]);
 }
 
 - (void)calculateRevenue {

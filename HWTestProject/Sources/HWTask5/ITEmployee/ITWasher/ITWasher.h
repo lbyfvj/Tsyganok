@@ -10,7 +10,6 @@
 #import "ITCar.h"
 
 @interface ITWasher : ITEmployee
-
-- (void)performWorkWithObject:(ITCar *)car;
+@property (nonatomic, readonly) NSDecimalNumber *price;
 
 @end

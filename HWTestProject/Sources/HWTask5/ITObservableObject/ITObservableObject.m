@@ -46,7 +46,7 @@
 
 - (void)setState:(NSUInteger)state {
     if (state != _state) {
-        state = _state;
+        _state = state;
         
         [self notifyOfStateChangeWithSelector:[self selectorForState:state]];
     }

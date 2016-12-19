@@ -1,8 +1,8 @@
 //
-//  NSObject+Category.h
-//  HWL1T2
+//  NSObject+ITObject.h
+//  ITSources
 //
-//  Created by Ivan Tsyganok on 30.11.16.
+//  Created by Ivan Tsyganok on 18.12.16.
 //  Copyright © 2016 Ivan Tsyganok. All rights reserved.
 //
 
