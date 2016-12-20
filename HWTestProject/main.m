@@ -92,12 +92,16 @@ int main(int argc, const char * argv[]) {
 //        NSLog(@"%@", [NSString randomStringWithLenght:40 ofCharacters:[ITCharacters characters]]);
         
         ITCar *car = [ITCar object];
+        car.money = [NSDecimalNumber decimalNumberWithString:@"1"];
+        //NSLog(@"Car money before wash: %@", car.money);
         ITWasher *washer = [ITWasher object];
         ITAccountant *accountant = [ITAccountant object];
+        //NSLog(@"Accountant money before wash: %@", accountant.money);
     
         [washer performWorkWithObject:car];
+        //NSLog(@"Car money after wash: %@", car.money);
         [accountant performWorkWithObject:washer];
-        
+        //NSLog(@"Accountant money after wash: %@", accountant.money);
     }
 
     return 0;

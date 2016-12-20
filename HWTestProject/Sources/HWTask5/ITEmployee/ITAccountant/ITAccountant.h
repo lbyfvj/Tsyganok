@@ -11,9 +11,9 @@
 
 @interface ITAccountant : ITEmployee
 @property (nonatomic, readonly) NSDecimalNumber *price;
-@property (nonatomic, assign) NSUInteger  revenue;
+
+- (instancetype)initWithMoney:(NSDecimalNumber *)money revenue:(NSDecimalNumber *)revenue;
 
 - (void)performWorkWithObject:(ITWasher *)washer;
-- (void)calculateRevenue;
 
 @end

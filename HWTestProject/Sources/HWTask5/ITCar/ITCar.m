@@ -33,6 +33,21 @@
     
     return self;
 }
+
+#pragma mark -
+#pragma mark ITMoneyChainProtocol
+
+- (void)takeMoney:(NSDecimalNumber *)money fromObject:(id<ITMoneyChainProtocol>)object {
+    self.money = [self.money decimalNumberByAdding:money];
+    object.money = [object.money decimalNumberBySubtracting:money];
+}
+
+
+- (void)giveMoney:(NSDecimalNumber *)money toObject:(id<ITMoneyChainProtocol>)object {
+    self.money = [self.money decimalNumberBySubtracting:money];
+    object.money = [object.money decimalNumberByAdding:money];
+}
+
 //#pragma mark -
 //#pragma mark - Accessors
 //

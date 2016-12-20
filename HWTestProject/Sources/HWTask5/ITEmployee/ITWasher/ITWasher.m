@@ -31,7 +31,7 @@ static const NSString *kDefaultCarWashPrice = @"1";
 }
 
 - (void)washCar:(ITCar *)car {
-    car.clean = YES;
+    car.carState = ITClean;
 }
 
 @end

@@ -37,32 +37,23 @@
 #pragma mark -
 #pragma mark - Accessors
 
-- (void)setCar:(ITCar *)car {
-    if (_car != car) {
-        [_car removeObserver:self];
-        
-        [_car release];
-        _car = [_car retain];
-        
-        [car addObserver:self];
-    }
-}
+//- (void)setCar:(ITCar *)car {
+//    if (_car != car) {
+//        [_car removeObserver:self];
+//        
+//        [_car release];
+//        _car = [_car retain];
+//        
+//        [car addObserver:self];
+//    }
+//}
 
-- (NSArray *)stuff {
+- (NSArray *)staff {
     return [[[self mutableStaff] copy] autorelease];
 }
 
-- (void)hireStuff:(ITEmployee *)employee {
+- (void)hireStaff:(ITEmployee *)employee {
     [self.mutableStaff addObject:employee];
-}
-
-- (void)fireStuff:(ITEmployee *)employee {
-    [self.mutableStaff removeObject:employee];
-
-}
-
-- (void)performWork {
-    
 }
 
 #pragma mark -

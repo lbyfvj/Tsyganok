@@ -10,12 +10,10 @@
 #import "ITWasher.h"
 #import "ITCar.h"
 
-@interface ITCarWash : NSObject// <ITCarObserver>
+@interface ITCarWash : NSObject
 @property (nonatomic, retain)           ITCar       *car;
 @property (nonatomic, copy, readonly)   NSArray     *staff;
 
 - (void)hireStaff:(ITEmployee *)employee;
-- (void)fireStaff:(ITEmployee *)employee;
-- (void)performWork;
 
 @end

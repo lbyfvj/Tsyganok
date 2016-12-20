@@ -10,8 +10,8 @@
 		9300AF871E07188700B34763 /* ITHuman.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AF861E07188700B34763 /* ITHuman.m */; };
 		9300AF8A1E071D1F00B34763 /* ITMan.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AF891E071D1F00B34763 /* ITMan.m */; };
 		9300AF8D1E071D3A00B34763 /* ITWoman.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AF8C1E071D3A00B34763 /* ITWoman.m */; };
-		9300AFB41E0893E900B34763 /* ITSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9300AFB31E0893E900B34763 /* ITSources.framework */; };
 		9308AC001E05B71900F6F655 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9308ABFF1E05B71900F6F655 /* main.m */; };
+		93F64F1C1E09D76300E6254F /* ITSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F64F1B1E09D76300E6254F /* ITSources.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,9 +33,9 @@
 		9300AF891E071D1F00B34763 /* ITMan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITMan.m; sourceTree = "<group>"; };
 		9300AF8B1E071D3A00B34763 /* ITWoman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITWoman.h; sourceTree = "<group>"; };
 		9300AF8C1E071D3A00B34763 /* ITWoman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITWoman.m; sourceTree = "<group>"; };
-		9300AFB31E0893E900B34763 /* ITSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ITSources.framework; path = "../../../../Library/Developer/Xcode/DerivedData/HWL1T1-gvzlabxmzdicjaeiwpkqbhcxymef/Build/Products/Debug/ITSources.framework"; sourceTree = "<group>"; };
 		9308ABFC1E05B71900F6F655 /* ITHuman */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ITHuman; sourceTree = BUILT_PRODUCTS_DIR; };
 		9308ABFF1E05B71900F6F655 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		93F64F1B1E09D76300E6254F /* ITSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ITSources.framework; path = "../../../../Library/Developer/Xcode/DerivedData/HWL1T1-gvzlabxmzdicjaeiwpkqbhcxymef/Build/Products/Debug/ITSources.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9300AFB41E0893E900B34763 /* ITSources.framework in Frameworks */,
+				93F64F1C1E09D76300E6254F /* ITSources.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +53,7 @@
 		9300AFAA1E072D8A00B34763 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9300AFB31E0893E900B34763 /* ITSources.framework */,
+				93F64F1B1E09D76300E6254F /* ITSources.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

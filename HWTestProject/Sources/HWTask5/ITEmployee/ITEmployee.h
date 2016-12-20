@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ITObservableObject.h"
 #import "ITMoneyChainProtocol.h"
+#import "ITEmloyeeObserverProtocol.h"
 
 @class ITEmployee;
 

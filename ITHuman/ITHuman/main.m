@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ITSources/ITSources.h>
 
 #import "ITMan.h"
 #import "ITWoman.h"
-#import <ITSources/NSObject+ITObject.h>
+
+
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {

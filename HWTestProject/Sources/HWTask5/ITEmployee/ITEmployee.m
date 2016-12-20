@@ -12,19 +12,29 @@
 
 @synthesize money = _money;
 
+@dynamic observerSet;
+
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
     self.money = nil;
     
+    [self removeObserver:self];
+    
     [super dealloc];
 }
+
+//- (instancetype)init {
+//    return [self initWithMoney:[NSDecimalNumber zero]];
+//}
 
 - (instancetype)initWithMoney:(NSDecimalNumber *)money {
     self = [super init];
     if (self) {
         self.money = money;
+        
+        [self addObserver:self];
     }
     
     return self;
@@ -32,6 +42,31 @@
 
 #pragma mark -
 #pragma mark Public Methods
+
+- (SEL)selectorForState:(NSUInteger)state {
+    switch (state) {
+        case ITEmployeeDidFinishWork:
+            return @selector(employeeDidFinishWork:);
+            
+        case ITEmployeeDidBeginWork:
+            return @selector(employeeDidBeginWork:);
+            
+        case ITEmployeeDidPerformWorkWithObject:
+            return @selector(employeeDidPerformWork:);
+            
+        default:
+            return [super selectorForState:state];
+    }
+}
+
+- (void)performWorkWithObject:(id<ITMoneyChainProtocol> )object {
+    NSLog(@"Employee %@ started work yyyyy with object: %@", [self class], object);
+    self.state = ITEmployeeDidBeginWork;
+}
+
+
+#pragma mark -
+#pragma mark ITMoneyChainProtocol
 
 - (void)takeMoney:(NSDecimalNumber *)money fromObject:(id<ITMoneyChainProtocol>)object {
     self.money = [self.money decimalNumberByAdding:money];
@@ -42,11 +77,6 @@
 - (void)giveMoney:(NSDecimalNumber *)money toObject:(id<ITMoneyChainProtocol>)object {
     self.money = [self.money decimalNumberBySubtracting:money];
     object.money = [object.money decimalNumberByAdding:money];
-}
-
-- (void)performWorkWithObject:(id<ITMoneyChainProtocol> )object {
-    NSLog(@"Employee %@ started work with object: %@", [self class], object);
-    self.state = ITEmployeeDidBeginWork;
 }
 
 @end

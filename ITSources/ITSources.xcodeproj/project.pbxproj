@@ -7,17 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9300AFA01E072BFA00B34763 /* ITSources.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AF9E1E072BFA00B34763 /* ITSources.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9300AFB81E0894DE00B34763 /* NSObject+ITObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFB61E0894DE00B34763 /* NSObject+ITObject.h */; };
-		9300AFB91E0894DE00B34763 /* NSObject+ITObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AFB71E0894DE00B34763 /* NSObject+ITObject.m */; };
+		9300AFF31E09AB4F00B34763 /* NSObject+ITObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFE21E09AB4F00B34763 /* NSObject+ITObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9300AFF41E09AB4F00B34763 /* NSObject+ITObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AFE31E09AB4F00B34763 /* NSObject+ITObject.m */; };
+		9300AFF51E09AB4F00B34763 /* ITSources.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFE41E09AB4F00B34763 /* ITSources.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9300AFF61E09AB4F00B34763 /* ITCharacters.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFE71E09AB4F00B34763 /* ITCharacters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9300AFF71E09AB4F00B34763 /* ITCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AFE81E09AB4F00B34763 /* ITCharacters.m */; };
+		9300AFF81E09AB4F00B34763 /* ITClusterCharacters.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFEA1E09AB4F00B34763 /* ITClusterCharacters.h */; };
+		9300AFF91E09AB4F00B34763 /* ITClusterCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AFEB1E09AB4F00B34763 /* ITClusterCharacters.m */; };
+		9300AFFA1E09AB4F00B34763 /* ITRangeCharacters.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFEC1E09AB4F00B34763 /* ITRangeCharacters.h */; };
+		9300AFFB1E09AB4F00B34763 /* ITRangeCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AFED1E09AB4F00B34763 /* ITRangeCharacters.m */; };
+		9300AFFC1E09AB4F00B34763 /* ITStringsCharacters.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFEE1E09AB4F00B34763 /* ITStringsCharacters.h */; };
+		9300AFFD1E09AB4F00B34763 /* ITStringsCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AFEF1E09AB4F00B34763 /* ITStringsCharacters.m */; };
+		9300AFFE1E09AB4F00B34763 /* NSString+ITString.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFF01E09AB4F00B34763 /* NSString+ITString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9300AFFF1E09AB4F00B34763 /* NSString+ITString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AFF11E09AB4F00B34763 /* NSString+ITString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9300AF9B1E072BFA00B34763 /* ITSources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ITSources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9300AF9E1E072BFA00B34763 /* ITSources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITSources.h; sourceTree = "<group>"; };
-		9300AF9F1E072BFA00B34763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9300AFB61E0894DE00B34763 /* NSObject+ITObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ITObject.h"; sourceTree = "<group>"; };
-		9300AFB71E0894DE00B34763 /* NSObject+ITObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ITObject.m"; sourceTree = "<group>"; };
+		9300AFE01E09AB4F00B34763 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ITSources/Info.plist; sourceTree = "<group>"; };
+		9300AFE21E09AB4F00B34763 /* NSObject+ITObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ITObject.h"; sourceTree = "<group>"; };
+		9300AFE31E09AB4F00B34763 /* NSObject+ITObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ITObject.m"; sourceTree = "<group>"; };
+		9300AFE41E09AB4F00B34763 /* ITSources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITSources.h; path = ITSources/ITSources.h; sourceTree = "<group>"; };
+		9300AFE71E09AB4F00B34763 /* ITCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCharacters.h; sourceTree = "<group>"; };
+		9300AFE81E09AB4F00B34763 /* ITCharacters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCharacters.m; sourceTree = "<group>"; };
+		9300AFEA1E09AB4F00B34763 /* ITClusterCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITClusterCharacters.h; sourceTree = "<group>"; };
+		9300AFEB1E09AB4F00B34763 /* ITClusterCharacters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITClusterCharacters.m; sourceTree = "<group>"; };
+		9300AFEC1E09AB4F00B34763 /* ITRangeCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITRangeCharacters.h; sourceTree = "<group>"; };
+		9300AFED1E09AB4F00B34763 /* ITRangeCharacters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITRangeCharacters.m; sourceTree = "<group>"; };
+		9300AFEE1E09AB4F00B34763 /* ITStringsCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITStringsCharacters.h; sourceTree = "<group>"; };
+		9300AFEF1E09AB4F00B34763 /* ITStringsCharacters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITStringsCharacters.m; sourceTree = "<group>"; };
+		9300AFF01E09AB4F00B34763 /* NSString+ITString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ITString.h"; sourceTree = "<group>"; };
+		9300AFF11E09AB4F00B34763 /* NSString+ITString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ITString.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,7 +54,9 @@
 		9300AF911E072BFA00B34763 = {
 			isa = PBXGroup;
 			children = (
-				9300AF9D1E072BFA00B34763 /* ITSources */,
+				9300AFDF1E09AB4F00B34763 /* ITSources */,
+				9300AFE41E09AB4F00B34763 /* ITSources.h */,
+				9300AFE01E09AB4F00B34763 /* Info.plist */,
 				9300AF9C1E072BFA00B34763 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,23 +69,55 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9300AF9D1E072BFA00B34763 /* ITSources */ = {
+		9300AFDF1E09AB4F00B34763 /* ITSources */ = {
 			isa = PBXGroup;
 			children = (
-				9300AFB51E0894DE00B34763 /* ITObject */,
-				9300AF9E1E072BFA00B34763 /* ITSources.h */,
-				9300AF9F1E072BFA00B34763 /* Info.plist */,
+				9300AFE11E09AB4F00B34763 /* ITObject */,
+				9300AFE51E09AB4F00B34763 /* ITString */,
 			);
 			path = ITSources;
 			sourceTree = "<group>";
 		};
-		9300AFB51E0894DE00B34763 /* ITObject */ = {
+		9300AFE11E09AB4F00B34763 /* ITObject */ = {
 			isa = PBXGroup;
 			children = (
-				9300AFB61E0894DE00B34763 /* NSObject+ITObject.h */,
-				9300AFB71E0894DE00B34763 /* NSObject+ITObject.m */,
+				9300AFE21E09AB4F00B34763 /* NSObject+ITObject.h */,
+				9300AFE31E09AB4F00B34763 /* NSObject+ITObject.m */,
 			);
 			path = ITObject;
+			sourceTree = "<group>";
+		};
+		9300AFE51E09AB4F00B34763 /* ITString */ = {
+			isa = PBXGroup;
+			children = (
+				9300AFE61E09AB4F00B34763 /* ITCharacters */,
+				9300AFF01E09AB4F00B34763 /* NSString+ITString.h */,
+				9300AFF11E09AB4F00B34763 /* NSString+ITString.m */,
+			);
+			path = ITString;
+			sourceTree = "<group>";
+		};
+		9300AFE61E09AB4F00B34763 /* ITCharacters */ = {
+			isa = PBXGroup;
+			children = (
+				9300AFE71E09AB4F00B34763 /* ITCharacters.h */,
+				9300AFE81E09AB4F00B34763 /* ITCharacters.m */,
+				9300AFE91E09AB4F00B34763 /* Private */,
+			);
+			path = ITCharacters;
+			sourceTree = "<group>";
+		};
+		9300AFE91E09AB4F00B34763 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				9300AFEA1E09AB4F00B34763 /* ITClusterCharacters.h */,
+				9300AFEB1E09AB4F00B34763 /* ITClusterCharacters.m */,
+				9300AFEC1E09AB4F00B34763 /* ITRangeCharacters.h */,
+				9300AFED1E09AB4F00B34763 /* ITRangeCharacters.m */,
+				9300AFEE1E09AB4F00B34763 /* ITStringsCharacters.h */,
+				9300AFEF1E09AB4F00B34763 /* ITStringsCharacters.m */,
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -73,8 +127,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9300AFB81E0894DE00B34763 /* NSObject+ITObject.h in Headers */,
-				9300AFA01E072BFA00B34763 /* ITSources.h in Headers */,
+				9300AFF51E09AB4F00B34763 /* ITSources.h in Headers */,
+				9300AFFE1E09AB4F00B34763 /* NSString+ITString.h in Headers */,
+				9300AFF31E09AB4F00B34763 /* NSObject+ITObject.h in Headers */,
+				9300AFF61E09AB4F00B34763 /* ITCharacters.h in Headers */,
+				9300AFFA1E09AB4F00B34763 /* ITRangeCharacters.h in Headers */,
+				9300AFF81E09AB4F00B34763 /* ITClusterCharacters.h in Headers */,
+				9300AFFC1E09AB4F00B34763 /* ITStringsCharacters.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +206,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9300AFB91E0894DE00B34763 /* NSObject+ITObject.m in Sources */,
+				9300AFFB1E09AB4F00B34763 /* ITRangeCharacters.m in Sources */,
+				9300AFF71E09AB4F00B34763 /* ITCharacters.m in Sources */,
+				9300AFF41E09AB4F00B34763 /* NSObject+ITObject.m in Sources */,
+				9300AFFF1E09AB4F00B34763 /* NSString+ITString.m in Sources */,
+				9300AFFD1E09AB4F00B34763 /* ITStringsCharacters.m in Sources */,
+				9300AFF91E09AB4F00B34763 /* ITClusterCharacters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

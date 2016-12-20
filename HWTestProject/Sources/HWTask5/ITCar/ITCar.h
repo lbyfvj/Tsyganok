@@ -13,10 +13,10 @@
 
 //@class ITCar;
 
-//typedef NS_ENUM(NSUInteger, ITCarState) {
-//    ITClean,
-//    ITDirty
-//};
+typedef NS_ENUM(NSUInteger, ITCarState) {
+    ITClean,
+    ITDirty
+};
 //
 //@protocol ITCarObserver <NSObject>
 //
@@ -28,7 +28,7 @@
 
 //@interface ITCar : ITObservableObject
 @interface ITCar : NSObject  <ITMoneyChainProtocol>
-@property (nonatomic, assign, getter=isClean)   BOOL    clean;
+@property (nonatomic, assign)   ITCarState    carState;
 
 - (instancetype)initWithMoney:(NSDecimalNumber *)money;
 //@property (nonatomic, assign) NSString      *name;
