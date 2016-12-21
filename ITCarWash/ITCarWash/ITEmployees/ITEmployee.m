@@ -10,4 +10,72 @@
 
 @implementation ITEmployee
 
+@synthesize money = _money;
+
+@dynamic observersSet;
+
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (void)dealloc {
+    //self.money = nil;
+    
+    [self removeObserver:self];
+    
+    [super dealloc];
+}
+
+//- (instancetype)init {
+//    return [self initWithMoney:[NSDecimalNumber zero]];
+//}
+
+- (instancetype)initWithMoney:(NSUInteger)money {
+    self = [super init];
+    if (self) {
+        self.money = money;
+        
+        [self addObserver:self];
+    }
+    
+    return self;
+}
+
+#pragma mark -
+#pragma mark Public Methods
+
+- (SEL)selectorForState:(NSUInteger)state {
+    switch (state) {
+        case ITEmployeeDidFinishWork:
+            return @selector(employeeDidFinishWork:);
+            
+        case ITEmployeeDidBeginWork:
+            return @selector(employeeDidBeginWork:);
+            
+        case ITEmployeeDidPerformWorkWithObject:
+            return @selector(employeeDidPerformWork:);
+            
+        default:
+            return [super selectorForState:state];
+    }
+}
+
+- (void)performWorkWithObject:(id<ITMoneyKeeperProtocol> )object {
+    NSLog(@"Employee %@ started work yyyyy with object: %@", [self class], object);
+    self.state = ITEmployeeDidBeginWork;
+}
+
+#pragma mark -
+#pragma mark ITMoneyKeeperProtocol
+
+- (void)takeMoney:(NSUInteger)money fromObject:(id<ITMoneyKeeperProtocol>)object {
+    self.money =+ money;
+    object.money =- money;
+}
+
+
+- (void)giveMoney:(NSUInteger)money toObject:(id<ITMoneyKeeperProtocol>)object {
+    self.money =- money;
+    object.money =+ money;
+}
+
 @end

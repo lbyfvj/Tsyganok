@@ -10,6 +10,11 @@
 		9357E8591E0B1213004ECC78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357E8581E0B1213004ECC78 /* main.m */; };
 		9357E8681E0B1525004ECC78 /* ITSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9357E8671E0B1525004ECC78 /* ITSources.framework */; };
 		9357E86C1E0B1660004ECC78 /* ITEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357E86B1E0B1660004ECC78 /* ITEmployee.m */; };
+		9357E8741E0B1A5C004ECC78 /* ITWasher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357E8731E0B1A5C004ECC78 /* ITWasher.m */; };
+		9357E8771E0B1A6C004ECC78 /* ITDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357E8761E0B1A6C004ECC78 /* ITDirector.m */; };
+		9357E87A1E0B1A8F004ECC78 /* ITAccountant.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357E8791E0B1A8F004ECC78 /* ITAccountant.m */; };
+		9357E87D1E0B1AF3004ECC78 /* ITCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357E87C1E0B1AF3004ECC78 /* ITCar.m */; };
+		9357E8801E0B1B9B004ECC78 /* ITCarWash.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357E87F1E0B1B9B004ECC78 /* ITCarWash.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +36,17 @@
 		9357E8691E0B15B4004ECC78 /* ITEmployeeObserverProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITEmployeeObserverProtocol.h; sourceTree = "<group>"; };
 		9357E86A1E0B1660004ECC78 /* ITEmployee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITEmployee.h; sourceTree = "<group>"; };
 		9357E86B1E0B1660004ECC78 /* ITEmployee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITEmployee.m; sourceTree = "<group>"; };
+		9357E86E1E0B1887004ECC78 /* ITMoneyKeeperProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITMoneyKeeperProtocol.h; sourceTree = "<group>"; };
+		9357E8721E0B1A5C004ECC78 /* ITWasher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITWasher.h; sourceTree = "<group>"; };
+		9357E8731E0B1A5C004ECC78 /* ITWasher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITWasher.m; sourceTree = "<group>"; };
+		9357E8751E0B1A6C004ECC78 /* ITDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITDirector.h; sourceTree = "<group>"; };
+		9357E8761E0B1A6C004ECC78 /* ITDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITDirector.m; sourceTree = "<group>"; };
+		9357E8781E0B1A8F004ECC78 /* ITAccountant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITAccountant.h; sourceTree = "<group>"; };
+		9357E8791E0B1A8F004ECC78 /* ITAccountant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITAccountant.m; sourceTree = "<group>"; };
+		9357E87B1E0B1AF3004ECC78 /* ITCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCar.h; sourceTree = "<group>"; };
+		9357E87C1E0B1AF3004ECC78 /* ITCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCar.m; sourceTree = "<group>"; };
+		9357E87E1E0B1B9B004ECC78 /* ITCarWash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCarWash.h; sourceTree = "<group>"; };
+		9357E87F1E0B1B9B004ECC78 /* ITCarWash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCarWash.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +85,8 @@
 		9357E8571E0B1213004ECC78 /* ITCarWash */ = {
 			isa = PBXGroup;
 			children = (
+				9357E87E1E0B1B9B004ECC78 /* ITCarWash.h */,
+				9357E87F1E0B1B9B004ECC78 /* ITCarWash.m */,
 			);
 			path = ITCarWash;
 			sourceTree = "<group>";
@@ -76,6 +94,9 @@
 		9357E85F1E0B1262004ECC78 /* ITEmployees */ = {
 			isa = PBXGroup;
 			children = (
+				9357E8711E0B1A10004ECC78 /* ITWasher */,
+				9357E8701E0B1A08004ECC78 /* ITDirector */,
+				9357E86F1E0B19FD004ECC78 /* ITAccountant */,
 				9357E86A1E0B1660004ECC78 /* ITEmployee.h */,
 				9357E86B1E0B1660004ECC78 /* ITEmployee.m */,
 				9357E8691E0B15B4004ECC78 /* ITEmployeeObserverProtocol.h */,
@@ -86,6 +107,8 @@
 		9357E8601E0B129E004ECC78 /* ITCar */ = {
 			isa = PBXGroup;
 			children = (
+				9357E87B1E0B1AF3004ECC78 /* ITCar.h */,
+				9357E87C1E0B1AF3004ECC78 /* ITCar.m */,
 			);
 			path = ITCar;
 			sourceTree = SOURCE_ROOT;
@@ -101,8 +124,36 @@
 		9357E86D1E0B16C7004ECC78 /* ITMoneyKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				9357E86E1E0B1887004ECC78 /* ITMoneyKeeperProtocol.h */,
 			);
 			path = ITMoneyKeeper;
+			sourceTree = "<group>";
+		};
+		9357E86F1E0B19FD004ECC78 /* ITAccountant */ = {
+			isa = PBXGroup;
+			children = (
+				9357E8781E0B1A8F004ECC78 /* ITAccountant.h */,
+				9357E8791E0B1A8F004ECC78 /* ITAccountant.m */,
+			);
+			path = ITAccountant;
+			sourceTree = "<group>";
+		};
+		9357E8701E0B1A08004ECC78 /* ITDirector */ = {
+			isa = PBXGroup;
+			children = (
+				9357E8751E0B1A6C004ECC78 /* ITDirector.h */,
+				9357E8761E0B1A6C004ECC78 /* ITDirector.m */,
+			);
+			path = ITDirector;
+			sourceTree = "<group>";
+		};
+		9357E8711E0B1A10004ECC78 /* ITWasher */ = {
+			isa = PBXGroup;
+			children = (
+				9357E8721E0B1A5C004ECC78 /* ITWasher.h */,
+				9357E8731E0B1A5C004ECC78 /* ITWasher.m */,
+			);
+			path = ITWasher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,8 +214,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9357E8771E0B1A6C004ECC78 /* ITDirector.m in Sources */,
 				9357E86C1E0B1660004ECC78 /* ITEmployee.m in Sources */,
+				9357E8801E0B1B9B004ECC78 /* ITCarWash.m in Sources */,
 				9357E8591E0B1213004ECC78 /* main.m in Sources */,
+				9357E87D1E0B1AF3004ECC78 /* ITCar.m in Sources */,
+				9357E87A1E0B1A8F004ECC78 /* ITAccountant.m in Sources */,
+				9357E8741E0B1A5C004ECC78 /* ITWasher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +349,7 @@
 				9357E85E1E0B1213004ECC78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <ITSources/ITObservableObject.h>
 
-//#import "ITMoneyChainProtocol.h"
+#import "ITMoneyKeeperProtocol.h"
 #import "ITEmployeeObserverProtocol.h"
 
 @class ITEmployee;
@@ -20,9 +20,9 @@ typedef NS_ENUM(NSUInteger, ITEmployeeState) {
     ITEmployeeDidPerformWorkWithObject
 };
 
-@interface ITEmployee : ITObservableObject ///<ITMoneyChainProtocol>
+@interface ITEmployee : ITObservableObject <ITMoneyKeeperProtocol>
 
-- (instancetype)initWithMoney:(NSDecimalNumber *)money;
+- (instancetype)initWithMoney:(NSUInteger)money;
 
 - (void)performWorkWithObject:(id)object;
 

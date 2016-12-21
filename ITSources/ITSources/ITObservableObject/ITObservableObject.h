@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ITObservableObject : NSObject
+@property (nonatomic, assign)   NSUInteger  state;
 @property (nonatomic, readonly) NSSet   *observersSet;
 
 - (void)addObserver:(id)observer;
