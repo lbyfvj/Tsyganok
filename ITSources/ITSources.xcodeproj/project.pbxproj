@@ -20,6 +20,8 @@
 		9300AFFD1E09AB4F00B34763 /* ITStringsCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AFEF1E09AB4F00B34763 /* ITStringsCharacters.m */; };
 		9300AFFE1E09AB4F00B34763 /* NSString+ITString.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFF01E09AB4F00B34763 /* NSString+ITString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9300AFFF1E09AB4F00B34763 /* NSString+ITString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AFF11E09AB4F00B34763 /* NSString+ITString.m */; };
+		9357E8641E0B1415004ECC78 /* ITObservableObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9357E8621E0B1415004ECC78 /* ITObservableObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9357E8651E0B1415004ECC78 /* ITObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357E8631E0B1415004ECC78 /* ITObservableObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		9300AFEF1E09AB4F00B34763 /* ITStringsCharacters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITStringsCharacters.m; sourceTree = "<group>"; };
 		9300AFF01E09AB4F00B34763 /* NSString+ITString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ITString.h"; sourceTree = "<group>"; };
 		9300AFF11E09AB4F00B34763 /* NSString+ITString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ITString.m"; sourceTree = "<group>"; };
+		9357E8621E0B1415004ECC78 /* ITObservableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITObservableObject.h; sourceTree = "<group>"; };
+		9357E8631E0B1415004ECC78 /* ITObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITObservableObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 		9300AFDF1E09AB4F00B34763 /* ITSources */ = {
 			isa = PBXGroup;
 			children = (
+				9357E8611E0B13F0004ECC78 /* ITObservableObject */,
 				9300AFE11E09AB4F00B34763 /* ITObject */,
 				9300AFE51E09AB4F00B34763 /* ITString */,
 			);
@@ -120,6 +125,15 @@
 			path = Private;
 			sourceTree = "<group>";
 		};
+		9357E8611E0B13F0004ECC78 /* ITObservableObject */ = {
+			isa = PBXGroup;
+			children = (
+				9357E8621E0B1415004ECC78 /* ITObservableObject.h */,
+				9357E8631E0B1415004ECC78 /* ITObservableObject.m */,
+			);
+			path = ITObservableObject;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -130,6 +144,7 @@
 				9300AFF51E09AB4F00B34763 /* ITSources.h in Headers */,
 				9300AFFE1E09AB4F00B34763 /* NSString+ITString.h in Headers */,
 				9300AFF31E09AB4F00B34763 /* NSObject+ITObject.h in Headers */,
+				9357E8641E0B1415004ECC78 /* ITObservableObject.h in Headers */,
 				9300AFF61E09AB4F00B34763 /* ITCharacters.h in Headers */,
 				9300AFFA1E09AB4F00B34763 /* ITRangeCharacters.h in Headers */,
 				9300AFF81E09AB4F00B34763 /* ITClusterCharacters.h in Headers */,
@@ -212,6 +227,7 @@
 				9300AFFF1E09AB4F00B34763 /* NSString+ITString.m in Sources */,
 				9300AFFD1E09AB4F00B34763 /* ITStringsCharacters.m in Sources */,
 				9300AFF91E09AB4F00B34763 /* ITClusterCharacters.m in Sources */,
+				9357E8651E0B1415004ECC78 /* ITObservableObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
