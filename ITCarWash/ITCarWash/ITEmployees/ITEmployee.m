@@ -18,21 +18,16 @@
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-    //self.money = nil;
-    
     [self removeObserver:self];
     
     [super dealloc];
 }
 
-//- (instancetype)init {
-//    return [self initWithMoney:[NSDecimalNumber zero]];
-//}
-
 - (instancetype)initWithMoney:(NSUInteger)money {
     self = [super init];
     if (self) {
         self.money = money;
+        self.state = ITEmployeeDidFinishWork;
         
         [self addObserver:self];
     }

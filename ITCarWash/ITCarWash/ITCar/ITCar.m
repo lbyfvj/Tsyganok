@@ -16,13 +16,8 @@
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-    self.money = 0;
     
     [super dealloc];
-}
-
-- (instancetype)init {
-    return [self initWithMoney:0];
 }
 
 - (instancetype)initWithMoney:(NSUInteger)money {
