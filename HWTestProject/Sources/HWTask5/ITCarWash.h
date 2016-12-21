@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ITWasher.h"
-#import "ITCar.h"
+#import "ITEmloyeeObserverProtocol.h"
 
-@interface ITCarWash : NSObject
+@class ITCar;
+
+@interface ITCarWash : NSObject <ITEmloyeeObserverProtocol>
 @property (nonatomic, retain)           ITCar       *car;
-@property (nonatomic, copy, readonly)   NSArray     *staff;
 
-- (void)hireStaff:(ITEmployee *)employee;
+- (void)hireEmployees:(ITEmployee *)employee;
 
 @end
