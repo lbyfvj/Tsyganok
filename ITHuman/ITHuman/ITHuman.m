@@ -7,6 +7,7 @@
 //
 
 #import "ITHuman.h"
+#import <ITSources/ITSources.h>
 
 @interface ITHuman ()
 @property (nonatomic, assign) NSMutableArray *mutableChildren;
