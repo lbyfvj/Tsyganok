@@ -8,12 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "ITEmployeeObserverProtocol.h"
-
-@class ITCar;
+#import "ITCar.h"
 
 @interface ITCarWash : NSObject <ITEmloyeeObserverProtocol>
-@property (nonatomic, retain)           ITCar       *car;
 
-- (void)hireEmployees:(ITEmployee *)employee;
+- (void)washCar:(ITCar *)car;
 
 @end
