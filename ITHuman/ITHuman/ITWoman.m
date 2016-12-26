@@ -10,6 +10,23 @@
 
 @implementation ITWoman
 
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {        
+        self.name = [NSString randomNameWithLength:5];
+        self.age = ITRandomNumberInRange(18, 32);
+        self.weight = ITRandomNumberInRange(45, 64);
+        self.gender = ITFemale;
+    }
+    
+    return self;
+}
+
+- (void)giveBirth {
+    NSLog(@"Give birth to baby!");
+}
+
 - (void)performGenderSpecificOperation {
     [self giveBirth];
 }

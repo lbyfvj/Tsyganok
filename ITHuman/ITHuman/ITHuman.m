@@ -7,10 +7,16 @@
 //
 
 #import "ITHuman.h"
-#import <ITSources/ITSources.h>
+
+NSUInteger ITRandomNumberInRange(unichar value1, unichar value2) {
+    unichar minValue = MIN(value1, value2);
+    unichar maxValue = MAX(value1, value2);
+    
+    return minValue + arc4random_uniform(maxValue - minValue + 1);
+}
 
 @interface ITHuman ()
-@property (nonatomic, assign) NSMutableArray *mutableChildren;
+@property (nonatomic, retain) NSMutableArray *mutableChildren;
 
 @end
 
@@ -31,9 +37,9 @@
 - (instancetype)init {
     self = [super init];
     
-    if (self) {
-        self.name = _name;
-        self.mutableChildren = [[NSMutableArray new] autorelease];
+    if (self) {        
+        self.name = self.name;
+        self.mutableChildren = [NSMutableArray array];
     }
     
     return self;
@@ -51,14 +57,6 @@
     for (id child in self.children) {
         [child sayHello];
     }
-}
-
-- (void)goFight {
-    NSLog(@"Fight!");
-}
-
-- (void)giveBirth {
-    NSLog(@"Give birth to baby!");
 }
 
 - (void)addChild:(ITHuman *)child {

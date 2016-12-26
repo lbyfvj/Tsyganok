@@ -17,6 +17,7 @@ NSRange ITMakeCharactersRange(unichar value1, unichar value2);
 + (id)symbolCharacters;
 + (id)capitalizedCharacters;
 + (id)lowercaseCharacters;
++ (id)alphanumericCharacters;
 + (id)characters;
 
 + (id)charactersWithRange:(NSRange)range;

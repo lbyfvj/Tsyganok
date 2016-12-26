@@ -48,7 +48,8 @@
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
                                   objects:(id [])buffer
-                                    count:(NSUInteger)resultLength {
+                                    count:(NSUInteger)resultLength
+{
     
     
     return [self.strings countByEnumeratingWithState:state

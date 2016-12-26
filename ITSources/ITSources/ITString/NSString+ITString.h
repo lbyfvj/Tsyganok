@@ -14,6 +14,7 @@
 + (id)randomString;
 + (id)randomStringWithLenght:(NSUInteger)lenght;
 + (id)randomStringWithLenght:(NSUInteger)lenght ofCharacters:(ITCharacters *)characters;
++ (id)randomNameWithLength:(NSUInteger)length;
 
 - (NSArray *)symbols;
 
