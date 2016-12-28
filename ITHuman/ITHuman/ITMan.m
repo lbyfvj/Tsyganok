@@ -8,15 +8,19 @@
 
 #import "ITMan.h"
 
+static const NSUInteger kITRandomMenNameLength = 7;
+static const NSRange kITRandomMenAgeRange = {24, 40};
+static const NSRange kITRandomMenWeightRange = {65, 85};
+
 @implementation ITMan
 
 - (instancetype)init {
     self = [super init];
     
     if (self) {
-        self.name = [NSString randomNameWithLength:7];
-        self.age = ITRandomNumberInRange(24, 40);
-        self.weight = ITRandomNumberInRange(65, 85);
+        self.name = [NSString randomNameWithLength:kITRandomMenNameLength];
+        self.age = ITRandomNumberInRange1(kITRandomMenAgeRange);
+        self.weight = ITRandomNumberInRange1(kITRandomMenWeightRange);
         self.gender = ITMale;
     }
     

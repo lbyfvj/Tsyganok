@@ -14,4 +14,15 @@
     return [[[self alloc] init] autorelease];
 }
 
++ (NSArray *)objectsWithCount:(NSUInteger)count {
+    
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:count];
+    
+    for (NSInteger i = 0; i < count; i++) {
+        [result addObject:[self object]];
+    }
+    
+    return result;
+}
+
 @end

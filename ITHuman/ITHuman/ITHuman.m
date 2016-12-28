@@ -15,6 +15,14 @@ NSUInteger ITRandomNumberInRange(unichar value1, unichar value2) {
     return minValue + arc4random_uniform(maxValue - minValue + 1);
 }
 
+NSUInteger ITRandomNumberInRange1(NSRange range) {
+    
+    unichar min = range.location;
+    unichar max = min + range.length;
+    
+    return min + arc4random_uniform(max - min +1);
+}
+
 @interface ITHuman ()
 @property (nonatomic, retain) NSMutableArray *mutableChildren;
 

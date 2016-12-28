@@ -17,10 +17,21 @@ int main(int argc, const char * argv[]) {
         
         NSMutableArray *humansArray = [NSMutableArray array];
         
-        for (NSUInteger i = 0; i < 7; i++) {
-            NSUInteger randomGender = ITRandomNumberInRange(ITFemale, ITMale);
-            ITHuman *human = randomGender == ITFemale ? [ITWoman object] : [ITMan object];
-            [humansArray addObject:human];
+        //        for (NSUInteger i = 0; i < 7; i++) {
+        //            NSUInteger randomGender = ITRandomNumberInRange(ITFemale, ITMale);
+        //            ITHuman *human = randomGender == ITFemale ? [ITWoman object] : [ITMan object];
+        //            [humansArray addObject:human];
+        //        }
+        
+        NSArray *mensArray = [ITMan objectsWithCount:4];
+        NSArray *womensArray = [ITWoman objectsWithCount:4];
+        
+        for (id women in womensArray) {
+            [humansArray addObject:women];
+        }
+        
+        for (id man in mensArray) {
+            [humansArray addObject:man];
         }
         
         for (ITHuman *human in humansArray) {
@@ -35,7 +46,6 @@ int main(int argc, const char * argv[]) {
         [human addChild:child1];
         
         [human sayHello];
-        
     }
     return 0;
 }

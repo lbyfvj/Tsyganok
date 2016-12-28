@@ -13,6 +13,7 @@
 
 extern
 NSUInteger ITRandomNumberInRange(unichar value1, unichar value2);
+NSUInteger ITRandomNumberInRange1(NSRange range);
 
 typedef enum {
     ITMale,
