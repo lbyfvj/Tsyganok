@@ -8,14 +8,7 @@
 
 #import "ITHuman.h"
 
-NSUInteger ITRandomNumberInRange(unichar value1, unichar value2) {
-    unichar minValue = MIN(value1, value2);
-    unichar maxValue = MAX(value1, value2);
-    
-    return minValue + arc4random_uniform(maxValue - minValue + 1);
-}
-
-NSUInteger ITRandomNumberInRange1(NSRange range) {
+NSUInteger ITRandomNumberInRange(NSRange range) {
     
     unichar min = range.location;
     unichar max = min + range.length;

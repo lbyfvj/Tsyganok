@@ -19,8 +19,8 @@ static const NSRange kITRandomMenWeightRange = {65, 85};
     
     if (self) {
         self.name = [NSString randomNameWithLength:kITRandomMenNameLength];
-        self.age = ITRandomNumberInRange1(kITRandomMenAgeRange);
-        self.weight = ITRandomNumberInRange1(kITRandomMenWeightRange);
+        self.age = ITRandomNumberInRange(kITRandomMenAgeRange);
+        self.weight = ITRandomNumberInRange(kITRandomMenWeightRange);
         self.gender = ITMale;
     }
     

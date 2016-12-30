@@ -17,12 +17,6 @@ int main(int argc, const char * argv[]) {
         
         NSMutableArray *humansArray = [NSMutableArray array];
         
-        //        for (NSUInteger i = 0; i < 7; i++) {
-        //            NSUInteger randomGender = ITRandomNumberInRange(ITFemale, ITMale);
-        //            ITHuman *human = randomGender == ITFemale ? [ITWoman object] : [ITMan object];
-        //            [humansArray addObject:human];
-        //        }
-        
         NSArray *mensArray = [ITMan objectsWithCount:4];
         NSArray *womensArray = [ITWoman objectsWithCount:4];
         
