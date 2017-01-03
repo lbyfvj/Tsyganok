@@ -21,6 +21,7 @@ static
 void ITEmptyTest();
 
 void ITMultipleValuesTests(){
+    printf("Perform Task 1 tests....... \n");
     ITMamaTest();
     ITPapaTest();
     ITMamaPapaTest();

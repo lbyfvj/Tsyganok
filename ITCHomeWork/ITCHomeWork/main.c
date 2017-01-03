@@ -11,6 +11,18 @@
 #include "ITMultipleValues.h"
 #include "ITMultipleValuesTests.h"
 
+#define ITGenerateTypeValueOutput(type, speceficator) \
+type output_##type(type value) { \
+printf("Perform Task2 \n"); \
+printf("%"#speceficator, value); \
+printf("\n"); \
+return value; \
+}
+
+#define ITOutputData(type, value) output_##type(value);
+
+ITGenerateTypeValueOutput(int, d);
+
 const int kITMultipleValuesIterations = 1000;
 
 void ITPerformMultipleValues(int iterations) {
@@ -21,13 +33,20 @@ void ITPerformMultipleValues(int iterations) {
 }
 
 void ITPerformTask1() {
+    printf("Perform Task1 \n");
     ITMultipleValuesTests();
     ITPerformMultipleValues(kITMultipleValuesIterations);
+}
+
+void ITPerformTask2() {
+    ITOutputData(int, 15);
 }
 
 int main(int argc, const char * argv[]) {
     
     ITPerformTask1();
+    printf("\n");
+    ITPerformTask2();
     
     return 0;
 }
