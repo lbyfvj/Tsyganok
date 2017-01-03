@@ -38,7 +38,14 @@ void ITPerformTask1() {
     ITPerformMultipleValues(kITMultipleValuesIterations);
 }
 
+void ITTask2Test() {
+    if (5 == output_int(5)) {
+        printf("Task2 test successed \n");
+    }
+}
+
 void ITPerformTask2() {
+    ITTask2Test();
     ITOutputData(int, 15);
 }
 
