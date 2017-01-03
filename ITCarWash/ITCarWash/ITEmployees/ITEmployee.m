@@ -43,30 +43,31 @@
         case ITEmployeeDidFinishWork:
             return @selector(employeeDidFinishWork:);
             
-        case ITEmployeeDidBeginWork:
-            return @selector(employeeDidBeginWork:);
+        case ITEmployeeDidBecomeReadyForWork:
+            return @selector(employeeDidBecomeReadyForWork::);
         
-        case ITEmployeeDidPerformWorkWithObject:
-            return @selector(employeeDidPerformWork:);
+        case ITEmployeeWillBeginWork:
+            return @selector(employeeWillBeginWork::);
             
         default:
             return [super selectorForState:state];
     }
 }
 
-- (void)performWorkWithObject:(id<ITMoneyKeeperProtocol> )object {
+- (void)proccessWorkWithObject:(id<ITMoneyKeeperProtocol> )object {
     NSLog(@"Employee %@ started work yyyyy with object: %@", [self class], object);
-    self.state = ITEmployeeDidBeginWork;
+    self.state = ITEmployeeDidBecomeReadyForWork;
 }
 
 #pragma mark -
 #pragma mark ITMoneyKeeperProtocol
 
+
+
 - (void)takeMoney:(NSUInteger)money fromObject:(id<ITMoneyKeeperProtocol>)object {
     self.money =+ money;
     object.money =- money;
 }
-
 
 - (void)giveMoney:(NSUInteger)money toObject:(id<ITMoneyKeeperProtocol>)object {
     self.money =- money;

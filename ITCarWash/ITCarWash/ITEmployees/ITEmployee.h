@@ -16,14 +16,16 @@
 
 typedef NS_ENUM(NSUInteger, ITEmployeeState) {
     ITEmployeeDidFinishWork,
-    ITEmployeeDidBeginWork,
-    ITEmployeeDidPerformWorkWithObject
+    ITEmployeeDidBecomeReadyForWork,
+    ITEmployeeWillBeginWork
 };
 
 @interface ITEmployee : ITObservableObject <ITMoneyKeeperProtocol>
 
 - (instancetype)initWithMoney:(NSUInteger)money;
 
-- (void)performWorkWithObject:(id<ITMoneyKeeperProtocol>)object;
+- (void)proccessWorkWithObject:(id<ITMoneyKeeperProtocol>)object;
+
+//- (void)performWorkWithObject:(id<ITMoneyKeeperProtocol>)object;
 
 @end

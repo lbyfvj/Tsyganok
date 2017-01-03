@@ -15,22 +15,28 @@
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
-- (void)dealloc {
-    
-    [super dealloc];
-}
-
 - (instancetype)initWithMoney:(NSUInteger)money {
     self = [super init];
-    if (self) {
-        self.money = money;
-    }
+    
+    self.money = money;
     
     return self;
 }
 
 #pragma mark -
 #pragma mark ITMoneyKeeperProtocol
+
+- (void)takeMoney {
+    
+}
+
+- (void)giveMoney {
+    
+}
+
+- (void)takeMoneyFromObject:(id<ITMoneyKeeperProtocol>)object {
+    
+}
 
 - (void)takeMoney:(NSUInteger)money fromObject:(id<ITMoneyKeeperProtocol>)object {
     self.money =+ money;

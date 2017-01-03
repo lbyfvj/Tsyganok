@@ -11,7 +11,7 @@
 @interface ITAccountant ()
 @property (nonatomic, assign)   NSUInteger  revenue;
 
-- (void)calculateRevenue;
+- (void)calculate;
 
 @end
 
@@ -23,28 +23,28 @@
     [super dealloc];
 }
 
+- (instancetype)init {
+    return [self initWithMoney: 0];
+}
+
 - (instancetype)initWithMoney:(NSUInteger)money
                       revenue:(NSUInteger)revenue {
     self = [super init];
     if (self) {
-        self.money = money;
+        //self.money = money;
         self.revenue = revenue;
     }
     
     return self;
 }
 
-- (instancetype)init {
-    return [self initWithMoney: 0];
-}
-
 - (void)performWorkWithObject:(id<ITMoneyKeeperProtocol> )object  {
-    [self takeMoney:self.price fromObject:object];
+    [self takeMoneyFromObject:object];
     NSLog(@"Employee %@ started work with %@", [self class], [object class]);
     [self calculateRevenue];
 }
 
-- (void)calculateRevenue {
+- (void)calculate {
     
 }
 

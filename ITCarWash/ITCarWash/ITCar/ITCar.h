@@ -11,8 +11,8 @@
 #import "ITMoneyKeeperProtocol.h"
 
 typedef NS_ENUM(NSUInteger, ITCarState) {
-    ITClean,
-    ITDirty
+    ITCarClean,
+    ITCarDirty
 };
 
 @interface ITCar : NSObject  <ITMoneyKeeperProtocol>

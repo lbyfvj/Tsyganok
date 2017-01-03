@@ -11,7 +11,11 @@
 @class ITEmployee;
 
 @protocol ITMoneyKeeperProtocol <NSObject>
-@property (nonatomic, assign) NSUInteger money;
+@property (nonatomic, retain) NSUInteger money;
+
+- (void)takeMoney;
+- (void)giveMoney;
+- (void)takeMoneyFromObject:(id<ITMoneyKeeperProtocol>)object;
 
 - (void)takeMoney:(NSUInteger)money fromObject:(id<ITMoneyKeeperProtocol>)object;
 - (void)giveMoney:(NSUInteger)money toObject:(id<ITMoneyKeeperProtocol>)object;

@@ -10,7 +10,7 @@
 #import "ITWasher.h"
 
 @interface ITAccountant : ITEmployee
-@property (nonatomic, readonly) NSUInteger price;
+//@property (nonatomic, readonly) NSUInteger price;
 
 - (instancetype)initWithMoney:(NSUInteger)money revenue:(NSUInteger)revenue;
 

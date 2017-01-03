@@ -8,7 +8,7 @@
 
 #import "ITWasher.h"
 
-static const NSUInteger kDefaultCarWashPrice = 1;
+//static const NSUInteger kDefaultCarWashPrice = 1;
 
 @interface ITWasher ()
 
@@ -18,20 +18,20 @@ static const NSUInteger kDefaultCarWashPrice = 1;
 
 @implementation ITWasher
 
-@dynamic price;
+//@dynamic price;
 
 #pragma mark -
 #pragma mark Accessors
 
-- (NSUInteger)price {
-    return kDefaultCarWashPrice;
-}
+//- (NSUInteger)price {
+//    return kDefaultCarWashPrice;
+//}
 
 #pragma mark -
 #pragma mark Public
 
 - (void)performWorkWithObject:(id<ITMoneyKeeperProtocol> )object {
-    [self takeMoney:self.price fromObject:object];
+    [self takeMoneyFromObject:object];
     NSLog(@"Employee %@ started work with %@", [self class], [object class]);
     [self washCar:object];
 }
@@ -40,7 +40,7 @@ static const NSUInteger kDefaultCarWashPrice = 1;
 #pragma mark Private
 
 - (void)washCar:(ITCar *)car {
-    car.carState = ITClean;
+    car.carState = ITCarClean;
 }
 
 @end
