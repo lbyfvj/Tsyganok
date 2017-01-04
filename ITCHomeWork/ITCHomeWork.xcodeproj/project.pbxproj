@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		932C54891E1D69600071C5C7 /* ITHumanTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 932C54871E1D69600071C5C7 /* ITHumanTests.c */; };
 		9390FEC81E1BFBE100C50D09 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 9390FEC71E1BFBE100C50D09 /* main.c */; };
 		9390FED11E1BFC5F00C50D09 /* ITMultipleValues.c in Sources */ = {isa = PBXBuildFile; fileRef = 9390FECF1E1BFC5F00C50D09 /* ITMultipleValues.c */; };
 		9390FED41E1C094400C50D09 /* ITMultipleValuesTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 9390FED21E1C094400C50D09 /* ITMultipleValuesTests.c */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		932C54871E1D69600071C5C7 /* ITHumanTests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ITHumanTests.c; sourceTree = "<group>"; };
+		932C54881E1D69600071C5C7 /* ITHumanTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITHumanTests.h; sourceTree = "<group>"; };
 		9390FEC41E1BFBE100C50D09 /* ITCHomeWork */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ITCHomeWork; sourceTree = BUILT_PRODUCTS_DIR; };
 		9390FEC71E1BFBE100C50D09 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		9390FECF1E1BFC5F00C50D09 /* ITMultipleValues.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ITMultipleValues.c; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 			children = (
 				9390FEE11E1D22D200C50D09 /* ITHuman.c */,
 				9390FEE21E1D22D200C50D09 /* ITHuman.h */,
+				932C54871E1D69600071C5C7 /* ITHumanTests.c */,
+				932C54881E1D69600071C5C7 /* ITHumanTests.h */,
 			);
 			path = Task5;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9390FEDC1E1D0DBA00C50D09 /* ITStructure.c in Sources */,
+				932C54891E1D69600071C5C7 /* ITHumanTests.c in Sources */,
 				9390FED11E1BFC5F00C50D09 /* ITMultipleValues.c in Sources */,
 				9390FEC81E1BFBE100C50D09 /* main.c in Sources */,
 				9390FED41E1C094400C50D09 /* ITMultipleValuesTests.c in Sources */,
@@ -303,6 +309,7 @@
 				9390FECD1E1BFBE100C50D09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

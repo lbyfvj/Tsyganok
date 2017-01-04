@@ -19,9 +19,8 @@ enum ITGender {
 
 typedef enum ITMaritalStatus ITMaritalStatus;
 enum ITMaritalStatus {
-    ITMarried,
     ITUnmarried,
-    ITDivorced
+    ITMarried
 };
 
 typedef struct ITHuman ITHuman;
@@ -46,5 +45,11 @@ ITHuman *ITCreateHuman(char *name, uint8_t age, ITGender gender);
 
 extern
 void ITGetMarried(ITHuman *human, ITHuman *partner);
+
+extern
+void ITGetDivorced(ITHuman *human, ITHuman *partner);
+
+extern
+ITHuman ITMakeChild(ITHuman *human, ITHuman *partner, char *name, uint8_t age, ITGender gender);
 
 #endif /* ITHuman_h */
