@@ -15,16 +15,16 @@ ITResultValues ITMultipleValues(int inputNumber) {
     
     ITResultValues result = ITEmptyResult;
     
-    if (0 == inputNumber) {
+    if (0 == inputNumber){
         return result;
     }
     
-    if (0 == (inputNumber % 3)) {
+    if (0 == (inputNumber % 3)){
         result += ITMamaResult;
         printf("%s", kMamaResult);
     }
     
-    if (0 == (inputNumber % 5)) {
+    if (0 == (inputNumber % 5)){
         result += ITPapaResult;
         printf("%s", kPapaResult);
     }

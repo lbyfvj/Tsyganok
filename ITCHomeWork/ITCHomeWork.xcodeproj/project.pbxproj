@@ -12,6 +12,7 @@
 		9390FED41E1C094400C50D09 /* ITMultipleValuesTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 9390FED21E1C094400C50D09 /* ITMultipleValuesTests.c */; };
 		9390FEDC1E1D0DBA00C50D09 /* ITStructure.c in Sources */ = {isa = PBXBuildFile; fileRef = 9390FEDA1E1D0DBA00C50D09 /* ITStructure.c */; };
 		9390FEDF1E1D0F2600C50D09 /* ITStructureTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 9390FEDD1E1D0F2600C50D09 /* ITStructureTests.c */; };
+		9390FEE31E1D22D200C50D09 /* ITHuman.c in Sources */ = {isa = PBXBuildFile; fileRef = 9390FEE11E1D22D200C50D09 /* ITHuman.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		9390FEDB1E1D0DBA00C50D09 /* ITStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITStructure.h; sourceTree = "<group>"; };
 		9390FEDD1E1D0F2600C50D09 /* ITStructureTests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ITStructureTests.c; sourceTree = "<group>"; };
 		9390FEDE1E1D0F2600C50D09 /* ITStructureTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITStructureTests.h; sourceTree = "<group>"; };
+		9390FEE11E1D22D200C50D09 /* ITHuman.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ITHuman.c; sourceTree = "<group>"; };
+		9390FEE21E1D22D200C50D09 /* ITHuman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITHuman.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,7 @@
 			children = (
 				9390FECE1E1BFC0800C50D09 /* Task1 */,
 				9390FED91E1D0D7000C50D09 /* Task3 */,
+				9390FEE01E1D22B800C50D09 /* Task5 */,
 				9390FEC71E1BFBE100C50D09 /* main.c */,
 			);
 			path = ITCHomeWork;
@@ -96,6 +100,15 @@
 				9390FEDE1E1D0F2600C50D09 /* ITStructureTests.h */,
 			);
 			path = Task3;
+			sourceTree = "<group>";
+		};
+		9390FEE01E1D22B800C50D09 /* Task5 */ = {
+			isa = PBXGroup;
+			children = (
+				9390FEE11E1D22D200C50D09 /* ITHuman.c */,
+				9390FEE21E1D22D200C50D09 /* ITHuman.h */,
+			);
+			path = Task5;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +173,7 @@
 				9390FED11E1BFC5F00C50D09 /* ITMultipleValues.c in Sources */,
 				9390FEC81E1BFBE100C50D09 /* main.c in Sources */,
 				9390FED41E1C094400C50D09 /* ITMultipleValuesTests.c in Sources */,
+				9390FEE31E1D22D200C50D09 /* ITHuman.c in Sources */,
 				9390FEDF1E1D0F2600C50D09 /* ITStructureTests.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
