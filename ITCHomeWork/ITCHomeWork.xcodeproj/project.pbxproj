@@ -10,6 +10,8 @@
 		9390FEC81E1BFBE100C50D09 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 9390FEC71E1BFBE100C50D09 /* main.c */; };
 		9390FED11E1BFC5F00C50D09 /* ITMultipleValues.c in Sources */ = {isa = PBXBuildFile; fileRef = 9390FECF1E1BFC5F00C50D09 /* ITMultipleValues.c */; };
 		9390FED41E1C094400C50D09 /* ITMultipleValuesTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 9390FED21E1C094400C50D09 /* ITMultipleValuesTests.c */; };
+		9390FEDC1E1D0DBA00C50D09 /* ITStructure.c in Sources */ = {isa = PBXBuildFile; fileRef = 9390FEDA1E1D0DBA00C50D09 /* ITStructure.c */; };
+		9390FEDF1E1D0F2600C50D09 /* ITStructureTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 9390FEDD1E1D0F2600C50D09 /* ITStructureTests.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,10 @@
 		9390FED01E1BFC5F00C50D09 /* ITMultipleValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITMultipleValues.h; sourceTree = "<group>"; };
 		9390FED21E1C094400C50D09 /* ITMultipleValuesTests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ITMultipleValuesTests.c; sourceTree = "<group>"; };
 		9390FED31E1C094400C50D09 /* ITMultipleValuesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITMultipleValuesTests.h; sourceTree = "<group>"; };
+		9390FEDA1E1D0DBA00C50D09 /* ITStructure.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ITStructure.c; sourceTree = "<group>"; };
+		9390FEDB1E1D0DBA00C50D09 /* ITStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITStructure.h; sourceTree = "<group>"; };
+		9390FEDD1E1D0F2600C50D09 /* ITStructureTests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ITStructureTests.c; sourceTree = "<group>"; };
+		9390FEDE1E1D0F2600C50D09 /* ITStructureTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITStructureTests.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				9390FECE1E1BFC0800C50D09 /* Task1 */,
+				9390FED91E1D0D7000C50D09 /* Task3 */,
 				9390FEC71E1BFBE100C50D09 /* main.c */,
 			);
 			path = ITCHomeWork;
@@ -78,6 +85,17 @@
 				9390FED31E1C094400C50D09 /* ITMultipleValuesTests.h */,
 			);
 			path = Task1;
+			sourceTree = "<group>";
+		};
+		9390FED91E1D0D7000C50D09 /* Task3 */ = {
+			isa = PBXGroup;
+			children = (
+				9390FEDA1E1D0DBA00C50D09 /* ITStructure.c */,
+				9390FEDB1E1D0DBA00C50D09 /* ITStructure.h */,
+				9390FEDD1E1D0F2600C50D09 /* ITStructureTests.c */,
+				9390FEDE1E1D0F2600C50D09 /* ITStructureTests.h */,
+			);
+			path = Task3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +156,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9390FEDC1E1D0DBA00C50D09 /* ITStructure.c in Sources */,
 				9390FED11E1BFC5F00C50D09 /* ITMultipleValues.c in Sources */,
 				9390FEC81E1BFBE100C50D09 /* main.c in Sources */,
 				9390FED41E1C094400C50D09 /* ITMultipleValuesTests.c in Sources */,
+				9390FEDF1E1D0F2600C50D09 /* ITStructureTests.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

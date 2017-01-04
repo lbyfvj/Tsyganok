@@ -10,6 +10,8 @@
 
 #include "ITMultipleValues.h"
 #include "ITMultipleValuesTests.h"
+#include "ITStructure.h"
+#include "ITStructureTests.h"
 
 #define ITGenerateTypeValueOutput(type, speceficator) \
 type output_##type(type value) { \
@@ -49,11 +51,17 @@ void ITPerformTask2() {
     ITOutputData(int, 15);
 }
 
+void ITPerformTask3() {
+    ITStructureTests();
+}
+
 int main(int argc, const char * argv[]) {
     
     ITPerformTask1();
     printf("\n");
     ITPerformTask2();
+    printf("\n");
+    ITPerformTask3();
     
     return 0;
 }
