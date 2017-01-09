@@ -10,6 +10,6 @@
 #import "ITCar.h"
 
 @interface ITWasher : ITEmployee
-//@property (nonatomic, readonly) NSUInteger price;
+@property (nonatomic, readonly) NSUInteger price;
 
 @end

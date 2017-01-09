@@ -18,9 +18,16 @@
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
+    self.money = 0;
+    
     [self removeObserver:self];
     
     [super dealloc];
+}
+
+- (instancetype)init {
+
+    return [self initWithMoney:0];
 }
 
 - (instancetype)initWithMoney:(NSUInteger)money {
@@ -44,34 +51,40 @@
             return @selector(employeeDidFinishWork:);
             
         case ITEmployeeDidBecomeReadyForWork:
-            return @selector(employeeDidBecomeReadyForWork::);
+            return @selector(employeeDidBecomeReadyForWork:);
         
         case ITEmployeeWillBeginWork:
-            return @selector(employeeWillBeginWork::);
+            return @selector(employeeWillBeginWork:);
             
         default:
             return [super selectorForState:state];
     }
 }
 
-- (void)proccessWorkWithObject:(id<ITMoneyKeeperProtocol> )object {
-    NSLog(@"Employee %@ started work yyyyy with object: %@", [self class], object);
-    self.state = ITEmployeeDidBecomeReadyForWork;
+- (void)proccessObject:(id<ITMoneyKeeperProtocol> )object {
+//    NSLog(@"Employee %@ started work yyyyy with object: %@", [self class], object);
+//    self.state = ITEmployeeDidBecomeReadyForWork;
 }
 
 #pragma mark -
 #pragma mark ITMoneyKeeperProtocol
 
-
-
-- (void)takeMoney:(NSUInteger)money fromObject:(id<ITMoneyKeeperProtocol>)object {
-    self.money =+ money;
-    object.money =- money;
+- (void)takeMoney:(NSUInteger)money {
+    @synchronized (self) {
+        self.money =+ money;
+    }
 }
 
-- (void)giveMoney:(NSUInteger)money toObject:(id<ITMoneyKeeperProtocol>)object {
-    self.money =- money;
-    object.money =+ money;
+- (void)giveMoney:(NSUInteger)money {
+    @synchronized (self) {
+        self.money =- money;
+    }
 }
+
+- (void)takeMoney:(NSUInteger)money fromKeeper:(id<ITMoneyKeeperProtocol>)object{
+    [self takeMoney:money];
+    [object giveMoney:money];
+}
+
 
 @end

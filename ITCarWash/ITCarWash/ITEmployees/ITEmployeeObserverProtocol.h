@@ -13,14 +13,9 @@
 @protocol ITEmloyeeObserverProtocol <NSObject>
 
 @optional
-- (void)employeeDidBeginWork:(ITEmployee *)employee;
-
-
 - (void)employeeDidFinishWork:(ITEmployee *)employee;
 - (void)employeeDidBecomeReadyForWork:(ITEmployee *)employee;
 - (void)employeeWillBeginWork:(ITEmployee *)employee;
-
-- (void)employeeDidPerformWork:(ITEmployee *)employee;
 
 @end
 

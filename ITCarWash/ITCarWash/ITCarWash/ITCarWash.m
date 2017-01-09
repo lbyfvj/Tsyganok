@@ -13,7 +13,9 @@
 #import "ITAccountant.h"
 #import "ITDirector.h"
 
-static const NSUInteger kITMaxWashersCount = 5;
+static const NSUInteger kITWashersCount = 5;
+static const NSUInteger kITAccountantsCount = 1;
+static const NSUInteger kITDirectorsCount = 1;
 
 @interface ITCarWash ()
 @property (nonatomic, retain)   ITWasher   *washer;
@@ -55,23 +57,24 @@ static const NSUInteger kITMaxWashersCount = 5;
 }
 
 - (void)washCar:(ITCar *)car {
-    [self.washer performWorkWithObject:car];
+    [self.washer proccessObject:car];
 }
 
 #pragma mark -
 #pragma mark - Private
 
-- (void)hireWashers {
-    NSUInteger randomWashersCount = arc4random_uniform(kITMaxWashersCount);
-    [self hireEmployeesWithClass: [ITWasher class] count:randomWashersCount];
+- (void)hireWashers:(NSUInteger)count {
+    for (NSUInteger i =0; i < count; i++) {
+        self.washer = [ITWasher object];
+    }
 }
 
-- (void)hireAccountant {
-    [self hireEmployeesWithClass: [ITAccountant class] count:1];
+- (void)hireAccountant:(NSUInteger)count {
+    [self hireEmployeesWithClass: [ITAccountant class] count:kITAccountantsCount];
 }
 
-- (void)hireDirector {
-    [self hireEmployeesWithClass: [ITDirector class] count:1];
+- (void)hireDirector:(NSUInteger)count {
+    [self hireEmployeesWithClass: [ITDirector class] count:kITDirectorsCount];
 }
 
 - (void)hireEmployeesWithClass:(Class)class count:(NSUInteger)count {

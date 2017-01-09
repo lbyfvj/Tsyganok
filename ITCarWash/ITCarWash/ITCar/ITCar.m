@@ -34,16 +34,16 @@
     
 }
 
-- (void)takeMoneyFromObject:(id<ITMoneyKeeperProtocol>)object {
+- (void)takeMoney:(NSUInteger)money fromKeeper:(id<ITMoneyKeeperProtocol>)object{
     
 }
 
-- (void)takeMoney:(NSUInteger)money fromObject:(id<ITMoneyKeeperProtocol>)object {
+- (void)takeMoney:(NSUInteger)money fromObject:(id<ITMoneyKeeperProtocol>)object{
     self.money =+ money;
     object.money =- money;
 }
 
-- (void)giveMoney:(NSUInteger)money toObject:(id<ITMoneyKeeperProtocol>)object {
+- (void)giveMoney:(NSUInteger)money toObject:(id<ITMoneyKeeperProtocol>)object{
     self.money =- money;
     object.money =+ money;
 }

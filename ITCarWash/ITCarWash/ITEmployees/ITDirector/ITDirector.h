@@ -10,4 +10,6 @@
 
 @interface ITDirector : ITEmployee
 
+- (instancetype)initWithMoney:(NSUInteger)money profit:(NSUInteger)profit;
+
 @end

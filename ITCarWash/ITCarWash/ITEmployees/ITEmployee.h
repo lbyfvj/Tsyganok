@@ -24,8 +24,6 @@ typedef NS_ENUM(NSUInteger, ITEmployeeState) {
 
 - (instancetype)initWithMoney:(NSUInteger)money;
 
-- (void)proccessWorkWithObject:(id<ITMoneyKeeperProtocol>)object;
-
-//- (void)performWorkWithObject:(id<ITMoneyKeeperProtocol>)object;
+- (void)proccessObject:(id<ITMoneyKeeperProtocol>)object;
 
 @end
