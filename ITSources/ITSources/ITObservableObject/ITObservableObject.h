@@ -9,12 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @interface ITObservableObject : NSObject
-@property (nonatomic, assign)   NSUInteger  state;
-@property (nonatomic, readonly) NSSet   *observersSet;
+@property (nonatomic, readonly) NSSet       *observersSet;
 
 - (void)addObserver:(id)observer;
+
 - (void)removeObserver:(id)observer;
+
 - (BOOL)containsObserver:(id)observer;
+
 - (SEL)selectorForState:(NSUInteger)state;
+
+- (void)notifyWithSelector:(SEL)selector;
 
 @end
