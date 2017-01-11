@@ -15,19 +15,19 @@ void ITOptomizedStructureSizeOutput();
 void ITUnionStructureSizeOutput();
 
 
-void ITStructureTests(){
+void ITStructureTests() {
     ITStructureSizeOutput();
     ITStructureOffSetOfElements();
     ITOptomizedStructureSizeOutput();
     ITUnionStructureSizeOutput();
 }
 
-void ITStructureSizeOutput(){
+void ITStructureSizeOutput() {
     struct ITStructure structure;
     printf("Structure size: %lu \n", sizeof(structure));
 }
 
-void ITStructureOffSetOfElements(){
+void ITStructureOffSetOfElements() {
     printf("Bool1 offSet: %lu \n", offsetof(struct ITStructure, bool1));
     printf("Bool2 offSet: %lu \n", offsetof(struct ITStructure, bool2));
     printf("Bool3 offSet: %lu \n", offsetof(struct ITStructure, bool3));
@@ -38,12 +38,12 @@ void ITStructureOffSetOfElements(){
     printf("Double offSet: %lu \n", offsetof(struct ITStructure, double1));
 }
 
-void ITOptomizedStructureSizeOutput(){
+void ITOptomizedStructureSizeOutput() {
     struct ITOptomizedStructure structure;
     printf("Structure size: %lu \n", sizeof(structure));
 }
 
-void ITUnionStructureSizeOutput(){
+void ITUnionStructureSizeOutput() {
     struct ITUnionStructure structure;
     printf("Structure size: %lu \n", sizeof(structure));
 }

@@ -12,21 +12,21 @@
 ITHuman ITCreateMan();
 ITHuman ITCreateWoman();
 
-ITHuman ITCreateMan(){
+ITHuman ITCreateMan() {
     ITHuman man = *ITCreateHuman("Ivashka", 32, ITMale);
     printf("Human %s created", man._name);
     
     return man;
 }
 
-ITHuman ITCreateWoman(){
+ITHuman ITCreateWoman() {
     ITHuman woman = *ITCreateHuman("Lena", 32, ITFemale);
     printf("Human %s created", woman._name);
     
     return woman;
 }
 
-void ITHumanTests(){
+void ITHumanTests() {
     ITHuman man = ITCreateMan();
     printf("\n");
     ITHuman woman = ITCreateWoman();

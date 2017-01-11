@@ -13,21 +13,21 @@ void ITSetPartner(ITHuman *human, ITHuman *partner);
 void ITSetMeritalStatus(ITHuman *human, ITMaritalStatus status);
 uint8_t ITGetChildrenCount(ITHuman *human);
 
-void ITSetPartner(ITHuman *human, ITHuman *partner){
+void ITSetPartner(ITHuman *human, ITHuman *partner) {
     human->_partner = partner;
 }
 
-void ITSetMeritalStatus(ITHuman *human, ITMaritalStatus status){
+void ITSetMeritalStatus(ITHuman *human, ITMaritalStatus status) {
     human->_meritalStatus = status;
 }
 
-uint8_t ITGetChildrenCount(ITHuman *human){
+uint8_t ITGetChildrenCount(ITHuman *human) {
     size_t arraySize = *(&human->_childrenArray + 1) - human->_childrenArray;
 
     return arraySize;
 }
 
-ITHuman *ITCreateHuman(char *name, uint8_t age, ITGender gender){
+ITHuman *ITCreateHuman(char *name, uint8_t age, ITGender gender) {
     ITHuman *human = malloc(sizeof(*human));
     
     human->_name = name;
@@ -42,21 +42,21 @@ ITHuman *ITCreateHuman(char *name, uint8_t age, ITGender gender){
     return human;
 }
 
-void ITGetMarried(ITHuman *human, ITHuman *partner){
+void ITGetMarried(ITHuman *human, ITHuman *partner) {
     ITSetPartner(human, partner);
     ITSetPartner(partner, human);
     ITSetMeritalStatus(human, ITMarried);
     ITSetMeritalStatus(partner, ITMarried);
 }
 
-void ITGetDivorced(ITHuman *human, ITHuman *partner){
+void ITGetDivorced(ITHuman *human, ITHuman *partner) {
     ITSetPartner(human, NULL);
     ITSetPartner(partner, NULL);
     ITSetMeritalStatus(human, ITUnmarried);
     ITSetMeritalStatus(partner, ITUnmarried);
 }
 
-ITHuman ITMakeChild(ITHuman *human, ITHuman *partner, char *name, uint8_t age, ITGender gender){
+ITHuman ITMakeChild(ITHuman *human, ITHuman *partner, char *name, uint8_t age, ITGender gender) {
     ITHuman *child = NULL;
     
     if (human->_partner == partner && partner->_partner == human && human->_gender != partner->_gender) {

@@ -20,7 +20,7 @@ void ITMamaPapaTest();
 static
 void ITEmptyTest();
 
-void ITMultipleValuesTests(){
+void ITMultipleValuesTests() {
     printf("Perform Task 1 tests....... \n");
     ITMamaTest();
     ITPapaTest();
@@ -28,26 +28,26 @@ void ITMultipleValuesTests(){
     ITEmptyTest();
 }
 
-void ITMamaTest(){
-    if (ITMamaResult == ITMultipleValues(3)){
+void ITMamaTest() {
+    if (ITMamaResult == ITMultipleValues(3)) {
         printf("Mama output success test \n");
     }
 }
 
-void ITPapaTest(){
-    if (ITPapaResult == ITMultipleValues(5)){
+void ITPapaTest() {
+    if (ITPapaResult == ITMultipleValues(5)) {
         printf("Papa output success test \n");
     }
 }
 
-void ITMamaPapaTest(){
-    if (ITMamaPapaResult == ITMultipleValues(15)){
+void ITMamaPapaTest() {
+    if (ITMamaPapaResult == ITMultipleValues(15)) {
         printf("MamaPapa output success test \n");
     }
 }
 
 void ITEmptyTest() {
-    if (ITEmptyResult == ITMultipleValues(2)){
+    if (ITEmptyResult == ITMultipleValues(2)) {
         printf("Empty output success test \n");
     }
 }
