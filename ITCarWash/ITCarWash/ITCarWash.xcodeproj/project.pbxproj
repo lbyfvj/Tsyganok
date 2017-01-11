@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9357E8591E0B1213004ECC78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357E8581E0B1213004ECC78 /* main.m */; };
 		9357E8681E0B1525004ECC78 /* ITSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9357E8671E0B1525004ECC78 /* ITSources.framework */; };
-		93AFA0FD1E26BF0D002516E1 /* ITObservable.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA0E71E26BF0D002516E1 /* ITObservable.m */; };
 		93AFA0FE1E26BF0D002516E1 /* ITCarWash.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA0EA1E26BF0D002516E1 /* ITCarWash.m */; };
 		93AFA0FF1E26BF0D002516E1 /* ITCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA0ED1E26BF0D002516E1 /* ITCar.m */; };
 		93AFA1001E26BF0D002516E1 /* ITAccountant.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA0F31E26BF0D002516E1 /* ITAccountant.m */; };
@@ -34,8 +33,6 @@
 		9357E8551E0B1213004ECC78 /* ITCarWash */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ITCarWash; sourceTree = BUILT_PRODUCTS_DIR; };
 		9357E8581E0B1213004ECC78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ITCarWash/main.m; sourceTree = "<group>"; };
 		9357E8671E0B1525004ECC78 /* ITSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ITSources.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/HWL1T1-gvzlabxmzdicjaeiwpkqbhcxymef/Build/Products/Debug/ITSources.framework"; sourceTree = "<group>"; };
-		93AFA0E61E26BF0D002516E1 /* ITObservable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITObservable.h; path = ../../../ITCarWashSmpl/ITCarWashSmpl/ITObservable.h; sourceTree = "<group>"; };
-		93AFA0E71E26BF0D002516E1 /* ITObservable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITObservable.m; path = ../../../ITCarWashSmpl/ITCarWashSmpl/ITObservable.m; sourceTree = "<group>"; };
 		93AFA0E91E26BF0D002516E1 /* ITCarWash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCarWash.h; sourceTree = "<group>"; };
 		93AFA0EA1E26BF0D002516E1 /* ITCarWash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCarWash.m; sourceTree = "<group>"; };
 		93AFA0EC1E26BF0D002516E1 /* ITCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCar.h; sourceTree = "<group>"; };
@@ -66,13 +63,11 @@
 		9357E84C1E0B1213004ECC78 = {
 			isa = PBXGroup;
 			children = (
-				93AFA0E61E26BF0D002516E1 /* ITObservable.h */,
-				93AFA0E71E26BF0D002516E1 /* ITObservable.m */,
+				9357E8581E0B1213004ECC78 /* main.m */,
 				93AFA0E81E26BF0D002516E1 /* ITCarWash */,
 				93AFA0EB1E26BF0D002516E1 /* ITCar */,
 				93AFA0EE1E26BF0D002516E1 /* ITMoneyKeeper */,
 				93AFA0F01E26BF0D002516E1 /* ITEmployees */,
-				9357E8581E0B1213004ECC78 /* main.m */,
 				9357E8561E0B1213004ECC78 /* Products */,
 				9357E8661E0B1525004ECC78 /* Frameworks */,
 			);
@@ -235,7 +230,6 @@
 				93AFA0FE1E26BF0D002516E1 /* ITCarWash.m in Sources */,
 				93AFA1031E26BF0D002516E1 /* ITWasher.m in Sources */,
 				93AFA1001E26BF0D002516E1 /* ITAccountant.m in Sources */,
-				93AFA0FD1E26BF0D002516E1 /* ITObservable.m in Sources */,
 				93AFA1021E26BF0D002516E1 /* ITEmployee.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

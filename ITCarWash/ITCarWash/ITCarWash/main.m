@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ITSources/ITObservableObject.h>
+
+#import <ITSources/ITSources.h>
 
 #import "ITCarWash.h"
 #import "ITCar.h"
