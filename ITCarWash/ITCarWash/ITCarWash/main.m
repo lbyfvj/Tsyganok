@@ -23,25 +23,19 @@ NSUInteger const kCarsQuantity = 50;
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
+        NSMutableArray *cars = [ITCar objectsWithCount:kCarsQuantity];
+        for (ITCar *car in cars) {
+            car.money = kInitialCarMoney;
+        }
+        
         ITCarWash *carWash = [ITCarWash object];
         [carWash initialSetup];
-        
-        NSMutableArray *cars = [NSMutableArray array];
-        for (NSUInteger i = 0; i < kCarsQuantity; i++) {
-            ITCar *car = [ITCar object];
-            car.money = kInitialCarMoney;
-            [cars addObject:car];
-        }
         
         [carWash washCars:cars];
         
         for (ITDirector *director in [carWash employeeOfClass:[ITDirector class]]) {
             NSLog(@"CarWash profit: %lu", (unsigned long)director.money);
         }
-        
-        cars = nil;
-        carWash = nil;
-        
     }
     
     return 0;

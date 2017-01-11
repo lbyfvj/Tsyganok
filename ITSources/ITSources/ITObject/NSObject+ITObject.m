@@ -14,7 +14,7 @@
     return [[[self alloc] init] autorelease];
 }
 
-+ (NSArray *)objectsWithCount:(NSUInteger)count {
++ (NSMutableArray *)objectsWithCount:(NSUInteger)count {
     
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:count];
     
