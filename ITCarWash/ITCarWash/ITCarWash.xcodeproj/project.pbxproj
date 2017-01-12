@@ -46,6 +46,7 @@
 		93AFA0F91E26BF0D002516E1 /* ITEmployee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITEmployee.m; sourceTree = "<group>"; };
 		93AFA0FB1E26BF0D002516E1 /* ITWasher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITWasher.h; sourceTree = "<group>"; };
 		93AFA0FC1E26BF0D002516E1 /* ITWasher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITWasher.m; sourceTree = "<group>"; };
+		93AFA1041E27E405002516E1 /* ITEmployeeObserverProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITEmployeeObserverProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +154,7 @@
 			children = (
 				93AFA0F81E26BF0D002516E1 /* ITEmployee.h */,
 				93AFA0F91E26BF0D002516E1 /* ITEmployee.m */,
+				93AFA1041E27E405002516E1 /* ITEmployeeObserverProtocol.h */,
 			);
 			path = ITEmployee;
 			sourceTree = "<group>";
