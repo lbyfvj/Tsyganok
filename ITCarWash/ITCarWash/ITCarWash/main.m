@@ -33,7 +33,7 @@ int main(int argc, const char * argv[]) {
         
         [carWash washCars:cars];
         
-        for (ITDirector *director in [carWash employeeOfClass:[ITDirector class]]) {
+        for (ITDirector *director in [carWash employeesOfClass:[ITDirector class]]) {
             NSLog(@"CarWash profit: %lu", (unsigned long)director.money);
         }
     }
