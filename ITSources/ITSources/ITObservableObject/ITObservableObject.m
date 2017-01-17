@@ -39,18 +39,31 @@
 #pragma mark Accessors
 
 - (NSSet *)observersSet {
-    return self.observersHashTable.setRepresentation;
+    id observersHashTable = self.observersHashTable;
+    @synchronized (observersHashTable) {
+        
+        return [observersHashTable setRepresentation];
+    }
+    //return self.observersHashTable.setRepresentation;
 }
 
 #pragma mark -
 #pragma mark Public Methods
 
 - (void)addObserver:(id)observer {
-    [self.observersHashTable addObject:observer];
+    id observersHashTable = self.observersHashTable;
+    @synchronized (observersHashTable) {
+        [observersHashTable addObject:observer];
+    }
+    //[self.observersHashTable addObject:observer];
 }
 
 - (void)removeObserver:(id)observer {
-    [self.observersHashTable removeObject:observer];
+    id observersHashTable = self.observersHashTable;
+    @synchronized (observersHashTable) {
+        [observersHashTable removeObject:observer];
+    }
+    //[self.observersHashTable removeObject:observer];
 }
 
 - (BOOL)containsObserver:(id)observer {
@@ -74,6 +87,32 @@
             [observer performSelector:selector withObject:self];
         }
     }
+}
+
+
+- (void)notifyObserversWithSelector:(SEL)selector {
+    NSArray *observers = [self observers];
+    for (id <NSObject> observer in observers) {
+        if ([observer respondsToSelector:selector]) {
+            [observer performSelector:selector withObject:self];
+        }
+    }
+}
+
+- (void)notifyObserversOnMainThreadWithSelector:(SEL)selector {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self notifyObserversWithSelector:selector];
+    });
+}
+
+- (void)notifyObserversWithSelector:(SEL)selector andObject:(id)object {
+    NSArray *observers = [self observers];
+    for (id <NSObject> observer in observers) {
+        if ([observer respondsToSelector:selector]) {
+            [observer performSelector:selector withObject:self withObject:object];
+        }
+    }
+    
 }
 
 @end
