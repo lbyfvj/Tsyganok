@@ -10,11 +10,11 @@
 
 @class ITEmployee;
 
-@protocol ITEmloyeeObserverProtocol <NSObject>
+@protocol ITEmloyeeObserver <NSObject>
 
 @optional
-- (void)ITEmployeeDidStartedWork:(ITEmployee *)employee;
-- (void)ITEmployeeDidFinishedWork:(ITEmployee *)employee;
-- (void)ITEmployeeWillBeginWork:(ITEmployee *)employee;
+- (void)employeeDidFinishWork:(ITEmployee *)employee;
+- (void)employeeDidBeginWork:(ITEmployee *)employee;
+- (void)employeeWaitingForWork:(ITEmployee *)employee;
 
 @end

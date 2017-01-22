@@ -28,7 +28,7 @@ NSUInteger const kITInitialCarMoney = 1;
 }
 
 #pragma mark-
-#pragma mark ITMoneyKeeperProtocol
+#pragma mark ITMoneyKeeper
 
 - (NSUInteger)giveMoney {
     @synchronized(self) {

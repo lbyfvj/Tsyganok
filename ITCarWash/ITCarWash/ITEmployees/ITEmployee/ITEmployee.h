@@ -9,19 +9,19 @@
 #import <ITSources/ITSources.h>
 
 #import "ITMoneyKeeperProtocol.h"
+#import "ITEmployeeObserverProtocol.h"
 
 static const uint8_t kITEmployeeMaxSleepTime = 1;
 
 typedef NS_ENUM (NSUInteger, ITEmployeeState) {
-    ITEmployeeDidFinishedWork,
-    ITEmployeeDidStartedWork
+    ITEmployeeDidFinishWork,
+    ITEmployeeDidStartWork,
+    ITEmployeeWaitingForWork
 };
 
-@interface ITEmployee : ITObservableObject <ITMoneyKeeperProtocol>
+@interface ITEmployee : ITObservableObject <ITMoneyKeeper, ITEmloyeeObserver>
 @property (nonatomic, assign)   ITEmployeeState          state;
 
 - (void)proccessObject:(id)object;
-//- (void)giveAllMoneyToObject:(id<ITMoneyKeeperProtocol>)object;
-//- (void)takeAllMoneyFromObject:(id<ITMoneyKeeperProtocol>)object;
 
 @end

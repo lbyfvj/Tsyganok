@@ -28,9 +28,9 @@
 }
 
 #pragma mark-
-#pragma mark ITMoneyKeeperProtocol
+#pragma mark ITMoneyKeeper
 
-- (void)takeMoneyFromObject:(id<ITMoneyKeeperProtocol>)object {
+- (void)takeMoneyFromObject:(id<ITMoneyKeeper>)object {
     [self takeMoney:[object giveMoney]];
 }
 

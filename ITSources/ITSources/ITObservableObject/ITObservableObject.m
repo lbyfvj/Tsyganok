@@ -11,6 +11,9 @@
 @interface ITObservableObject ()
 @property (nonatomic, retain) NSHashTable   *observersHashTable;
 
+- (void)notifyOfStateWithSelector:(SEL)selector;
+- (void)notifyOfStateWithSelector:(SEL)selector object:(id)object;
+
 @end
 
 @implementation ITObservableObject
@@ -44,7 +47,19 @@
         
         return [observersHashTable setRepresentation];
     }
-    //return self.observersHashTable.setRepresentation;
+}
+
+- (void)setState:(NSUInteger)state {
+    [self setState:state object:nil];
+}
+
+- (void)setState:(NSUInteger)state object:(id)object {
+    @synchronized(self) {
+        if (state != _state) {
+            _state = state;
+            [self notifyOfState:_state object:object];
+        }
+    }
 }
 
 #pragma mark -
@@ -55,7 +70,6 @@
     @synchronized (observersHashTable) {
         [observersHashTable addObject:observer];
     }
-    //[self.observersHashTable addObject:observer];
 }
 
 - (void)removeObserver:(id)observer {
@@ -63,16 +77,17 @@
     @synchronized (observersHashTable) {
         [observersHashTable removeObject:observer];
     }
-    //[self.observersHashTable removeObject:observer];
 }
 
 - (BOOL)containsObserver:(id)observer {
-    return [self.observersHashTable containsObject:observer];
-    
+    NSHashTable *observers = self.observersHashTable;
+    @synchronized (observers) {
+        
+        return [observers containsObject:observer];
+    }
 }
 
 - (SEL)selectorForState:(NSUInteger)state {
-    [self doesNotRecognizeSelector:_cmd];
     
     return nil;
 }
@@ -80,39 +95,27 @@
 #pragma mark -
 #pragma mark Private Methods
 
-- (void)notifyWithSelector:(SEL)selector {
-    NSHashTable *observers = self.observersHashTable;
-    for (id observer in observers) {
-        if ([observer respondsToSelector:selector]) {
-            [observer performSelector:selector withObject:self];
-        }
-    }
+- (void)notifyOfStateChangeWithSelector:(SEL)selector {
+    [self notifyOfStateChangeWithSelector:selector object:nil];
 }
 
-
-- (void)notifyObserversWithSelector:(SEL)selector {
-    NSHashTable *observers = self.observersHashTable;
-    for (id <NSObject> observer in observers) {
-        if ([observer respondsToSelector:selector]) {
-            [observer performSelector:selector withObject:self];
-        }
-    }
+- (void)notifyOfState:(NSUInteger)state {
+    [self notifyOfState:state object:nil];
 }
 
-- (void)notifyObserversOnMainThreadWithSelector:(SEL)selector {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self notifyObserversWithSelector:selector];
-    });
+- (void)notifyOfState:(NSUInteger)state object:(id)object {
+    [self notifyOfStateChangeWithSelector:[self selectorForState:state] object:object];
 }
 
-- (void)notifyObserversWithSelector:(SEL)selector andObject:(id)object {
+- (void)notifyOfStateChangeWithSelector:(SEL)selector object:(id)object {
     NSHashTable *observers = self.observersHashTable;
-    for (id <NSObject> observer in observers) {
-        if ([observer respondsToSelector:selector]) {
-            [observer performSelector:selector withObject:self withObject:object];
+    @synchronized(observers) {
+        for (id observer in observers) {
+            if ([observer respondsToSelector:selector]) {
+                [observer performSelector:selector withObject:self withObject:object];
+            }
         }
     }
-    
 }
 
 @end

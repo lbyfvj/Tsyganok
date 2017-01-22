@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ITObservableObject : NSObject
+@property (nonatomic, assign)   NSUInteger  state;
 @property (nonatomic, readonly) NSSet       *observersSet;
 
 - (void)addObserver:(id)observer;
@@ -19,6 +20,9 @@
 
 - (SEL)selectorForState:(NSUInteger)state;
 
-- (void)notifyWithSelector:(SEL)selector;
+- (void)setState:(NSUInteger)state object:(id)object;
+
+- (void)notifyOfState:(NSUInteger)state;
+- (void)notifyOfState:(NSUInteger)state object:(id)object;
 
 @end
