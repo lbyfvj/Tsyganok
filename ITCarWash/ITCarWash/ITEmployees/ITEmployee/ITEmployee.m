@@ -27,27 +27,24 @@
     [self doesNotRecognizeSelector:_cmd];
 }
 
-- (void)giveAllMoneyToObject:(id<ITMoneyKeeperProtocol>)object {
-    [self giveMoney:self.money toObject:object];
-}
-
-- (void)takeAllMoneyFromObject:(ITEmployee *)object {
-    [object giveMoney:object.money toObject:self];
-}
-
 #pragma mark-
 #pragma mark ITMoneyKeeperProtocol
 
-- (void)giveMoney:(NSUInteger)money toObject:(id<ITMoneyKeeperProtocol>)object {
-    if (self.money >= money && (object)) {
-        self.money -= money;
-        object.money += money;
+- (void)takeMoneyFromObject:(id<ITMoneyKeeperProtocol>)object {
+    [self takeMoney:[object giveMoney]];
+}
+
+- (void)takeMoney:(NSUInteger)money {
+    @synchronized(self) {
+        self.money += money;
     }
 }
 
-- (void)takeMoney:(NSUInteger)money fromObject:(id<ITMoneyKeeperProtocol>)object {
-    if (object) {
-       [object giveMoney:money toObject:self];
+- (NSUInteger)giveMoney {
+    @synchronized(self) {
+        NSUInteger money = self.money;
+        self.money = 0;
+        return money;
     }
 }
 

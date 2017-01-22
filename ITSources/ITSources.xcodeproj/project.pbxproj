@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9300AFF31E09AB4F00B34763 /* NSObject+ITObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFE21E09AB4F00B34763 /* NSObject+ITObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9300AFF41E09AB4F00B34763 /* NSObject+ITObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AFE31E09AB4F00B34763 /* NSObject+ITObject.m */; };
-		9300AFF51E09AB4F00B34763 /* ITSources.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFE41E09AB4F00B34763 /* ITSources.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9300AFF61E09AB4F00B34763 /* ITCharacters.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFE71E09AB4F00B34763 /* ITCharacters.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9300AFF71E09AB4F00B34763 /* ITCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AFE81E09AB4F00B34763 /* ITCharacters.m */; };
 		9300AFF81E09AB4F00B34763 /* ITClusterCharacters.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300AFEA1E09AB4F00B34763 /* ITClusterCharacters.h */; };
@@ -22,14 +19,16 @@
 		9300AFFF1E09AB4F00B34763 /* NSString+ITString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300AFF11E09AB4F00B34763 /* NSString+ITString.m */; };
 		9357E8641E0B1415004ECC78 /* ITObservableObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9357E8621E0B1415004ECC78 /* ITObservableObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9357E8651E0B1415004ECC78 /* ITObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357E8631E0B1415004ECC78 /* ITObservableObject.m */; };
+		93B136891E34A3CD00BF2276 /* NSArray+ITArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 93B136871E34A3CD00BF2276 /* NSArray+ITArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93B1368A1E34A3CD00BF2276 /* NSArray+ITArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B136881E34A3CD00BF2276 /* NSArray+ITArray.m */; };
+		93B1368C1E34A3E100BF2276 /* ITSources.h in Headers */ = {isa = PBXBuildFile; fileRef = 93B1368B1E34A3E100BF2276 /* ITSources.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93B136901E34A50300BF2276 /* NSObject+ITObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 93B1368E1E34A50300BF2276 /* NSObject+ITObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93B136911E34A50300BF2276 /* NSObject+ITObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B1368F1E34A50300BF2276 /* NSObject+ITObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9300AF9B1E072BFA00B34763 /* ITSources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ITSources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9300AFE01E09AB4F00B34763 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ITSources/Info.plist; sourceTree = "<group>"; };
-		9300AFE21E09AB4F00B34763 /* NSObject+ITObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ITObject.h"; sourceTree = "<group>"; };
-		9300AFE31E09AB4F00B34763 /* NSObject+ITObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ITObject.m"; sourceTree = "<group>"; };
-		9300AFE41E09AB4F00B34763 /* ITSources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITSources.h; path = ITSources/ITSources.h; sourceTree = "<group>"; };
 		9300AFE71E09AB4F00B34763 /* ITCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCharacters.h; sourceTree = "<group>"; };
 		9300AFE81E09AB4F00B34763 /* ITCharacters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCharacters.m; sourceTree = "<group>"; };
 		9300AFEA1E09AB4F00B34763 /* ITClusterCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITClusterCharacters.h; sourceTree = "<group>"; };
@@ -42,6 +41,11 @@
 		9300AFF11E09AB4F00B34763 /* NSString+ITString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ITString.m"; sourceTree = "<group>"; };
 		9357E8621E0B1415004ECC78 /* ITObservableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITObservableObject.h; sourceTree = "<group>"; };
 		9357E8631E0B1415004ECC78 /* ITObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITObservableObject.m; sourceTree = "<group>"; };
+		93B136871E34A3CD00BF2276 /* NSArray+ITArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ITArray.h"; sourceTree = "<group>"; };
+		93B136881E34A3CD00BF2276 /* NSArray+ITArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ITArray.m"; sourceTree = "<group>"; };
+		93B1368B1E34A3E100BF2276 /* ITSources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSources.h; sourceTree = "<group>"; };
+		93B1368E1E34A50300BF2276 /* NSObject+ITObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ITObject.h"; sourceTree = "<group>"; };
+		93B1368F1E34A50300BF2276 /* NSObject+ITObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ITObject.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				9300AFDF1E09AB4F00B34763 /* ITSources */,
-				9300AFE41E09AB4F00B34763 /* ITSources.h */,
+				93B1368B1E34A3E100BF2276 /* ITSources.h */,
 				9300AFE01E09AB4F00B34763 /* Info.plist */,
 				9300AF9C1E072BFA00B34763 /* Products */,
 			);
@@ -76,20 +80,12 @@
 		9300AFDF1E09AB4F00B34763 /* ITSources */ = {
 			isa = PBXGroup;
 			children = (
+				93B1368D1E34A50300BF2276 /* ITObject */,
+				93B136861E34A3CD00BF2276 /* ITArray */,
 				9357E8611E0B13F0004ECC78 /* ITObservableObject */,
-				9300AFE11E09AB4F00B34763 /* ITObject */,
 				9300AFE51E09AB4F00B34763 /* ITString */,
 			);
 			path = ITSources;
-			sourceTree = "<group>";
-		};
-		9300AFE11E09AB4F00B34763 /* ITObject */ = {
-			isa = PBXGroup;
-			children = (
-				9300AFE21E09AB4F00B34763 /* NSObject+ITObject.h */,
-				9300AFE31E09AB4F00B34763 /* NSObject+ITObject.m */,
-			);
-			path = ITObject;
 			sourceTree = "<group>";
 		};
 		9300AFE51E09AB4F00B34763 /* ITString */ = {
@@ -134,6 +130,25 @@
 			path = ITObservableObject;
 			sourceTree = "<group>";
 		};
+		93B136861E34A3CD00BF2276 /* ITArray */ = {
+			isa = PBXGroup;
+			children = (
+				93B136871E34A3CD00BF2276 /* NSArray+ITArray.h */,
+				93B136881E34A3CD00BF2276 /* NSArray+ITArray.m */,
+			);
+			path = ITArray;
+			sourceTree = "<group>";
+		};
+		93B1368D1E34A50300BF2276 /* ITObject */ = {
+			isa = PBXGroup;
+			children = (
+				93B1368E1E34A50300BF2276 /* NSObject+ITObject.h */,
+				93B1368F1E34A50300BF2276 /* NSObject+ITObject.m */,
+			);
+			name = ITObject;
+			path = ../ITObject;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -141,11 +156,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9300AFF51E09AB4F00B34763 /* ITSources.h in Headers */,
 				9300AFFE1E09AB4F00B34763 /* NSString+ITString.h in Headers */,
-				9300AFF31E09AB4F00B34763 /* NSObject+ITObject.h in Headers */,
 				9357E8641E0B1415004ECC78 /* ITObservableObject.h in Headers */,
+				93B136901E34A50300BF2276 /* NSObject+ITObject.h in Headers */,
+				93B136891E34A3CD00BF2276 /* NSArray+ITArray.h in Headers */,
 				9300AFF61E09AB4F00B34763 /* ITCharacters.h in Headers */,
+				93B1368C1E34A3E100BF2276 /* ITSources.h in Headers */,
 				9300AFFA1E09AB4F00B34763 /* ITRangeCharacters.h in Headers */,
 				9300AFF81E09AB4F00B34763 /* ITClusterCharacters.h in Headers */,
 				9300AFFC1E09AB4F00B34763 /* ITStringsCharacters.h in Headers */,
@@ -223,9 +239,10 @@
 			files = (
 				9300AFFB1E09AB4F00B34763 /* ITRangeCharacters.m in Sources */,
 				9300AFF71E09AB4F00B34763 /* ITCharacters.m in Sources */,
-				9300AFF41E09AB4F00B34763 /* NSObject+ITObject.m in Sources */,
+				93B1368A1E34A3CD00BF2276 /* NSArray+ITArray.m in Sources */,
 				9300AFFF1E09AB4F00B34763 /* NSString+ITString.m in Sources */,
 				9300AFFD1E09AB4F00B34763 /* ITStringsCharacters.m in Sources */,
+				93B136911E34A50300BF2276 /* NSObject+ITObject.m in Sources */,
 				9300AFF91E09AB4F00B34763 /* ITClusterCharacters.m in Sources */,
 				9357E8651E0B1415004ECC78 /* ITObservableObject.m in Sources */,
 			);

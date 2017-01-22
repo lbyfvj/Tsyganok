@@ -15,7 +15,7 @@
 
 -(void)proccessObject:(id)object {
     sleep(arc4random_uniform(kITEmployeeMaxSleepTime));
-    [self takeAllMoneyFromObject:object];
+    [self takeMoneyFromObject:object];
 }
 
 - (void)performInBackground:(id)object {

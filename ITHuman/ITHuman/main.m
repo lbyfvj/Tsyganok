@@ -17,8 +17,15 @@ int main(int argc, const char * argv[]) {
         
         NSMutableArray *humansArray = [NSMutableArray array];
         
-        NSArray *mensArray = [ITMan objectsWithCount:4];
-        NSArray *womensArray = [ITWoman objectsWithCount:4];
+        //NSArray *mensArray = [ITMan objectsWithCount:4];
+        NSArray *mensArray = [NSArray objectsWithCount:4 block:^id{
+            return [ITMan object];
+        }];
+        
+        //NSArray *womensArray = [ITWoman objectsWithCount:4];
+        NSArray *womensArray = [NSArray objectsWithCount:4 block:^id{
+            return [ITWoman object];
+        }];
         
         for (id women in womensArray) {
             [humansArray addObject:women];

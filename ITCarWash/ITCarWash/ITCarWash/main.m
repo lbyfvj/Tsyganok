@@ -17,19 +17,16 @@
 #import "ITDirector.h"
 #import "ITAccountant.h"
 
-NSUInteger const kInitialCarMoney = 1;
-NSUInteger const kCarsQuantity = 50;
+NSUInteger const kITCarsQuantity = 50;
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        NSMutableArray *cars = [ITCar objectsWithCount:kCarsQuantity];
-        for (ITCar *car in cars) {
-            car.money = kInitialCarMoney;
-        }
+        NSArray *cars = [NSArray objectsWithCount:kITCarsQuantity block:^id{
+            return [ITCar object];
+        }];
         
         ITCarWash *carWash = [ITCarWash object];
-        [carWash initialSetup];
         
         [carWash washCars:cars];
         

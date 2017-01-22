@@ -11,7 +11,10 @@
 @protocol ITMoneyKeeperProtocol
 @property (nonatomic, assign) NSUInteger money;
 
-- (void)giveMoney:(NSUInteger)money toObject:(id<ITMoneyKeeperProtocol>)object;
-- (void)takeMoney:(NSUInteger)money fromObject:(id<ITMoneyKeeperProtocol>)object;
+@optional
+- (void)takeMoneyFromObject:(id<ITMoneyKeeperProtocol>)object;
+- (void)takeMoney:(NSUInteger)money;
+
+- (NSUInteger)giveMoney;
 
 @end

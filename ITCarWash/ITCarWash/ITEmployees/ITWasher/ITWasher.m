@@ -10,7 +10,7 @@
 
 #import "ITCar.h"
 
-static NSUInteger const kDefaultPrice = 1;
+//static NSUInteger const kDefaultPrice = 1;
 
 @implementation ITWasher
 
@@ -37,7 +37,7 @@ static NSUInteger const kDefaultPrice = 1;
 
 - (void)washCar:(ITCar *)car {
     sleep(arc4random_uniform(kITEmployeeMaxSleepTime));
-    [self takeMoney:kDefaultPrice fromObject:car];
+    [self takeMoneyFromObject:car];
     car.carState = ITCarClean;
 }
 

@@ -8,6 +8,8 @@
 
 #import "ITCar.h"
 
+NSUInteger const kITInitialCarMoney = 1;
+
 @implementation ITCar
 
 @synthesize money = _money;
@@ -19,7 +21,7 @@
     self = [super init];    
     if (self) {
         self.carState = ITCarDirty;
-        self.money = _money;
+        self.money = kITInitialCarMoney;
     }
     
     return self;
@@ -28,16 +30,11 @@
 #pragma mark-
 #pragma mark ITMoneyKeeperProtocol
 
-- (void)giveMoney:(NSUInteger)money toObject:(id<ITMoneyKeeperProtocol>)object {
-    if (self.money >= money && (object)) {
-        self.money -= money;
-        object.money += money;
-    }
-}
-
-- (void)takeMoney:(NSUInteger)money fromObject:(id<ITMoneyKeeperProtocol>)object {
-    if (object) {
-        [object giveMoney:money toObject:self];
+- (NSUInteger)giveMoney {
+    @synchronized(self) {
+        NSUInteger money = self.money;
+        self.money = 0;
+        return money;
     }
 }
 

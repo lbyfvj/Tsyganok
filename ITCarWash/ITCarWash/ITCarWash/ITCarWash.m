@@ -37,6 +37,7 @@
 - (instancetype)init {
     self = [super init];
     self.mutableStaff = [NSMutableArray array];
+    [self initialSetup];
     
     return self;
 }

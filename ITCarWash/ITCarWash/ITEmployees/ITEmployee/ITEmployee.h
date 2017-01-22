@@ -21,7 +21,7 @@ typedef NS_ENUM (NSUInteger, ITEmployeeState) {
 @property (nonatomic, assign)   ITEmployeeState          state;
 
 - (void)proccessObject:(id)object;
-- (void)giveAllMoneyToObject:(id<ITMoneyKeeperProtocol>)object;
-- (void)takeAllMoneyFromObject:(id<ITMoneyKeeperProtocol>)object;
+//- (void)giveAllMoneyToObject:(id<ITMoneyKeeperProtocol>)object;
+//- (void)takeAllMoneyFromObject:(id<ITMoneyKeeperProtocol>)object;
 
 @end

@@ -91,7 +91,7 @@
 
 
 - (void)notifyObserversWithSelector:(SEL)selector {
-    NSArray *observers = [self observers];
+    NSHashTable *observers = self.observersHashTable;
     for (id <NSObject> observer in observers) {
         if ([observer respondsToSelector:selector]) {
             [observer performSelector:selector withObject:self];
@@ -106,7 +106,7 @@
 }
 
 - (void)notifyObserversWithSelector:(SEL)selector andObject:(id)object {
-    NSArray *observers = [self observers];
+    NSHashTable *observers = self.observersHashTable;
     for (id <NSObject> observer in observers) {
         if ([observer respondsToSelector:selector]) {
             [observer performSelector:selector withObject:self withObject:object];
