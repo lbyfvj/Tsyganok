@@ -8,20 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ITEmployeeObserverProtocol.h"
+#import "ITCar.h"
+
 @class ITEmployee;
 @class ITWasher;
 
-@interface ITCarWash : NSObject
+@interface ITCarWash : NSObject <ITEmloyeeObserver>
 
 @property (nonatomic, retain) NSArray *staff;
 
-- (void)initialSetup;
-- (void)hireEmployee:(ITEmployee *)employee;
-- (void)dismissEmployee:(ITEmployee *)employee;
+- (void)washCars:(NSArray *)cars;
 
 - (NSArray *)employeesOfClass:(Class)employeeClass;
-
-- (void)washCars:(NSArray *)cars;
-- (ITWasher *)findFreeWasher;
 
 @end

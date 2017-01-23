@@ -11,9 +11,6 @@
 @interface ITObservableObject ()
 @property (nonatomic, retain) NSHashTable   *observersHashTable;
 
-- (void)notifyOfStateWithSelector:(SEL)selector;
-- (void)notifyOfStateWithSelector:(SEL)selector object:(id)object;
-
 @end
 
 @implementation ITObservableObject
@@ -92,22 +89,19 @@
     return nil;
 }
 
-#pragma mark -
-#pragma mark Private Methods
-
-- (void)notifyOfStateChangeWithSelector:(SEL)selector {
-    [self notifyOfStateChangeWithSelector:selector object:nil];
-}
-
 - (void)notifyOfState:(NSUInteger)state {
     [self notifyOfState:state object:nil];
 }
 
 - (void)notifyOfState:(NSUInteger)state object:(id)object {
-    [self notifyOfStateChangeWithSelector:[self selectorForState:state] object:object];
+    [self notifyOfStateWithSelector:[self selectorForState:state] object:object];
 }
 
-- (void)notifyOfStateChangeWithSelector:(SEL)selector object:(id)object {
+- (void)notifyOfStateWithSelector:(SEL)selector {
+    [self notifyOfStateWithSelector:selector object:nil];
+}
+
+- (void)notifyOfStateWithSelector:(SEL)selector object:(id)object {
     NSHashTable *observers = self.observersHashTable;
     @synchronized(observers) {
         for (id observer in observers) {

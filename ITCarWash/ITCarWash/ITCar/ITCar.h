@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ITSources/ITSources.h>
 
 #import "ITMoneyKeeperProtocol.h"
 
@@ -15,7 +16,8 @@ typedef NS_ENUM(NSUInteger, ITCarState) {
     ITCarDirty
 };
 
-@interface ITCar : NSObject <ITMoneyKeeper>
+@interface ITCar : ITObservableObject <ITMoneyKeeper>
+@property (nonatomic, copy)     NSString      *name;
 @property (nonatomic, assign)   ITCarState    carState;
 
 @end

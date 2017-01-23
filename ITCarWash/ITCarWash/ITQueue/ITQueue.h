@@ -11,9 +11,10 @@
 #import <ITSources/ITSources.h>
 
 @interface ITQueue : NSObject
-@property (nonatomic, readonly)	NSArray	*queue;
+@property (nonatomic, readonly) NSUInteger  count;
+@property (nonatomic, readonly)	NSArray     *queue;
 
 - (void)addObjectToQueue:(id)object;
-- (void)removeObjectFromQueue:(id)object;
+- (id)removeFromQueue;
 
 @end

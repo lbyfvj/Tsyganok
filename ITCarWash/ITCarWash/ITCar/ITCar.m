@@ -17,9 +17,15 @@ NSUInteger const kITInitialCarMoney = 1;
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
+- (void)dealloc {    
+    self.name = nil;
+    [super dealloc];
+}
+
 - (instancetype)init {
     self = [super init];    
     if (self) {
+        self.name = [NSString randomNameWithLength:4];
         self.carState = ITCarDirty;
         self.money = kITInitialCarMoney;
     }

@@ -44,6 +44,10 @@
     }
 }
 
+- (NSUInteger)count {
+    return [self.mutableQueue count];
+}
+
 #pragma mark -
 #pragma mark Public Methods
 
@@ -53,20 +57,14 @@
     }
 }
 
-- (void)removeObjectFromQueue:(id)object {
+- (id)removeFromQueue {
     @synchronized(self) {
         NSMutableArray *array = self.mutableQueue;
-        id result = [[[array firstObject] retain] autorelease];
+        id result = [array firstObject];
         [array removeObject:result];
+        
+        return result;
     }
-}
-
-- (void)performInBackground:(id)object {
-    
-}
-
-- (void)performOnMainThread:(id)object {
-    
 }
 
 @end

@@ -17,7 +17,7 @@
 #import "ITDirector.h"
 #import "ITAccountant.h"
 
-NSUInteger const kITCarsQuantity = 50;
+NSUInteger const kITCarsQuantity = 5;
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -28,11 +28,9 @@ int main(int argc, const char * argv[]) {
         
         ITCarWash *carWash = [ITCarWash object];
         
-        [carWash washCars:cars];
+        [carWash performSelectorInBackground:@selector(washCars:)  withObject:cars];
         
-        for (ITDirector *director in [carWash employeesOfClass:[ITDirector class]]) {
-            NSLog(@"CarWash profit: %lu", (unsigned long)director.money);
-        }
+        [[NSRunLoop mainRunLoop] run];
     }
     
     return 0;

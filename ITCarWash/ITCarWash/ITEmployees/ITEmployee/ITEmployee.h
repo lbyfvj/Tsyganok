@@ -14,14 +14,16 @@
 static const uint8_t kITEmployeeMaxSleepTime = 1;
 
 typedef NS_ENUM (NSUInteger, ITEmployeeState) {
-    ITEmployeeDidFinishWork,
-    ITEmployeeDidStartWork,
-    ITEmployeeWaitingForWork
+    ITEmployeeFree,
+    ITEmployeeWorking,
+    ITEmployeeWaiting
 };
 
 @interface ITEmployee : ITObservableObject <ITMoneyKeeper, ITEmloyeeObserver>
-@property (nonatomic, assign)   ITEmployeeState          state;
+@property (nonatomic, copy)     NSString      *name;
 
-- (void)proccessObject:(id)object;
+- (void)proccessObject:(id<ITMoneyKeeper>)object;
+
+- (void)performWorkWithObject:(id<ITMoneyKeeper>)object;
 
 @end

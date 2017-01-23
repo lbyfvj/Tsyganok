@@ -15,6 +15,6 @@
 @optional
 - (void)employeeDidFinishWork:(ITEmployee *)employee;
 - (void)employeeDidBeginWork:(ITEmployee *)employee;
-- (void)employeeWaitingForWork:(ITEmployee *)employee;
+- (void)employeeWillBeginWork:(ITEmployee *)employee;
 
 @end

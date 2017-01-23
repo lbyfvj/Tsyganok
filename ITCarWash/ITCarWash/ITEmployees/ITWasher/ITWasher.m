@@ -7,29 +7,19 @@
 //
 
 #import "ITWasher.h"
-
 #import "ITCar.h"
-
-//static NSUInteger const kDefaultPrice = 1;
 
 @implementation ITWasher
 
 #pragma mark-
 #pragma mark Public
 
-- (void)proccessObject:(id)car {
-    self.state = ITEmployeeDidStartedWork;
-    [self washCar:car];
-    [self notifyWithSelector:@selector(proccessObject:)];
-    self.state = ITEmployeeDidFinishedWork;
-}
-
-- (void)performInBackground:(id)object {
-    [self proccessObject:object];
-}
-
-- (void)performOnMainThread:(id)object {
-    [self notifyWithSelector:@selector(proccessObject:)];
+- (void)proccessObject:(ITCar *)object {
+    NSLog(@"%@(%@) begin procceed %@(%@)", [self class], self.name, [object class], object.name);
+    [self washCar:object];
+    [self takeMoneyFromObject:object];
+    NSLog(@"%@(%@) took money from %@(%@)", [self class], self.name, [object class], object.name);
+    NSLog(@"%@(%@) finished procceed %@(%@)", [self class], self.name, [object class], object.name);
 }
 
 #pragma mark-
@@ -37,7 +27,6 @@
 
 - (void)washCar:(ITCar *)car {
     sleep(arc4random_uniform(kITEmployeeMaxSleepTime));
-    [self takeMoneyFromObject:car];
     car.carState = ITCarClean;
 }
 
