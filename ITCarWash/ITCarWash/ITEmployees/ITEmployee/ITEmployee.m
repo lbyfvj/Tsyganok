@@ -12,12 +12,11 @@
 
 @interface ITEmployee ()
 @property (nonatomic, retain) ITQueue *employeesQueue;
+@property (nonatomic, assign) NSUInteger money;
 
 @end
 
 @implementation ITEmployee
-
-@synthesize money = _money;
 
 #pragma mark-
 #pragma mark Initializatinos and Deallocations

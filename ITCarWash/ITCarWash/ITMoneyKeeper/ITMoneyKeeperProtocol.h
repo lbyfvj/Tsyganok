@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol ITMoneyKeeper
-@property (nonatomic, assign) NSUInteger money;
+@property (nonatomic, readonly) NSUInteger money;
 
 @optional
 - (void)takeMoneyFromObject:(id<ITMoneyKeeper>)object;

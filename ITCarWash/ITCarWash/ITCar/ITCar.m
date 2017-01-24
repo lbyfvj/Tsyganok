@@ -10,9 +10,12 @@
 
 NSUInteger const kITInitialCarMoney = 1;
 
-@implementation ITCar
+@interface ITCar ()
+@property (nonatomic, assign) NSUInteger money;
 
-@synthesize money = _money;
+@end
+
+@implementation ITCar
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
