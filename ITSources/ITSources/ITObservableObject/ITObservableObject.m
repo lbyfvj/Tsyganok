@@ -11,6 +11,9 @@
 @interface ITObservableObject ()
 @property (nonatomic, retain) NSHashTable   *observersHashTable;
 
+- (void)notifyOfStateWithSelector:(SEL)selector;
+- (void)notifyOfStateWithSelector:(SEL)selector object:(id)object;
+
 @end
 
 @implementation ITObservableObject
@@ -47,10 +50,10 @@
 }
 
 - (void)setState:(NSUInteger)state {
-    [self setState:state object:nil];
+    [self setState:state withObject:nil];
 }
 
-- (void)setState:(NSUInteger)state object:(id)object {
+- (void)setState:(NSUInteger)state withObject:(id)object {
     @synchronized(self) {
         if (state != _state) {
             _state = state;

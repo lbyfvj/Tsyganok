@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
         
         ITCarWash *carWash = [ITCarWash object];
         
-        [carWash performSelectorInBackground:@selector(washCars:)  withObject:cars];
+        [carWash performSelectorInBackground:@selector(washCars:) withObject:cars];
         
         [[NSRunLoop mainRunLoop] run];
     }

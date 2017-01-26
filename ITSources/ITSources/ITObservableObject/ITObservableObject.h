@@ -20,12 +20,9 @@
 
 - (SEL)selectorForState:(NSUInteger)state;
 
-- (void)setState:(NSUInteger)state object:(id)object;
+- (void)setState:(NSUInteger)state withObject:(id)object;
 
 - (void)notifyOfState:(NSUInteger)state;
 - (void)notifyOfState:(NSUInteger)state object:(id)object;
-
-- (void)notifyOfStateWithSelector:(SEL)selector;
-- (void)notifyOfStateWithSelector:(SEL)selector object:(id)object;
 
 @end
