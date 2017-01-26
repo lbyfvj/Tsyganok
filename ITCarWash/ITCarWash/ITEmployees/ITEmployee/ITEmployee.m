@@ -47,7 +47,7 @@
 - (void)performWorkWithObject:(ITEmployee *)employee {
     @synchronized(self) {
         if (ITEmployeeFree != self.state) {
-            [self.employeesQueue addObjectToQueue:employee];
+            [self.employeesQueue enqueue:employee];
         } else {
             self.state = ITEmployeeWorking;
             
@@ -73,7 +73,7 @@
     @synchronized(self) {
         ITQueue *employeesQueue = self.employeesQueue;
         if (employeesQueue.count > 0 ) {
-            id object = [employeesQueue removeFromQueue];            
+            id object = [employeesQueue dequeue];
             [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:object];
         } else {
             self.state = ITEmployeeWaiting;

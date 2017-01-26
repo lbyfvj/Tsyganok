@@ -45,19 +45,21 @@
 }
 
 - (NSUInteger)count {
-    return [self.mutableQueue count];
+    @synchronized (self) {
+        return [self.mutableQueue count];
+    }
 }
 
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)addObjectToQueue:(id)object {
+- (void)enqueue:(id)object {
     @synchronized(self) {
         [self.mutableQueue addObject:object];
     }
 }
 
-- (id)removeFromQueue {
+- (id)dequeue {
     @synchronized(self) {
         NSMutableArray *array = self.mutableQueue;
         id result = [array firstObject];

@@ -92,7 +92,7 @@ static NSInteger const kITWashersCount = 4;
 
 - (void)proccessCar:(ITCar *)car {
     @synchronized(car) {
-        [self.carsQueue addObjectToQueue:car];
+        [self.carsQueue enqueue:car];
     }
     
     @synchronized(self.mutableStaff) {
@@ -142,7 +142,7 @@ static NSInteger const kITWashersCount = 4;
 }
 
 - (void)giveWorkToWasher:(ITWasher *)washer {
-    ITCar *activeCar = [self.carsQueue removeFromQueue];
+    ITCar *activeCar = [self.carsQueue dequeue];
     if (activeCar) {
         [washer performSelectorInBackground:@selector(performWorkWithObject:) withObject:activeCar];
     }
