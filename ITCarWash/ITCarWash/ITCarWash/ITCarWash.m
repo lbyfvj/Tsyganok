@@ -19,14 +19,16 @@
 static NSInteger const kITWashersCount = 4;
 
 @interface ITCarWash ()
-@property (nonatomic, retain) NSMutableArray    *mutableStaff;
+@property (nonatomic, retain) NSMutableArray    *staff;
 @property (nonatomic, retain) ITQueue           *carsQueue;
 
 - (void)initialSetup;
 - (void)hireEmployee:(ITEmployee *)employee;
 - (void)dismissEmployee:(ITEmployee *)employee;
 
-- (void)proccessCar:(ITCar *)car;
+- (NSArray *)employeesOfClass:(Class)employeeClass;
+
+- (void)washCar:(ITCar *)car;
 
 - (ITWasher *)findFreeWasher;
 
@@ -34,15 +36,13 @@ static NSInteger const kITWashersCount = 4;
 
 @implementation ITCarWash
 
-@dynamic staff;
-
 #pragma mark-
 #pragma mark Initializatinos and Deallocations
 
 - (void)dealloc {
-    [self.mutableStaff removeAllObjects];
+    [self.staff removeAllObjects];
     
-    self.mutableStaff = nil;
+    self.staff = nil;
     self.carsQueue = nil;
     
     [super dealloc];
@@ -50,7 +50,7 @@ static NSInteger const kITWashersCount = 4;
 
 - (instancetype)init {
     self = [super init];
-    self.mutableStaff = [NSMutableArray array];
+    self.staff = [NSMutableArray array];
     self.carsQueue = [ITQueue object];
     [self initialSetup];
     
@@ -58,10 +58,8 @@ static NSInteger const kITWashersCount = 4;
 }
 
 - (void)initialSetup {
-
     ITAccountant *accountant = [ITAccountant object];
     ITDirector *director = [ITDirector object];
-    
     NSMutableArray *staff = [NSMutableArray objectsWithCount:kITWashersCount block:^id{
         ITWasher *washer = [ITWasher object];
         [washer addObserver:accountant];
@@ -69,12 +67,9 @@ static NSInteger const kITWashersCount = 4;
         
         return washer;
     }];
-
     [accountant addObserver:director];
-    
     [staff addObject:accountant];
-    [staff addObject:director];
-    
+    [staff addObject:director];    
     for (ITEmployee* employee in staff) {
         [self hireEmployee:employee];
     }
@@ -83,19 +78,14 @@ static NSInteger const kITWashersCount = 4;
 #pragma mark-
 #pragma mark Accessors
 
-- (NSArray *)staff {
-    return [[[self  mutableStaff] copy] autorelease];
-}
 
 #pragma mark-
 #pragma mark Public
 
-- (void)proccessCar:(ITCar *)car {
-    @synchronized(car) {
-        [self.carsQueue enqueue:car];
-    }
-    
-    @synchronized(self.mutableStaff) {
+- (void)washCar:(ITCar *)car {
+    [self.carsQueue enqueue:car];
+
+    @synchronized(self.staff) {
         ITWasher *freeWasher = [self findFreeWasher];
         if (freeWasher) {
             [self giveWorkToWasher:freeWasher];
@@ -105,17 +95,19 @@ static NSInteger const kITWashersCount = 4;
 
 -(void)washCars:(NSArray *)cars {
     for (ITCar *car in cars) {
-        [self proccessCar:car];
+        [self washCar:car];
     }
 }
 
 - (NSArray *)employeesOfClass:(Class)employeeClass {
     NSMutableArray *result = [NSMutableArray array];
-    for (id item in self.mutableStaff) {
+    NSMutableArray *staff = self.staff;
+    for (id item in staff) {
         if ([item isMemberOfClass:employeeClass]) {
             [result addObject:item];
         }
     }
+    
     return result;
 }
 
@@ -123,11 +115,11 @@ static NSInteger const kITWashersCount = 4;
 #pragma mark - Private
 
 - (void)hireEmployee:(ITEmployee *)employee {
-    [self.mutableStaff addObject:employee];
+    [self.staff addObject:employee];
 }
 
 - (void)dismissEmployee:(ITEmployee *)employee {
-    [self.mutableStaff removeObject:employee];
+    [self.staff removeObject:employee];
 }
 
 - (ITWasher *)findFreeWasher {
@@ -144,7 +136,7 @@ static NSInteger const kITWashersCount = 4;
 - (void)giveWorkToWasher:(ITWasher *)washer {
     ITCar *activeCar = [self.carsQueue dequeue];
     if (activeCar) {
-        [washer performSelectorInBackground:@selector(performWorkWithObject:) withObject:activeCar];
+        [washer performWorkWithObject:activeCar];
     }
 }
 

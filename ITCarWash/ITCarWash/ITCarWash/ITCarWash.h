@@ -16,10 +16,6 @@
 
 @interface ITCarWash : NSObject <ITEmloyeeObserver>
 
-@property (nonatomic, retain) NSArray *staff;
-
 - (void)washCars:(NSArray *)cars;
-
-- (NSArray *)employeesOfClass:(Class)employeeClass;
 
 @end
