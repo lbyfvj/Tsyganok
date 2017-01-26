@@ -40,8 +40,7 @@ static NSInteger const kITWashersCount = 4;
 #pragma mark Initializatinos and Deallocations
 
 - (void)dealloc {
-    [self.staff removeAllObjects];
-    
+    [self removeConnections];    
     self.staff = nil;
     self.carsQueue = nil;
     
@@ -72,6 +71,17 @@ static NSInteger const kITWashersCount = 4;
     [staff addObject:director];    
     for (ITEmployee* employee in staff) {
         [self hireEmployee:employee];
+    }
+}
+
+- (void)removeConnections {
+    for (ITWasher *washer in [self employeesOfClass:[ITWasher class]]) {
+        [washer removeObserver:[self employeesOfClass:[ITAccountant class]]];
+        [washer removeObserver:self];
+    }
+    
+    for (ITAccountant *accountant in [self employeesOfClass:[ITAccountant class]]) {
+        [accountant removeObserver:[self employeesOfClass:[ITDirector class]]];
     }
 }
 
