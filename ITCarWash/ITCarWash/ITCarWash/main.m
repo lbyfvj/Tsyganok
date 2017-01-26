@@ -17,7 +17,7 @@
 #import "ITDirector.h"
 #import "ITAccountant.h"
 
-NSUInteger const kITCarsQuantity = 5;
+NSUInteger const kITCarsQuantity = 100;
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {

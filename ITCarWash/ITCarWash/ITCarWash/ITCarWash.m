@@ -144,9 +144,11 @@ static NSInteger const kITWashersCount = 4;
 }
 
 - (void)giveWorkToWasher:(ITWasher *)washer {
-    ITCar *activeCar = [self.carsQueue dequeue];
-    if (activeCar) {
-        [washer performWorkWithObject:activeCar];
+    @synchronized (washer) {
+        ITCar *activeCar = [self.carsQueue dequeue];
+        if (activeCar) {
+            [washer performWorkWithObject:activeCar];
+        }
     }
 }
 
