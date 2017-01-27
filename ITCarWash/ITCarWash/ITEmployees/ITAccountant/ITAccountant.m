@@ -16,7 +16,6 @@
 
 - (void)proccessObject:(ITWasher *)object {
     NSLog(@"%@ begin procceed %@(%@)", [self class], [object class], object.name);
-    [self takeMoneyFromObject:object];
     [self calculate];
     NSLog(@"%@ finished procceed %@(%@)", [self class], [object class], object.name);
 }

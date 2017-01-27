@@ -17,7 +17,6 @@
 - (void)proccessObject:(ITCar *)object {
     NSLog(@"%@(%@) begin procceed %@(%@)", [self class], self.name, [object class], object.name);
     [self washCar:object];
-    [self takeMoneyFromObject:object];
     NSLog(@"%@(%@) took money from %@(%@)", [self class], self.name, [object class], object.name);
     NSLog(@"%@(%@) finished procceed %@(%@)", [self class], self.name, [object class], object.name);
 }
