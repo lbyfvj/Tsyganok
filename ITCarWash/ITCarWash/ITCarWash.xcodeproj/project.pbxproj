@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9307D7B11E3BF16F00267E60 /* ITQueueDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9307D7B01E3BF16F00267E60 /* ITQueueDispatcher.m */; };
 		9357E8591E0B1213004ECC78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357E8581E0B1213004ECC78 /* main.m */; };
 		93AFA1081E295485002516E1 /* ITQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA1071E295485002516E1 /* ITQueue.m */; };
 		93AFA1201E2A2C44002516E1 /* ITCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA10B1E2A2C44002516E1 /* ITCar.m */; };
@@ -31,6 +32,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9307D7AD1E3BF16400267E60 /* ITEmployeeStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITEmployeeStatus.h; sourceTree = "<group>"; };
+		9307D7AF1E3BF16F00267E60 /* ITQueueDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITQueueDispatcher.h; sourceTree = "<group>"; };
+		9307D7B01E3BF16F00267E60 /* ITQueueDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITQueueDispatcher.m; sourceTree = "<group>"; };
 		9357E8551E0B1213004ECC78 /* ITCarWash */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ITCarWash; sourceTree = BUILT_PRODUCTS_DIR; };
 		9357E8581E0B1213004ECC78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ITCarWash/main.m; sourceTree = "<group>"; };
 		93AFA1061E295485002516E1 /* ITQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITQueue.h; sourceTree = "<group>"; };
@@ -64,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9307D7AE1E3BF16F00267E60 /* ITQueueDispatcher */ = {
+			isa = PBXGroup;
+			children = (
+				9307D7AF1E3BF16F00267E60 /* ITQueueDispatcher.h */,
+				9307D7B01E3BF16F00267E60 /* ITQueueDispatcher.m */,
+			);
+			path = ITQueueDispatcher;
+			sourceTree = "<group>";
+		};
 		9357E84C1E0B1213004ECC78 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +137,7 @@
 		93AFA1101E2A2C44002516E1 /* ITEmployees */ = {
 			isa = PBXGroup;
 			children = (
+				9307D7AE1E3BF16F00267E60 /* ITQueueDispatcher */,
 				93AFA1111E2A2C44002516E1 /* ITAccountant */,
 				93AFA1141E2A2C44002516E1 /* ITDirector */,
 				93AFA1171E2A2C44002516E1 /* ITEmployee */,
@@ -156,6 +170,7 @@
 				93AFA1181E2A2C44002516E1 /* ITEmployee.h */,
 				93AFA1191E2A2C44002516E1 /* ITEmployee.m */,
 				93AFA11A1E2A2C44002516E1 /* ITEmployeeObserverProtocol.h */,
+				9307D7AD1E3BF16400267E60 /* ITEmployeeStatus.h */,
 			);
 			path = ITEmployee;
 			sourceTree = "<group>";
@@ -241,6 +256,7 @@
 				93AFA1251E2A2C44002516E1 /* ITEmployee.m in Sources */,
 				93AFA1201E2A2C44002516E1 /* ITCar.m in Sources */,
 				9357E8591E0B1213004ECC78 /* main.m in Sources */,
+				9307D7B11E3BF16F00267E60 /* ITQueueDispatcher.m in Sources */,
 				93AFA1081E295485002516E1 /* ITQueue.m in Sources */,
 				93AFA1261E2A2C44002516E1 /* ITWasher.m in Sources */,
 			);
