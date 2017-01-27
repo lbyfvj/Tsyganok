@@ -46,11 +46,10 @@
 
 - (void)performWorkWithObject:(ITEmployee *)employee {
     @synchronized(self) {
-        if (ITEmployeeFree != self.state) {
+        if (ITEmployeeDidBecomeFree != self.state) {
             [self.employeesQueue enqueue:employee];
         } else {
-            self.state = ITEmployeeWorking;
-            
+            self.state = ITEmployeeDidBecomeBusy;            
             [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:employee];
         }
     }
@@ -67,7 +66,7 @@
 
 - (void)performWorkOnMainThreadWithObject:(id<ITMoneyKeeper>)employee {
     @synchronized (employee) {
-        ((ITEmployee *)employee).state = ITEmployeeFree;
+        ((ITEmployee *)employee).state = ITEmployeeDidBecomeFree;
     }
     
     @synchronized(self) {
@@ -76,7 +75,7 @@
             id object = [employeesQueue dequeue];
             [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:object];
         } else {
-            self.state = ITEmployeeWaiting;
+            self.state = ITEmployeeDidBecomePending;
         }
     }
 }
@@ -86,14 +85,14 @@
 
 - (SEL)selectorForState:(NSUInteger)state {
     switch (state) {
-        case ITEmployeeWorking:
-            return @selector(employeeDidBeginWork:);
+        case ITEmployeeDidBecomeBusy:
+            return @selector(employeeDidBecomeBusy:);
             
-        case ITEmployeeFree:
-            return @selector(employeeDidFinishWork:);
+        case ITEmployeeDidBecomeFree:
+            return @selector(employeeDidBecomeFree:);
             
-        case ITEmployeeWaiting:
-            return @selector(employeeWillBeginWork:);
+        case ITEmployeeDidBecomePending:
+            return @selector(employeeDidBecomePending:);
             
         default:
             return [super selectorForState:state];
@@ -124,15 +123,15 @@
 #pragma mark-
 #pragma mark ITEmployeeObserver Protocol
 
-- (void)employeeDidFinishWork:(ITEmployee *)employee {
+- (void)employeeDidBecomeFree:(ITEmployee *)employee {
     
 }
 
-- (void)employeeDidBeginWork:(ITEmployee *)employee {
+- (void)employeeDidBecomeBusy:(ITEmployee *)employee {
     
 }
 
-- (void)employeeWillBeginWork:(ITEmployee *)employee {
+- (void)employeeDidBecomePending:(ITEmployee *)employee {
     [self performSelectorInBackground:@selector(performWorkWithObject:) withObject:employee];
 }
 

@@ -45,11 +45,11 @@
 
 - (SEL)selectorForState:(NSUInteger)state {
     switch (state) {
-        case ITEmployeeDidFinishWork:
-            return @selector(employeeDidFinishWork:);
+        case ITemployeeDidBecomeFree:
+            return @selector(employeeDidBecomeFree:);
             
-        case ITEmployeeDidBeginWork:
-            return @selector(employeeDidBeginWork:);
+        case ITemployeeDidBecomeBusy:
+            return @selector(employeeDidBecomeBusy:);
             
         case ITEmployeeDidPerformWorkWithObject:
             return @selector(employeeDidPerformWork:);
@@ -61,7 +61,7 @@
 
 - (void)performWorkWithObject:(id<ITMoneyChainProtocol> )object {
     NSLog(@"Employee %@ started work yyyyy with object: %@", [self class], object);
-    self.state = ITEmployeeDidBeginWork;
+    self.state = ITemployeeDidBecomeBusy;
 }
 
 

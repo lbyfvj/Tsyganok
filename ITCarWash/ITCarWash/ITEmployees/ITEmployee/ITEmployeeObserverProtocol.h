@@ -13,8 +13,8 @@
 @protocol ITEmloyeeObserver <NSObject>
 
 @optional
-- (void)employeeDidFinishWork:(ITEmployee *)employee;
-- (void)employeeDidBeginWork:(ITEmployee *)employee;
-- (void)employeeWillBeginWork:(ITEmployee *)employee;
+- (void)employeeDidBecomeFree:(ITEmployee *)employee;
+- (void)employeeDidBecomeBusy:(ITEmployee *)employee;
+- (void)employeeDidBecomePending:(ITEmployee *)employee;
 
 @end

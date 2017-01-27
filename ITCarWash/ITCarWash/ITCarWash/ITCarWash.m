@@ -135,7 +135,7 @@ static NSInteger const kITWashersCount = 4;
 - (ITWasher *)findFreeWasher {
     ITWasher *washer= nil;
     for (washer in [self employeesOfClass:[ITWasher class]]) {
-        if (washer.state == ITEmployeeFree) {
+        if (washer.state == ITEmployeeDidBecomeFree) {
             break;
         }
     }
@@ -155,17 +155,17 @@ static NSInteger const kITWashersCount = 4;
 #pragma mark -
 #pragma mark ITEmployeeObserver Protocol
 
-- (void)employeeDidFinishWork:(ITEmployee *)employee {
+- (void)employeeDidBecomeFree:(ITEmployee *)employee {
     if ([employee isMemberOfClass:[ITWasher class]]) {
         [self giveWorkToWasher:(ITWasher *)employee];
     }
 }
 
-- (void)employeeDidBeginWork:(ITEmployee *)employee {
+- (void)employeeDidBecomeBusy:(ITEmployee *)employee {
     
 }
 
-- (void)employeeWillBeginWork:(ITEmployee *)employee {
+- (void)employeeDidBecomePending:(ITEmployee *)employee {
     
 }
 

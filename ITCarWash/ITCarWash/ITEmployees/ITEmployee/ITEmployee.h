@@ -14,9 +14,9 @@
 static const uint8_t kITEmployeeMaxSleepTime = 1;
 
 typedef NS_ENUM (NSUInteger, ITEmployeeState) {
-    ITEmployeeFree,
-    ITEmployeeWorking,
-    ITEmployeeWaiting
+    ITEmployeeDidBecomeFree,
+    ITEmployeeDidBecomeBusy,
+    ITEmployeeDidBecomePending
 };
 
 @interface ITEmployee : ITObservableObject <ITMoneyKeeper, ITEmloyeeObserver>
