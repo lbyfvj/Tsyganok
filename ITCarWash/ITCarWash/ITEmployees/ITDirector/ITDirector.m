@@ -12,8 +12,12 @@
 
 @implementation ITDirector
 
-#pragma mark-
-#pragma mark Public
+#pragma mark -
+#pragma mark Overloaded Methods
+
+- (void)finishProcessing {
+    self.state = ITEmployeeDidBecomeFree;
+}
 
 -(void)proccessObject:(ITAccountant *)object {
     NSLog(@"%@ begin procceed %@", [self class], [object class]);
@@ -21,9 +25,13 @@
     [self getProfit];
 }
 
+#pragma mark-
+#pragma mark Private
+
 - (void)getProfit {
     sleep(arc4random_uniform(kITEmployeeMaxSleepTime));
     NSLog(@"%@ get profit: %lu", [self class], self.money);
+    [self finishProcessing];
 }
 
 @end

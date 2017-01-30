@@ -11,8 +11,12 @@
 
 @implementation ITWasher
 
-#pragma mark-
-#pragma mark Public
+#pragma mark -
+#pragma mark Overloaded Methods
+
+- (void)finishProccessingObject:(id<ITMoneyKeeper>)object {
+    ((ITCar *)object).carState = ITCarClean;
+}
 
 - (void)proccessObject:(ITCar *)object {
     NSLog(@"%@(%@) begin procceed %@(%@)", [self class], self.name, [object class], object.name);
@@ -26,7 +30,7 @@
 
 - (void)washCar:(ITCar *)car {
     sleep(arc4random_uniform(kITEmployeeMaxSleepTime));
-    car.carState = ITCarClean;
+    [self finishProccessingObject:car];
 }
 
 @end

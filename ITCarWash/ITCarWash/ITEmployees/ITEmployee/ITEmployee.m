@@ -67,7 +67,7 @@
 
 - (void)performWorkOnMainThreadWithObject:(id<ITMoneyKeeper>)employee {
     @synchronized (employee) {
-        ((ITEmployee *)employee).state = ITEmployeeDidBecomeFree;
+        [self finishProccessingObject:employee];
     }
     
     @synchronized(self) {
@@ -76,9 +76,17 @@
             id object = [employeesQueue dequeueObject];
             [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:object];
         } else {
-            self.state = ITEmployeeDidBecomePending;
+            [self finishProccess];
         }
     }
+}
+
+- (void)finishProccessingObject:(id<ITMoneyKeeper>)object {
+    ((ITEmployee *)object).state = ITEmployeeDidBecomeFree;
+}
+
+- (void)finishProccess {
+    self.state = ITEmployeeDidBecomePending;
 }
 
 #pragma mark -
