@@ -17,6 +17,9 @@
 #import "ITQueue.h"
 
 static NSInteger const kITWashersCount = 4;
+static NSInteger const kITAccountantsCount = 1;
+static NSInteger const kITDirectorsCount = 1;
+typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *observers);
 
 @interface ITCarWash ()
 @property (nonatomic, retain) NSMutableArray    *staff;
@@ -57,32 +60,55 @@ static NSInteger const kITWashersCount = 4;
 }
 
 - (void)initialSetup {
-    ITAccountant *accountant = [ITAccountant object];
+//    ITAccountant *accountant = [ITAccountant object];
+//    ITDirector *director = [ITDirector object];
+//    NSMutableArray *staff = [NSMutableArray objectsWithCount:kITWashersCount block:^id{
+//        ITWasher *washer = [ITWasher object];
+//        [washer addObserver:accountant];
+//        [washer addObserver:self];
+//        
+//        return washer;
+//    }];
+//    [accountant addObserver:director];
+//    [staff addObjectsFromArray:@[accountant, director]];
+//    for (ITEmployee* employee in staff) {
+//        [self hireEmployee:employee];
+//    }
+    
+    id (^carWashStaff)(Class class, NSUInteger count, id<ITEmloyeeObserver>observer) = ^id(Class class, NSUInteger count, id<ITEmloyeeObserver>observer) {
+        return [NSArray objectsWithCount:count block:^id{
+            ITEmployee *employee = [class object];
+            [employee addObserver:observer];
+            [employee addObserver:self];
+            
+            return employee;
+        }];
+    };
+
     ITDirector *director = [ITDirector object];
-    NSMutableArray *staff = [NSMutableArray objectsWithCount:kITWashersCount block:^id{
-        ITWasher *washer = [ITWasher object];
-        [washer addObserver:accountant];
-        [washer addObserver:self];
-        
-        return washer;
-    }];
-    [accountant addObserver:director];
-    [staff addObject:accountant];
-    [staff addObject:director];    
+    NSArray *accountant = carWashStaff([ITAccountant class], kITAccountantsCount, director);
+    NSMutableArray *staff = carWashStaff([ITWasher class], kITWashersCount, [accountant firstObject]);
+    [staff arrayByAddingObjectsFromArray:@[accountant, director]];
+    
     for (ITEmployee* employee in staff) {
         [self hireEmployee:employee];
     }
 }
 
 - (void)removeConnections {
-    for (ITWasher *washer in [self employeesOfClass:[ITWasher class]]) {
-        [washer removeObserver:[self employeesOfClass:[ITAccountant class]]];
-        [washer removeObserver:self];
-    }
+    NSArray *accountants = [self employeesOfClass:[ITAccountant class]];
+    NSArray *directors = [self employeesOfClass:[ITDirector class]];
+    NSArray *washers = [self employeesOfClass:[ITWasher class]];
     
-    for (ITAccountant *accountant in [self employeesOfClass:[ITAccountant class]]) {
-        [accountant removeObserver:[self employeesOfClass:[ITDirector class]]];
-    }
+    ITRemoveCarWashConnections removeCarWashConnections = ^void(NSArray *observableObjects, NSArray *observers) {
+        for (id object in observableObjects) {
+            [object removeObservers:observers];
+        }
+    };
+    
+    removeCarWashConnections(washers, accountants);
+    removeCarWashConnections(washers, @[self]);
+    removeCarWashConnections(accountants, directors);
 }
 
 #pragma mark-
