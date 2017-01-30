@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, ITCarState) {
     ITCarDirty
 };
 
-@interface ITCar : ITObservableObject <ITMoneyKeeper>
+@interface ITCar : NSObject <ITMoneyKeeper>
 @property (nonatomic, copy)     NSString      *name;
 @property (nonatomic, assign)   ITCarState    carState;
 

@@ -11,7 +11,7 @@
 #import "ITQueue.h"
 
 @interface ITEmployee ()
-@property (nonatomic, retain) ITQueue *employeesQueue;
+@property (nonatomic, retain) ITQueue *queue;
 @property (nonatomic, assign) NSUInteger money;
 
 @end
@@ -23,7 +23,7 @@
 
 - (void)dealloc {
     self.name = nil;
-    self.employeesQueue = nil;
+    self.queue = nil;
     
     [super dealloc];
 }
@@ -32,7 +32,7 @@
     self = [super init];
     
     self.name = [NSString randomNameWithLength:7];
-    self.employeesQueue = [ITQueue object];
+    self.queue = [ITQueue object];
     
     return self;
 }
@@ -47,7 +47,7 @@
 - (void)performWorkWithObject:(ITEmployee *)employee {
     @synchronized(self) {
         if (ITEmployeeDidBecomeFree != self.state) {
-            [self.employeesQueue enqueueObject:employee];
+            [self.queue enqueueObject:employee];
         } else {
             self.state = ITEmployeeDidBecomeBusy;            
             [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:employee];
@@ -71,9 +71,9 @@
     }
     
     @synchronized(self) {
-        ITQueue *employeesQueue = self.employeesQueue;
-        if (employeesQueue.count > 0 ) {
-            id object = [employeesQueue dequeueObject];
+        ITQueue *queue = self.queue;
+        if (queue.count > 0 ) {
+            id object = [queue dequeueObject];
             [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:object];
         } else {
             [self finishProccess];
