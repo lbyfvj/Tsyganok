@@ -47,7 +47,7 @@
 - (void)performWorkWithObject:(ITEmployee *)employee {
     @synchronized(self) {
         if (ITEmployeeDidBecomeFree != self.state) {
-            [self.employeesQueue enqueue:employee];
+            [self.employeesQueue enqueueObject:employee];
         } else {
             self.state = ITEmployeeDidBecomeBusy;            
             [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:employee];
@@ -59,8 +59,9 @@
 #pragma mark Private
 
 - (void)performWorkInBackgroundWithObject:(id<ITMoneyKeeper>)employee {
-    [self proccessObject:employee];
     [self takeMoneyFromObject:employee];
+    [self proccessObject:employee];
+    
     [self performSelectorOnMainThread:@selector(performWorkOnMainThreadWithObject:) withObject:employee waitUntilDone:NO];
 }
 
@@ -72,7 +73,7 @@
     @synchronized(self) {
         ITQueue *employeesQueue = self.employeesQueue;
         if (employeesQueue.count > 0 ) {
-            id object = [employeesQueue dequeue];
+            id object = [employeesQueue dequeueObject];
             [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:object];
         } else {
             self.state = ITEmployeeDidBecomePending;

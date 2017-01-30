@@ -53,16 +53,16 @@
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)enqueue:(id)object {
+- (void)enqueueObject:(id)object {
     @synchronized(self) {
         [self.mutableQueue addObject:object];
     }
 }
 
-- (id)dequeue {
+- (id)dequeueObject {
     @synchronized(self) {
         NSMutableArray *array = self.mutableQueue;
-        id result = [array firstObject];
+        id result = [[[array firstObject] retain] autorelease];
         [array removeObject:result];
         
         return result;

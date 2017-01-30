@@ -93,7 +93,7 @@ static NSInteger const kITWashersCount = 4;
 #pragma mark Public
 
 - (void)washCar:(ITCar *)car {
-    [self.carsQueue enqueue:car];
+    [self.carsQueue enqueueObject:car];
 
     @synchronized(self.staff) {
         ITWasher *freeWasher = [self findFreeWasher];
@@ -145,7 +145,7 @@ static NSInteger const kITWashersCount = 4;
 
 - (void)giveWorkToWasher:(ITWasher *)washer {
     @synchronized (washer) {
-        ITCar *activeCar = [self.carsQueue dequeue];
+        ITCar *activeCar = [self.carsQueue dequeueObject];
         if (activeCar) {
             [washer performWorkWithObject:activeCar];
         }

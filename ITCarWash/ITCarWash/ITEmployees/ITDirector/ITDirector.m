@@ -17,7 +17,6 @@
 
 -(void)proccessObject:(ITAccountant *)object {
     NSLog(@"%@ begin procceed %@", [self class], [object class]);
-    [self takeMoneyFromObject:object];
     object.state = ITEmployeeDidBecomeFree;
     [self getProfit];
 }
