@@ -18,7 +18,6 @@
 
 static NSInteger const kITWashersCount = 4;
 static NSInteger const kITAccountantsCount = 1;
-static NSInteger const kITDirectorsCount = 1;
 typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *observers);
 
 @interface ITCarWash ()

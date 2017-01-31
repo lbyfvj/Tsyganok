@@ -58,16 +58,16 @@
 #pragma mark-
 #pragma mark Private
 
-- (void)performWorkInBackgroundWithObject:(id<ITMoneyKeeper>)employee {
-    [self takeMoneyFromObject:employee];
-    [self proccessObject:employee];
+- (void)performWorkInBackgroundWithObject:(id<ITMoneyKeeper>)object {
+    [self takeMoneyFromObject:object];
+    [self proccessObject:object];
     
-    [self performSelectorOnMainThread:@selector(performWorkOnMainThreadWithObject:) withObject:employee waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(performWorkOnMainThreadWithObject:) withObject:object waitUntilDone:NO];
 }
 
-- (void)performWorkOnMainThreadWithObject:(id<ITMoneyKeeper>)employee {
-    @synchronized (employee) {
-        [self finishProccessingObject:employee];
+- (void)performWorkOnMainThreadWithObject:(id<ITMoneyKeeper>)object {
+    @synchronized (object) {
+        [self finishProccessingObject:object];
     }
     
     @synchronized(self) {
