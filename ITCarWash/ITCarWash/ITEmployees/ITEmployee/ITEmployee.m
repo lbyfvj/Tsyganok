@@ -45,14 +45,7 @@
 }
 
 - (void)performWorkWithObject:(ITEmployee *)employee {
-    @synchronized(self) {
-        if (ITEmployeeDidBecomeFree != self.state) {
-            [self.queue enqueueObject:employee];
-        } else {
-            self.state = ITEmployeeDidBecomeBusy;            
-            [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:employee];
-        }
-    }
+    [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:employee];
 }
 
 #pragma mark-
@@ -70,14 +63,8 @@
         [self finishProccessingObject:object];
     }
     
-    @synchronized(self) {
-        ITQueue *queue = self.queue;
-        if (queue.count > 0 ) {
-            id object = [queue dequeueObject];
-            [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:object];
-        } else {
-            [self finishProccess];
-        }
+    @synchronized (self) {
+        [self finishProccess];
     }
 }
 

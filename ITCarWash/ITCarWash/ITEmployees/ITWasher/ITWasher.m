@@ -30,7 +30,7 @@
 
 - (void)washCar:(ITCar *)car {
     sleep(arc4random_uniform(kITEmployeeMaxSleepTime));
-    [self finishProccessingObject:car];
+    //[self finishProccessingObject:car];
 }
 
 @end

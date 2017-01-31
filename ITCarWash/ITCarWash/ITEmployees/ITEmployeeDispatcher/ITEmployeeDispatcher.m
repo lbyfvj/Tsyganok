@@ -73,6 +73,8 @@
 }
 
 - (void)performWorkWithObject:(id <ITMoneyKeeper>)object {
+    [self.objectsQueue enqueueObject:object];
+    
     ITEmployee *employee = [self findFreeEmployee];
     
     if (employee) {
@@ -99,12 +101,12 @@
 }
 
 - (void)giveWorkToEmployee:(ITEmployee *)employee {
-    @synchronized(self.objectsQueue) {
         id object = [self.objectsQueue dequeueObject];
         if (!object) {
             return;
         }
-        
+    
+    @synchronized (self.handlers) {
         [employee performSelectorInBackground:@selector(performWorkWithObject:)
                                    withObject:object];
     }
@@ -131,8 +133,7 @@
 - (void)employeeDidBecomePending:(ITEmployee *)employee {
     NSArray *handlers = self.handlers;
     if (![handlers containsObject:employee]) {
-        [self performSelectorInBackground:@selector(performWorkWithObject:)
-                               withObject:employee];
+        [self performWorkWithObject:employee];
     }
 }
 

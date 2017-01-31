@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "ITEmployeeObserverProtocol.h"
+#import "ITMoneyKeeperProtocol.h"
 
 @interface ITEmployeeDispatcher : NSObject <ITEmloyeeObserver>
 @property (nonatomic, readonly)     NSArray     *handlers;
@@ -15,6 +17,6 @@
 - (void)addHandler:(id)object;
 - (void)removeHandler:(id)object;
 
-- (void)performWorkWithObject:(ITEmployee *)employee;
+- (void)performWorkWithObject:(id <ITMoneyKeeper>)employee;
 
 @end

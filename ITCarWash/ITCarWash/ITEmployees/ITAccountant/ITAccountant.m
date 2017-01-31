@@ -15,14 +15,14 @@
 #pragma mark Public
 
 - (void)proccessObject:(ITWasher *)object {
-    NSLog(@"%@ begin procceed %@(%@)", [self class], [object class], object.name);
+    NSLog(@"%@(%@) begin procceed %@(%@)", [self class], self.name, [object class], object.name);
     [self calculate];
-    NSLog(@"%@ finished procceed %@(%@)", [self class], [object class], object.name);
+    NSLog(@"%@(%@) finished procceed %@(%@)", [self class], self.name, [object class], object.name);
 }
 
 - (void)calculate {
     sleep(arc4random_uniform(kITEmployeeMaxSleepTime));
-    NSLog(@"Money calculated by %@: %lu", [self class], self.money);
+    NSLog(@"Money calculated by %@(%@): %lu", [self class], self.name, self.money);
 }
 
 @end
