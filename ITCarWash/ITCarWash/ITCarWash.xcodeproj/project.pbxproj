@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9307D7B81E4118B400267E60 /* ITEmployeeDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9307D7B71E4118B400267E60 /* ITEmployeeDispatcher.m */; };
+		9307D7BC1E42810700267E60 /* ITCarWashAdministrator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9307D7BB1E42810700267E60 /* ITCarWashAdministrator.m */; };
 		9357E8591E0B1213004ECC78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357E8581E0B1213004ECC78 /* main.m */; };
 		93AFA1081E295485002516E1 /* ITQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA1071E295485002516E1 /* ITQueue.m */; };
 		93AFA1201E2A2C44002516E1 /* ITCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA10B1E2A2C44002516E1 /* ITCar.m */; };
@@ -34,6 +35,8 @@
 /* Begin PBXFileReference section */
 		9307D7B61E4118B400267E60 /* ITEmployeeDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITEmployeeDispatcher.h; sourceTree = "<group>"; };
 		9307D7B71E4118B400267E60 /* ITEmployeeDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITEmployeeDispatcher.m; sourceTree = "<group>"; };
+		9307D7BA1E42810700267E60 /* ITCarWashAdministrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCarWashAdministrator.h; sourceTree = "<group>"; };
+		9307D7BB1E42810700267E60 /* ITCarWashAdministrator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCarWashAdministrator.m; sourceTree = "<group>"; };
 		9357E8551E0B1213004ECC78 /* ITCarWash */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ITCarWash; sourceTree = BUILT_PRODUCTS_DIR; };
 		9357E8581E0B1213004ECC78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ITCarWash/main.m; sourceTree = "<group>"; };
 		93AFA1061E295485002516E1 /* ITQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITQueue.h; sourceTree = "<group>"; };
@@ -74,6 +77,15 @@
 				9307D7B71E4118B400267E60 /* ITEmployeeDispatcher.m */,
 			);
 			path = ITEmployeeDispatcher;
+			sourceTree = "<group>";
+		};
+		9307D7B91E4280F200267E60 /* ITCarWashAdministrator */ = {
+			isa = PBXGroup;
+			children = (
+				9307D7BA1E42810700267E60 /* ITCarWashAdministrator.h */,
+				9307D7BB1E42810700267E60 /* ITCarWashAdministrator.m */,
+			);
+			path = ITCarWashAdministrator;
 			sourceTree = "<group>";
 		};
 		9357E84C1E0B1213004ECC78 = {
@@ -127,6 +139,7 @@
 		93AFA10C1E2A2C44002516E1 /* ITCarWash */ = {
 			isa = PBXGroup;
 			children = (
+				9307D7B91E4280F200267E60 /* ITCarWashAdministrator */,
 				93AFA10D1E2A2C44002516E1 /* ITCarWash.h */,
 				93AFA10E1E2A2C44002516E1 /* ITCarWash.m */,
 			);
@@ -250,6 +263,7 @@
 			files = (
 				93AFA1231E2A2C44002516E1 /* ITAccountant.m in Sources */,
 				93AFA1241E2A2C44002516E1 /* ITDirector.m in Sources */,
+				9307D7BC1E42810700267E60 /* ITCarWashAdministrator.m in Sources */,
 				93AFA1211E2A2C44002516E1 /* ITCarWash.m in Sources */,
 				93AFA1251E2A2C44002516E1 /* ITEmployee.m in Sources */,
 				93AFA1201E2A2C44002516E1 /* ITCar.m in Sources */,

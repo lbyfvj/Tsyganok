@@ -23,6 +23,7 @@
     NSLog(@"%@ begin procceed %@(%@)", [self class], [object class], object.name);
     object.state = ITEmployeeDidBecomeFree;
     [self getProfit];
+    NSLog(@"%@(%@) finished procceed %@(%@)", [self class], self.name, [object class], object.name);
 }
 
 #pragma mark-
@@ -31,7 +32,6 @@
 - (void)getProfit {
     sleep(arc4random_uniform(kITEmployeeMaxSleepTime));
     NSLog(@"%@ get profit: %lu", [self class], self.money);
-    //[self finishProcessing];
 }
 
 @end

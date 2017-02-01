@@ -62,12 +62,14 @@
     id handlers = self.mutableHandlers;
     @synchronized (handlers) {
         [handlers addObject:object];
+        [object addObserver:self];
     }
 }
 
 - (void)removeHandler:(id)object {
     id handlers = self.mutableHandlers;
     @synchronized (handlers) {
+        [object removeObserver:self];
         [handlers removeObject:object];
     }
 }
@@ -101,14 +103,15 @@
 }
 
 - (void)giveWorkToEmployee:(ITEmployee *)employee {
+    @synchronized (self.handlers) {
         id object = [self.objectsQueue dequeueObject];
+        
         if (!object) {
+            employee.state = ITEmployeeDidBecomeFree;
             return;
         }
-    
-    @synchronized (self.handlers) {
-        [employee performSelectorInBackground:@selector(performWorkWithObject:)
-                                   withObject:object];
+        
+        [employee performWorkWithObject:object];
     }
 }
 
@@ -124,8 +127,7 @@
         
         if (ITEmployeeDidBecomeFree == employee.state) {
             employee.state = ITEmployeeDidBecomeBusy;
-            
-            [self giveWorkToEmployee:employee];
+            [self performSelectorInBackground:@selector(giveWorkToEmployee:) withObject:employee];
         }
     }
 }

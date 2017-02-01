@@ -195,22 +195,4 @@ typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *
 //    }
 //}
 
-#pragma mark -
-#pragma mark ITEmployeeObserver Protocol
-
-//- (void)employeeDidBecomeFree:(ITEmployee *)employee {
-//    if ([employee isMemberOfClass:[ITWasher class]]) {
-//        [self giveWorkToWasher:(ITWasher *)employee];
-//    }
-//}
-//
-//- (void)employeeDidBecomeBusy:(ITEmployee *)employee {
-//    
-//}
-//
-//- (void)employeeDidBecomePending:(ITEmployee *)employee {
-//    
-//}
-
-
 @end

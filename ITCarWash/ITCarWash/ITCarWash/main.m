@@ -16,19 +16,24 @@
 #import "ITEmployee.h"
 #import "ITDirector.h"
 #import "ITAccountant.h"
+#import "ITCarWashAdministrator.h"
 
-NSUInteger const kITCarsQuantity = 100;
+//NSUInteger const kITCarsQuantity = 100;
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        NSArray *cars = [NSArray objectsWithCount:kITCarsQuantity block:^id{
-            return [ITCar object];
-        }];
+//        NSArray *cars = [NSArray objectsWithCount:kITCarsQuantity block:^id{
+//            return [ITCar object];
+//        }];
+//        
+//        ITCarWash *carWash = [ITCarWash object];
+//
+//        [carWash washCars:cars];
         
-        ITCarWash *carWash = [ITCarWash object];
-
-        [carWash washCars:cars];
+        ITCarWashAdministrator *carWashAdminstrator = [ITCarWashAdministrator object];
+        
+        [carWashAdminstrator startTimer];
         
         [[NSRunLoop mainRunLoop] run];
     }

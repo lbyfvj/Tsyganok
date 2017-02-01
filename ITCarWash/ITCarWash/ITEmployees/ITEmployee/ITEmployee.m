@@ -45,7 +45,8 @@
 }
 
 - (void)performWorkWithObject:(ITEmployee *)employee {
-    [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:employee];
+    [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:)
+                           withObject:employee];
 }
 
 #pragma mark-
@@ -55,7 +56,9 @@
     [self takeMoneyFromObject:object];
     [self proccessObject:object];
     
-    [self performSelectorOnMainThread:@selector(performWorkOnMainThreadWithObject:) withObject:object waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(performWorkOnMainThreadWithObject:)
+                           withObject:object
+                        waitUntilDone:NO];
 }
 
 - (void)performWorkOnMainThreadWithObject:(id<ITMoneyKeeper>)object {
@@ -114,21 +117,6 @@
         self.money = 0;
         return money;
     }
-}
-
-#pragma mark-
-#pragma mark ITEmployeeObserver Protocol
-
-- (void)employeeDidBecomeFree:(ITEmployee *)employee {
-    
-}
-
-- (void)employeeDidBecomeBusy:(ITEmployee *)employee {
-    
-}
-
-- (void)employeeDidBecomePending:(ITEmployee *)employee {
-    [self performSelectorInBackground:@selector(performWorkWithObject:) withObject:employee];
 }
 
 @end
