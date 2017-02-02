@@ -13,14 +13,15 @@
 #import "ITCarWash.h"
 
 static NSUInteger const kITCarsQuantity = 100;
-static NSTimeInterval const kITCarProcceedInterval = 2;
+static NSUInteger const kITDefaultCarsPack = 4;
+static NSTimeInterval const kITCarProceedInterval = 2;
 
 @interface ITCarWashAdministrator ()
 @property (nonatomic, retain)   ITCarWash   *carWash;
 @property (nonatomic, retain)   NSTimer     *timer;
-@property (nonatomic, retain)   NSArray     *cars;
+@property (nonatomic, assign)   NSUInteger  washedCars;
 
-- (void)procceed:(NSTimer *)timer;
+- (void)proceed:(NSTimer *)timer;
 
 @end
 
@@ -32,7 +33,6 @@ static NSTimeInterval const kITCarProcceedInterval = 2;
 - (void)dealloc {
     self.timer = nil;
     self.carWash = nil;
-    self.cars = nil;
     
     [super dealloc];
 }
@@ -41,9 +41,7 @@ static NSTimeInterval const kITCarProcceedInterval = 2;
 {
     self = [super init];
     self.carWash = [ITCarWash object];
-    self.cars = [NSArray objectsWithCount:kITCarsQuantity block:^id{
-        return [ITCar object];
-    }];
+    self.washedCars = 0;
     
     return self;
 }
@@ -51,8 +49,17 @@ static NSTimeInterval const kITCarProcceedInterval = 2;
 #pragma mark -
 #pragma mark Private
 
-- (void)procceed:(NSTimer *)timer {
-    [self.carWash washCars:self.cars];
+- (void)proceed:(NSTimer *)timer {
+    NSUInteger carsInPack = MIN(kITDefaultCarsPack, kITCarsQuantity - self.washedCars);
+    NSArray *cars = [NSArray objectsWithCount:carsInPack block:^id{
+        return [ITCar object];
+    }];
+    
+    if (cars.count > 0) {
+        [self.carWash washCars:cars];
+    }
+
+    self.washedCars++;
 }
 
 #pragma mark -
@@ -60,9 +67,9 @@ static NSTimeInterval const kITCarProcceedInterval = 2;
 
 - (void)startTimer {
     if (!self.timer) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:kITCarProcceedInterval
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:kITCarProceedInterval
                                                       target:self
-                                                    selector:@selector(procceed:)
+                                                    selector:@selector(proceed:)
                                                     userInfo:nil
                                                      repeats:YES];
     }

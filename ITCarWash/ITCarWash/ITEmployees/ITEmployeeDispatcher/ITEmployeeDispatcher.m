@@ -33,6 +33,14 @@
     self.mutableHandlers = nil;
     self.objectsQueue = nil;
     
+    void (^ITRemoveConnections)(NSArray *observableObjects, NSArray *observers) = ^void(NSArray *observableObjects, NSArray *observers) {
+        for (id object in observableObjects) {
+            [object removeObservers:observers];
+        }
+    };
+    
+    ITRemoveConnections(self.mutableHandlers, @[self]);
+    
     [super dealloc];
 }
 
@@ -76,13 +84,7 @@
 
 - (void)performWorkWithObject:(id <ITMoneyKeeper>)object {
     [self.objectsQueue enqueueObject:object];
-    
-    ITEmployee *employee = [self findFreeEmployee];
-    
-    if (employee) {
-        employee.state = ITEmployeeDidBecomeBusy;
-        [self giveWorkToEmployee:employee];
-    }
+    [self giveWorkToEmployee:[self findFreeEmployee]];
 }
 
 #pragma mark -
@@ -104,15 +106,20 @@
 
 - (void)giveWorkToEmployee:(ITEmployee *)employee {
     @synchronized (self.handlers) {
-        id object = [self.objectsQueue dequeueObject];
-        
-        if (!object) {
-            employee.state = ITEmployeeDidBecomeFree;
+        if (employee.state != ITEmployeeDidBecomeFree) {
             return;
         }
         
-        [employee performWorkWithObject:object];
+        employee.state = ITEmployeeDidBecomeBusy;
     }
+    
+    id object = [self.objectsQueue dequeueObject];
+    if (!object) {
+        employee.state = ITEmployeeDidBecomeFree;
+        return;
+    }
+    
+    [employee performWorkWithObject:object];
 }
 
 #pragma mark -

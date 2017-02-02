@@ -54,8 +54,7 @@
 
 - (void)performWorkInBackgroundWithObject:(id<ITMoneyKeeper>)object {
     [self takeMoneyFromObject:object];
-    [self proccessObject:object];
-    
+    [self proccessObject:object];    
     [self performSelectorOnMainThread:@selector(performWorkOnMainThreadWithObject:)
                            withObject:object
                         waitUntilDone:NO];

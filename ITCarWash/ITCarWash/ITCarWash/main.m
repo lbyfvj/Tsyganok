@@ -10,26 +10,16 @@
 
 #import <ITSources/ITSources.h>
 
-#import "ITCarWash.h"
-#import "ITCar.h"
-#import "ITWasher.h"
-#import "ITEmployee.h"
-#import "ITDirector.h"
-#import "ITAccountant.h"
+//#import "ITCarWash.h"
+//#import "ITCar.h"
+//#import "ITWasher.h"
+//#import "ITEmployee.h"
+//#import "ITDirector.h"
+//#import "ITAccountant.h"
 #import "ITCarWashAdministrator.h"
-
-//NSUInteger const kITCarsQuantity = 100;
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        
-//        NSArray *cars = [NSArray objectsWithCount:kITCarsQuantity block:^id{
-//            return [ITCar object];
-//        }];
-//        
-//        ITCarWash *carWash = [ITCarWash object];
-//
-//        [carWash washCars:cars];
         
         ITCarWashAdministrator *carWashAdminstrator = [ITCarWashAdministrator object];
         
