@@ -132,16 +132,14 @@
             return;
         }
         
-        if (ITEmployeeDidBecomeFree == employee.state) {
-            employee.state = ITEmployeeDidBecomeBusy;
+        if (ITEmployeeDidBecomeFree == employee.state && !(self.objectsQueue.count == 0)) {
             [self performSelectorInBackground:@selector(giveWorkToEmployee:) withObject:employee];
         }
     }
 }
 
 - (void)employeeDidBecomePending:(ITEmployee *)employee {
-    NSArray *handlers = self.handlers;
-    if (![handlers containsObject:employee]) {
+    if (![self.handlers containsObject:employee]) {
         [self performWorkWithObject:employee];
     }
 }

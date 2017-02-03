@@ -17,6 +17,7 @@
 
 - (void)finishProcessing {
     self.state = ITEmployeeDidBecomeFree;
+    
 }
 
 -(void)proccessObject:(ITAccountant *)object {

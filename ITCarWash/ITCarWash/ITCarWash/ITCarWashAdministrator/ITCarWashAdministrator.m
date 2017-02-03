@@ -57,8 +57,10 @@ static NSTimeInterval const kITCarProceedInterval = 2;
     
     if (cars.count > 0) {
         [self.carWash washCars:cars];
+    } else {
+        [self stopTimer];
     }
-
+    
     self.washedCars++;
 }
 

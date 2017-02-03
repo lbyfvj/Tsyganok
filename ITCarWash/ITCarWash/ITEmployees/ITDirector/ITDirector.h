@@ -8,6 +8,6 @@
 
 #import "ITEmployee.h"
 
-@interface ITDirector : ITEmployee
+@interface ITDirector : ITEmployee <ITEmloyeeObserver>
 
 @end

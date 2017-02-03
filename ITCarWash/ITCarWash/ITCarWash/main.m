@@ -10,12 +10,6 @@
 
 #import <ITSources/ITSources.h>
 
-//#import "ITCarWash.h"
-//#import "ITCar.h"
-//#import "ITWasher.h"
-//#import "ITEmployee.h"
-//#import "ITDirector.h"
-//#import "ITAccountant.h"
 #import "ITCarWashAdministrator.h"
 
 int main(int argc, const char * argv[]) {

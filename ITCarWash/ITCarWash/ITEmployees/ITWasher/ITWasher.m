@@ -14,8 +14,10 @@
 #pragma mark -
 #pragma mark Overloaded Methods
 
-- (void)finishProccessingObject:(id<ITMoneyKeeper>)object {
-    ((ITCar *)object).carState = ITCarClean;
+- (void)finishProccessingObject:(ITCar *)object {
+    if ([object isKindOfClass:[ITCar class]]) {
+        object.carState = ITCarClean;
+    }
 }
 
 - (void)proccessObject:(ITCar *)object {

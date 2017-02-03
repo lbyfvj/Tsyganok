@@ -11,7 +11,6 @@
 #import "ITQueue.h"
 
 @interface ITEmployee ()
-@property (nonatomic, retain) ITQueue *queue;
 @property (nonatomic, assign) NSUInteger money;
 
 @end
@@ -23,16 +22,13 @@
 
 - (void)dealloc {
     self.name = nil;
-    self.queue = nil;
     
     [super dealloc];
 }
 
 - (id)init {
     self = [super init];
-    
     self.name = [NSString randomNameWithLength:7];
-    self.queue = [ITQueue object];
     
     return self;
 }
@@ -60,7 +56,7 @@
                         waitUntilDone:NO];
 }
 
-- (void)performWorkOnMainThreadWithObject:(id<ITMoneyKeeper>)object {
+- (void)performWorkOnMainThreadWithObject:(ITEmployee *)object {
     @synchronized (object) {
         [self finishProccessingObject:object];
     }
@@ -70,8 +66,10 @@
     }
 }
 
-- (void)finishProccessingObject:(id<ITMoneyKeeper>)object {
-    ((ITEmployee *)object).state = ITEmployeeDidBecomeFree;
+- (void)finishProccessingObject:(ITEmployee *)object {
+    if ([object isKindOfClass:[ITEmployee class]]) {
+        object.state = ITEmployeeDidBecomeFree;
+    }
 }
 
 - (void)finishProccess {
