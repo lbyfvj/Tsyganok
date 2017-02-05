@@ -58,21 +58,21 @@
 
 - (void)performWorkOnMainThreadWithObject:(ITEmployee *)object {
     @synchronized (object) {
-        [self finishProccessingObject:object];
+        [self finishProcessingingObject:object];
     }
     
     @synchronized (self) {
-        [self finishProccess];
+        [self finishProcessing];
     }
 }
 
-- (void)finishProccessingObject:(ITEmployee *)object {
+- (void)finishProcessingingObject:(ITEmployee *)object {
     if ([object isKindOfClass:[ITEmployee class]]) {
         object.state = ITEmployeeDidBecomeFree;
     }
 }
 
-- (void)finishProccess {
+- (void)finishProcessing {
     self.state = ITEmployeeDidBecomePending;
 }
 

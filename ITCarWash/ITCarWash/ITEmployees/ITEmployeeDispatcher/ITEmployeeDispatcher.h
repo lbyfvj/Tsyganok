@@ -17,6 +17,6 @@
 - (void)addHandler:(id)object;
 - (void)removeHandler:(id)object;
 
-- (void)performWorkWithObject:(id <ITMoneyKeeper>)employee;
+- (void)performWorkWithObject:(id)employee;
 
 @end

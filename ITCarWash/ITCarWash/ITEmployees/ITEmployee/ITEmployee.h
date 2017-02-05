@@ -11,7 +11,7 @@
 #import "ITMoneyKeeperProtocol.h"
 #import "ITEmployeeObserverProtocol.h"
 
-static const uint8_t kITEmployeeMaxSleepTime = 1;
+static const uint8_t kITEmployeeMaxSleepTime = 2;
 
 typedef NS_ENUM (NSUInteger, ITEmployeeState) {
     ITEmployeeDidBecomeFree,

@@ -27,6 +27,8 @@ static NSTimeInterval const kITCarProceedInterval = 2;
 
 @implementation ITCarWashAdministrator
 
+@dynamic running;
+
 #pragma mark -
 #pragma mark Initializations and dellocations
 
@@ -47,6 +49,21 @@ static NSTimeInterval const kITCarProceedInterval = 2;
 }
 
 #pragma mark -
+#pragma mark Accessors
+
+- (void)setTimer:(NSTimer *)timer {
+    if (timer != _timer) {
+        [_timer invalidate];        
+        [_timer release];
+        _timer = [timer retain];
+    }
+}
+
+- (BOOL)isRunning {
+    return [self.timer isValid];
+}
+
+#pragma mark -
 #pragma mark Private
 
 - (void)proceed:(NSTimer *)timer {
@@ -61,7 +78,7 @@ static NSTimeInterval const kITCarProceedInterval = 2;
         [self stopTimer];
     }
     
-    self.washedCars++;
+    self.washedCars += carsInPack;
 }
 
 #pragma mark -

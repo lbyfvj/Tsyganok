@@ -82,7 +82,7 @@
     }
 }
 
-- (void)performWorkWithObject:(id <ITMoneyKeeper>)object {
+- (void)performWorkWithObject:(id)object {
     [self.objectsQueue enqueueObject:object];
     [self giveWorkToEmployee:[self findFreeEmployee]];
 }
@@ -93,27 +93,23 @@
 - (ITEmployee *)findFreeEmployee {
     NSArray *employees = self.handlers;
     @synchronized (employees) {
-        ITEmployee *employee= nil;
-        for (employee in employees) {
+        for (ITEmployee *employee in employees) {
             if (employee.state == ITEmployeeDidBecomeFree) {
-                break;
+                return employee;
             }
         }
-        
-        return employee;
     }
+    return nil;
 }
 
 - (void)giveWorkToEmployee:(ITEmployee *)employee {
-    @synchronized (self.handlers) {
-        if (employee.state != ITEmployeeDidBecomeFree) {
-            return;
-        }
-        
-        employee.state = ITEmployeeDidBecomeBusy;
+    if (!employee || ITEmployeeDidBecomeFree != employee.state) {
+        return;
     }
+    employee.state = ITEmployeeDidBecomeBusy;
     
     id object = [self.objectsQueue dequeueObject];
+    
     if (!object) {
         employee.state = ITEmployeeDidBecomeFree;
         return;
@@ -126,14 +122,9 @@
 #pragma mark - ITEmployeeObserver Protocol
 
 - (void)employeeDidBecomeFree:(ITEmployee *)employee {
-    NSArray *handlers = self.handlers;
-    @synchronized(handlers) {
-        if (![handlers containsObject:employee]) {
-            return;
-        }
-        
+    if ([self.handlers containsObject:employee]) {
         if (ITEmployeeDidBecomeFree == employee.state && !(self.objectsQueue.count == 0)) {
-            [self performSelectorInBackground:@selector(giveWorkToEmployee:) withObject:employee];
+            [self giveWorkToEmployee:employee];
         }
     }
 }
