@@ -13,6 +13,8 @@
 @interface ITEmployee ()
 @property (nonatomic, assign) NSUInteger money;
 
+- (void)performWorkOnMainThreadWithObject:(ITEmployee *)object;
+
 @end
 
 @implementation ITEmployee
@@ -45,25 +47,12 @@
                            withObject:employee];
 }
 
-#pragma mark-
-#pragma mark Private
-
-- (void)performWorkInBackgroundWithObject:(id<ITMoneyKeeper>)object {
+- (void)performWorkInBackgroundWithObject:(id)object {
     [self takeMoneyFromObject:object];
-    [self proccessObject:object];    
+    [self proccessObject:object];
     [self performSelectorOnMainThread:@selector(performWorkOnMainThreadWithObject:)
                            withObject:object
                         waitUntilDone:NO];
-}
-
-- (void)performWorkOnMainThreadWithObject:(ITEmployee *)object {
-    @synchronized (object) {
-        [self finishProcessingingObject:object];
-    }
-    
-    @synchronized (self) {
-        [self finishProcessing];
-    }
 }
 
 - (void)finishProcessingingObject:(ITEmployee *)object {
@@ -74,6 +63,23 @@
 
 - (void)finishProcessing {
     self.state = ITEmployeeDidBecomePending;
+}
+
+- (void)print:(NSString *)message withObject:(id)object {
+    NSLog(@"%@(%@) %@ %@(%@)", [self class], self.name, message, [object class], ((ITEmployee *)object).name);
+}
+
+#pragma mark-
+#pragma mark Private
+
+- (void)performWorkOnMainThreadWithObject:(ITEmployee *)object {
+    @synchronized (object) {
+        [self finishProcessingingObject:object];
+    }
+    
+    @synchronized (self) {
+        [self finishProcessing];
+    }
 }
 
 #pragma mark -
@@ -98,7 +104,7 @@
 #pragma mark-
 #pragma mark ITMoneyKeeper Protocol
 
-- (void)takeMoneyFromObject:(id<ITMoneyKeeper>)object {
+- (void)takeMoneyFromObject:(id)object {
     [self takeMoney:[object giveMoney]];
 }
 

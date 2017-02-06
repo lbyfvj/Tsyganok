@@ -22,8 +22,16 @@ typedef NS_ENUM (NSUInteger, ITEmployeeState) {
 @interface ITEmployee : ITObservableObject <ITMoneyKeeper, ITEmloyeeObserver>
 @property (nonatomic, copy)     NSString      *name;
 
-- (void)proccessObject:(id<ITMoneyKeeper>)object;
+- (void)proccessObject:(id)object;
 
-- (void)performWorkWithObject:(id<ITMoneyKeeper>)object;
+- (void)performWorkWithObject:(id)object;
+
+- (void)performWorkInBackgroundWithObject:(id)object;
+
+- (void)finishProcessingingObject:(ITEmployee *)object;
+
+- (void)finishProcessing;
+
+- (void)print:(NSString *)message withObject:(id)object;
 
 @end

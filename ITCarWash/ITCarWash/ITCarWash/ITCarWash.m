@@ -40,6 +40,10 @@ typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *
 - (void)dealloc {
     [self removeConnections];
     
+    self.washersDispatcher = nil;
+    self.accountantsDispatcher = nil;
+    self.directorsDispatcher = nil;
+    
     [super dealloc];
 }
 
@@ -53,13 +57,13 @@ typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *
 - (void)initialSetup {
     
     id (^carWashConnections)(Class class, NSUInteger count, id<ITEmloyeeObserver>observer) = ^id(Class class, NSUInteger count, id<ITEmloyeeObserver>observer) {
-        return [[NSArray objectsWithCount:count block:^id{
+        return [NSArray objectsWithCount:count block:^id{
             ITEmployee *employee = [class object];
             [employee addObserver:observer];
             [employee addObserver:self];
             
             return employee;
-        }] autorelease];
+        }];
     };
     
     self.washersDispatcher = [ITEmployeeDispatcher object];
@@ -92,10 +96,6 @@ typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *
     removeCarWashConnections(self.washersDispatcher.handlers, @[self, self.accountantsDispatcher]);
     removeCarWashConnections(self.accountantsDispatcher.handlers, @[self, self.directorsDispatcher]);
     removeCarWashConnections(self.directorsDispatcher.handlers, @[self]);
-    
-    self.washersDispatcher = nil;
-    self.accountantsDispatcher = nil;
-    self.directorsDispatcher = nil;
 }
 
 #pragma mark-

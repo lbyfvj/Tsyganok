@@ -21,10 +21,10 @@
 }
 
 - (void)proccessObject:(ITCar *)object {
-    NSLog(@"%@(%@) begin procceed %@(%@)", [self class], self.name, [object class], object.name);
+    [self print:@"begin procceed" withObject:((ITCar *)object)];
     [self washCar:object];
-    NSLog(@"%@(%@) took money from %@(%@)", [self class], self.name, [object class], object.name);
-    NSLog(@"%@(%@) finished procceed %@(%@)", [self class], self.name, [object class], object.name);
+    [self print:@"took money from" withObject:((ITCar *)object)];
+    [self print:@"finished procceed" withObject:((ITCar *)object)];
 }
 
 #pragma mark-

@@ -21,10 +21,12 @@
 }
 
 -(void)proccessObject:(ITAccountant *)object {
-    NSLog(@"%@ begin procceed %@(%@)", [self class], [object class], object.name);
+    [self print:@"begin procceed" withObject:object];
+    //NSLog(@"%@ begin procceed %@(%@)", [self class], [object class], object.name);
     object.state = ITEmployeeDidBecomeFree;
     [self getProfit];
-    NSLog(@"%@(%@) finished procceed %@(%@)", [self class], self.name, [object class], object.name);
+    [self print:@"finished procceed" withObject:object];
+    //NSLog(@"%@(%@) finished procceed %@(%@)", [self class], self.name, [object class], object.name);
 }
 
 #pragma mark-
