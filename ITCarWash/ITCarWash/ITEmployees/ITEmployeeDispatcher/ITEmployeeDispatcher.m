@@ -17,6 +17,7 @@
 @property (nonatomic, retain)   NSMutableArray  *mutableHandlers;
 @property (nonatomic, retain)   ITQueue         *objectsQueue;
 
+- (ITEmployee *)reserveEmployee;
 - (ITEmployee *)findFreeEmployee;
 - (void)giveWorkToEmployee:(ITEmployee *)employee;
 

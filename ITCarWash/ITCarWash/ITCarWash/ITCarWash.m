@@ -99,7 +99,7 @@ typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *
 #pragma mark-
 #pragma mark Public
 
--(void)washCars:(NSArray *)cars {
+- (void)washCars:(NSArray *)cars {
     for (ITCar *car in cars) {
         [self performSelectorInBackground:@selector(washCar:)
                                withObject:car];
