@@ -14,7 +14,7 @@
 #pragma mark-
 #pragma mark Public
 
-- (void)proccessObject:(ITWasher *)object {
+- (void)processObject:(ITWasher *)object {
     NSLog(@"%@ begin procceed %@(%@)", [self class], [object class], object.name);
     [self calculate];
     NSLog(@"%@ finished procceed %@(%@)", [self class], [object class], object.name);

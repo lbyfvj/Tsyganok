@@ -11,7 +11,7 @@
 #import "ITMoneyKeeperProtocol.h"
 #import "ITEmployeeObserverProtocol.h"
 
-static const uint8_t kITEmployeeMaxSleepTime = 1;
+static const uint8_t kITEmployeeMaxSleepTime = 2;
 
 typedef NS_ENUM (NSUInteger, ITEmployeeState) {
     ITEmployeeDidBecomeFree,
@@ -22,8 +22,14 @@ typedef NS_ENUM (NSUInteger, ITEmployeeState) {
 @interface ITEmployee : ITObservableObject <ITMoneyKeeper, ITEmloyeeObserver>
 @property (nonatomic, copy)     NSString      *name;
 
-- (void)proccessObject:(id<ITMoneyKeeper>)object;
+- (void)processObject:(id)object; // Don't call it directly. Method for overloading in subclasses only.
 
-- (void)performWorkWithObject:(id<ITMoneyKeeper>)object;
+- (void)performWorkWithObject:(id)object;
+
+- (void)performWorkInBackgroundWithObject:(id)employee;
+
+- (void)finishProcessingObject:(id)object;
+
+- (void)finishProcessing;
 
 @end

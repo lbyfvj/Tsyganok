@@ -17,8 +17,6 @@
 #import "ITQueue.h"
 
 static NSInteger const kITWashersCount = 4;
-static NSInteger const kITAccountantsCount = 1;
-static NSInteger const kITDirectorsCount = 1;
 typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *observers);
 
 @interface ITCarWash ()
@@ -60,55 +58,31 @@ typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *
 }
 
 - (void)initialSetup {
-//    ITAccountant *accountant = [ITAccountant object];
-//    ITDirector *director = [ITDirector object];
-//    NSMutableArray *staff = [NSMutableArray objectsWithCount:kITWashersCount block:^id{
-//        ITWasher *washer = [ITWasher object];
-//        [washer addObserver:accountant];
-//        [washer addObserver:self];
-//        
-//        return washer;
-//    }];
-//    [accountant addObserver:director];
-//    [staff addObjectsFromArray:@[accountant, director]];
-//    for (ITEmployee* employee in staff) {
-//        [self hireEmployee:employee];
-//    }
-    
-    id (^carWashStaff)(Class class, NSUInteger count, id<ITEmloyeeObserver>observer) = ^id(Class class, NSUInteger count, id<ITEmloyeeObserver>observer) {
-        return [NSArray objectsWithCount:count block:^id{
-            ITEmployee *employee = [class object];
-            [employee addObserver:observer];
-            [employee addObserver:self];
-            
-            return employee;
-        }];
-    };
-
+    ITAccountant *accountant = [ITAccountant object];
     ITDirector *director = [ITDirector object];
-    NSArray *accountant = carWashStaff([ITAccountant class], kITAccountantsCount, director);
-    NSMutableArray *staff = carWashStaff([ITWasher class], kITWashersCount, [accountant firstObject]);
-    [staff arrayByAddingObjectsFromArray:@[accountant, director]];
-    
+    NSMutableArray *staff = [NSMutableArray objectsWithCount:kITWashersCount block:^id{
+        ITWasher *washer = [ITWasher object];
+        [washer addObserver:accountant];
+        [washer addObserver:self];
+        
+        return washer;
+    }];
+    [accountant addObserver:director];
+    [staff addObjectsFromArray:@[accountant, director]];
     for (ITEmployee* employee in staff) {
         [self hireEmployee:employee];
     }
 }
 
 - (void)removeConnections {
-    NSArray *accountants = [self employeesOfClass:[ITAccountant class]];
-    NSArray *directors = [self employeesOfClass:[ITDirector class]];
-    NSArray *washers = [self employeesOfClass:[ITWasher class]];
-    
     ITRemoveCarWashConnections removeCarWashConnections = ^void(NSArray *observableObjects, NSArray *observers) {
         for (id object in observableObjects) {
             [object removeObservers:observers];
         }
     };
     
-    removeCarWashConnections(washers, accountants);
-    removeCarWashConnections(washers, @[self]);
-    removeCarWashConnections(accountants, directors);
+    removeCarWashConnections([self employeesOfClass:[ITWasher class]], [[self employeesOfClass:[ITAccountant class]] arrayByAddingObject:self]);
+    removeCarWashConnections([self employeesOfClass:[ITAccountant class]], [self employeesOfClass:[ITDirector class]]);
 }
 
 #pragma mark-
@@ -122,7 +96,7 @@ typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *
     [self.carsQueue enqueueObject:car];
 
     @synchronized(self.staff) {
-        ITWasher *freeWasher = [self findFreeWasher];
+        ITWasher *freeWasher = [self reserveWasher];
         if (freeWasher) {
             [self giveWorkToWasher:freeWasher];
         }
@@ -136,15 +110,17 @@ typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *
 }
 
 - (NSArray *)employeesOfClass:(Class)employeeClass {
-    NSMutableArray *result = [NSMutableArray array];
     NSMutableArray *staff = self.staff;
-    for (id item in staff) {
-        if ([item isMemberOfClass:employeeClass]) {
-            [result addObject:item];
+    @synchronized (staff) {
+        NSMutableArray *result = [NSMutableArray array];
+        for (id item in staff) {
+            if ([item isMemberOfClass:employeeClass]) {
+                [result addObject:item];
+            }
         }
+        
+        return result;
     }
-    
-    return result;
 }
 
 #pragma mark -
@@ -169,11 +145,21 @@ typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *
     return washer;
 }
 
+- (ITWasher *)reserveWasher {
+    @synchronized (self.staff) {
+        ITWasher *washer = [self findFreeWasher];
+        washer.state = ITEmployeeDidBecomeBusy;
+        
+        return washer;
+    }
+}
+
 - (void)giveWorkToWasher:(ITWasher *)washer {
     @synchronized (washer) {
         ITCar *activeCar = [self.carsQueue dequeueObject];
         if (activeCar) {
-            [washer performWorkWithObject:activeCar];
+            [washer performSelectorInBackground:@selector(performWorkInBackgroundWithObject:)
+                                        withObject:activeCar];
         }
     }
 }

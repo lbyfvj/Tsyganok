@@ -14,11 +14,11 @@
 #pragma mark -
 #pragma mark Overloaded Methods
 
-- (void)finishProccessingObject:(id<ITMoneyKeeper>)object {
-    ((ITCar *)object).carState = ITCarClean;
+- (void)finishProcessingObject:(ITCar *)object {
+    object.carState = ITCarClean;
 }
 
-- (void)proccessObject:(ITCar *)object {
+- (void)processObject:(ITCar *)object {
     NSLog(@"%@(%@) begin procceed %@(%@)", [self class], self.name, [object class], object.name);
     [self washCar:object];
     NSLog(@"%@(%@) took money from %@(%@)", [self class], self.name, [object class], object.name);
@@ -30,7 +30,6 @@
 
 - (void)washCar:(ITCar *)car {
     sleep(arc4random_uniform(kITEmployeeMaxSleepTime));
-    [self finishProccessingObject:car];
 }
 
 @end

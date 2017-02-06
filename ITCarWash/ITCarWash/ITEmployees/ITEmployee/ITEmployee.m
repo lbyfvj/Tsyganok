@@ -14,6 +14,8 @@
 @property (nonatomic, retain) ITQueue *queue;
 @property (nonatomic, assign) NSUInteger money;
 
+- (void)performWorkOnMainThreadWithObject:(id)employee;
+
 @end
 
 @implementation ITEmployee
@@ -40,7 +42,7 @@
 #pragma mark-
 #pragma mark Public
 
-- (void)proccessObject:(id)object {    
+- (void)processObject:(id)object {
     [self doesNotRecognizeSelector:_cmd];
 }
 
@@ -55,19 +57,27 @@
     }
 }
 
+- (void)finishProcessingObject:(ITEmployee *)object {
+    object.state = ITEmployeeDidBecomeFree;
+}
+
+- (void)finishProcessing {
+    self.state = ITEmployeeDidBecomePending;
+}
+
 #pragma mark-
 #pragma mark Private
 
-- (void)performWorkInBackgroundWithObject:(id<ITMoneyKeeper>)employee {
-    [self takeMoneyFromObject:employee];
-    [self proccessObject:employee];
+- (void)performWorkInBackgroundWithObject:(id)object {
+    [self takeMoneyFromObject:object];
+    [self processObject:object];
     
-    [self performSelectorOnMainThread:@selector(performWorkOnMainThreadWithObject:) withObject:employee waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(performWorkOnMainThreadWithObject:) withObject:object waitUntilDone:NO];
 }
 
-- (void)performWorkOnMainThreadWithObject:(id<ITMoneyKeeper>)employee {
-    @synchronized (employee) {
-        [self finishProccessingObject:employee];
+- (void)performWorkOnMainThreadWithObject:(id)object {
+    @synchronized (object) {
+        [self finishProcessingObject:object];
     }
     
     @synchronized(self) {
@@ -76,17 +86,9 @@
             id object = [queue dequeueObject];
             [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:object];
         } else {
-            [self finishProccess];
+            [self finishProcessing];
         }
     }
-}
-
-- (void)finishProccessingObject:(id<ITMoneyKeeper>)object {
-    ((ITEmployee *)object).state = ITEmployeeDidBecomeFree;
-}
-
-- (void)finishProccess {
-    self.state = ITEmployeeDidBecomePending;
 }
 
 #pragma mark -
