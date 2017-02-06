@@ -84,29 +84,37 @@
 
 - (void)performWorkWithObject:(id)object {
     [self.objectsQueue enqueueObject:object];
-    [self giveWorkToEmployee:[self findFreeEmployee]];
+    [self giveWorkToEmployee:[self reserveEmployee]];
 }
 
 #pragma mark -
 #pragma mark Private
 
-- (ITEmployee *)findFreeEmployee {
+- (ITEmployee *)reserveEmployee {
     NSArray *employees = self.handlers;
     @synchronized (employees) {
+        ITEmployee *employee = [self findFreeEmployee];
+        employee.state = ITEmployeeDidBecomeBusy;
+        
+        return employee;
+    }
+}
+
+- (ITEmployee *)findFreeEmployee {
+    NSArray *employees = self.handlers;
         for (ITEmployee *employee in employees) {
             if (employee.state == ITEmployeeDidBecomeFree) {
                 return employee;
             }
         }
-    }
+
     return nil;
 }
 
 - (void)giveWorkToEmployee:(ITEmployee *)employee {
-    if (!employee || ITEmployeeDidBecomeFree != employee.state) {
+    if (!employee) {
         return;
     }
-    employee.state = ITEmployeeDidBecomeBusy;
     
     id object = [self.objectsQueue dequeueObject];
     
