@@ -56,34 +56,28 @@ typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *
 
 - (void)initialSetup {
     
-    id (^carWashConnections)(Class class, NSUInteger count, id<ITEmloyeeObserver>observer) = ^id(Class class, NSUInteger count, id<ITEmloyeeObserver>observer) {
+    id (^carWashEmployees)(Class class, NSUInteger count, id<ITEmloyeeObserver>observer) = ^id(Class class, NSUInteger count, id<ITEmloyeeObserver>observer) {
         return [NSArray objectsWithCount:count block:^id{
             ITEmployee *employee = [class object];
             [employee addObserver:observer];
-            [employee addObserver:self];
             
             return employee;
         }];
     };
     
-    self.washersDispatcher = [ITEmployeeDispatcher object];
-    self.accountantsDispatcher = [ITEmployeeDispatcher object];
-    self.directorsDispatcher = [ITEmployeeDispatcher object];
+    id (^carWashDispatcher)(Class dispatcherClass, Class handlerClass, NSUInteger count, id handlerObserver) = ^id(Class dispatcherClass, Class handlerClass, NSUInteger count, id handlerObserver) {
+        id dispatcher = [dispatcherClass object];
+        NSArray *handlers = carWashEmployees([handlerClass class], count, handlerObserver);
+        for (id handler in handlers) {
+            [dispatcher addHandler:handler];
+        }
+        
+        return dispatcher;
+    };
     
-    NSArray *directors = carWashConnections([ITDirector class], kITDirectorsCount, self);
-    for (id director in directors) {
-        [self.directorsDispatcher addHandler:director];
-    }
-    
-    NSArray *accountants = carWashConnections([ITAccountant class], kITAccountantsCount, self.directorsDispatcher);
-    for (id accountant in accountants) {
-        [self.accountantsDispatcher addHandler:accountant];
-    }
-    
-    NSArray *washers = carWashConnections([ITWasher class], kITWashersCount, self.accountantsDispatcher);
-    for (id washer in washers) {
-        [self.washersDispatcher addHandler:washer];
-    }
+    self.directorsDispatcher = carWashDispatcher([ITEmployeeDispatcher class], [ITDirector class], kITDirectorsCount, nil);
+    self.accountantsDispatcher = carWashDispatcher([ITEmployeeDispatcher class], [ITAccountant class], kITAccountantsCount, self.directorsDispatcher);
+    self.washersDispatcher = carWashDispatcher([ITEmployeeDispatcher class], [ITWasher class], kITWashersCount, self.accountantsDispatcher);
 }
 
 - (void)removeConnections {
