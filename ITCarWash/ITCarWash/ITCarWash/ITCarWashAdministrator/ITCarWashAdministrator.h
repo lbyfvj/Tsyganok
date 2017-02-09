@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface ITCarWashAdministrator : NSObject
-@property (nonatomic, readonly, getter=isRunning)   BOOL    running;
+//@property (nonatomic, readonly, getter=isRunning)   BOOL    running;
 
-- (void)startTimer;
-- (void)stopTimer;
+//- (void)startTimer;
+//- (void)stopTimer;
+
+
+- (void)start;
 
 @end

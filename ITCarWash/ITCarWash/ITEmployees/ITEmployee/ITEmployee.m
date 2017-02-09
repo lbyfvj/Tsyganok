@@ -42,9 +42,16 @@
     [self doesNotRecognizeSelector:_cmd];
 }
 
-- (void)performWorkWithObject:(ITEmployee *)employee {
-    [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:)
-                           withObject:employee];
+- (void)performWorkWithObject:(ITEmployee *)object {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self takeMoneyFromObject:object];
+        [self proccessObject:object];
+        dispatch_async(dispatch_get_main_queue(), ^ {
+//            [self finishProcessingingObject:object];
+//            [self finishProcessing];
+            [self performWorkInBackgroundWithObject:object];
+        });
+    });
 }
 
 - (void)performWorkInBackgroundWithObject:(id)object {
