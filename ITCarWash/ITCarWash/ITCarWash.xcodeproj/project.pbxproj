@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9307D7B81E4118B400267E60 /* ITEmployeeDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9307D7B71E4118B400267E60 /* ITEmployeeDispatcher.m */; };
+		9307D7BC1E42810700267E60 /* ITCarWashAdministrator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9307D7BB1E42810700267E60 /* ITCarWashAdministrator.m */; };
+		9357E8591E0B1213004ECC78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357E8581E0B1213004ECC78 /* main.m */; };
+		93AFA1081E295485002516E1 /* ITQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA1071E295485002516E1 /* ITQueue.m */; };
+		93AFA1201E2A2C44002516E1 /* ITCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA10B1E2A2C44002516E1 /* ITCar.m */; };
+		93AFA1211E2A2C44002516E1 /* ITCarWash.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA10E1E2A2C44002516E1 /* ITCarWash.m */; };
+		93AFA1231E2A2C44002516E1 /* ITAccountant.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA1131E2A2C44002516E1 /* ITAccountant.m */; };
+		93AFA1241E2A2C44002516E1 /* ITDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA1161E2A2C44002516E1 /* ITDirector.m */; };
+		93AFA1251E2A2C44002516E1 /* ITEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA1191E2A2C44002516E1 /* ITEmployee.m */; };
+		93AFA1261E2A2C44002516E1 /* ITWasher.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA11D1E2A2C44002516E1 /* ITWasher.m */; };
+		93B136961E34A60300BF2276 /* ITSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B136951E34A60300BF2276 /* ITSources.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9357E8531E0B1213004ECC78 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9307D7B61E4118B400267E60 /* ITEmployeeDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITEmployeeDispatcher.h; sourceTree = "<group>"; };
+		9307D7B71E4118B400267E60 /* ITEmployeeDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITEmployeeDispatcher.m; sourceTree = "<group>"; };
+		9307D7BA1E42810700267E60 /* ITCarWashAdministrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCarWashAdministrator.h; sourceTree = "<group>"; };
+		9307D7BB1E42810700267E60 /* ITCarWashAdministrator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCarWashAdministrator.m; sourceTree = "<group>"; };
+		9357E8551E0B1213004ECC78 /* ITCarWash */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ITCarWash; sourceTree = BUILT_PRODUCTS_DIR; };
+		9357E8581E0B1213004ECC78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ITCarWash/main.m; sourceTree = "<group>"; };
+		93AFA1061E295485002516E1 /* ITQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITQueue.h; sourceTree = "<group>"; };
+		93AFA1071E295485002516E1 /* ITQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITQueue.m; sourceTree = "<group>"; };
+		93AFA10A1E2A2C44002516E1 /* ITCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCar.h; sourceTree = "<group>"; };
+		93AFA10B1E2A2C44002516E1 /* ITCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCar.m; sourceTree = "<group>"; };
+		93AFA10D1E2A2C44002516E1 /* ITCarWash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCarWash.h; sourceTree = "<group>"; };
+		93AFA10E1E2A2C44002516E1 /* ITCarWash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCarWash.m; sourceTree = "<group>"; };
+		93AFA1121E2A2C44002516E1 /* ITAccountant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITAccountant.h; sourceTree = "<group>"; };
+		93AFA1131E2A2C44002516E1 /* ITAccountant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITAccountant.m; sourceTree = "<group>"; };
+		93AFA1151E2A2C44002516E1 /* ITDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITDirector.h; sourceTree = "<group>"; };
+		93AFA1161E2A2C44002516E1 /* ITDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITDirector.m; sourceTree = "<group>"; };
+		93AFA1181E2A2C44002516E1 /* ITEmployee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITEmployee.h; sourceTree = "<group>"; };
+		93AFA1191E2A2C44002516E1 /* ITEmployee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITEmployee.m; sourceTree = "<group>"; };
+		93AFA11A1E2A2C44002516E1 /* ITEmployeeObserverProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITEmployeeObserverProtocol.h; sourceTree = "<group>"; };
+		93AFA11C1E2A2C44002516E1 /* ITWasher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITWasher.h; sourceTree = "<group>"; };
+		93AFA11D1E2A2C44002516E1 /* ITWasher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITWasher.m; sourceTree = "<group>"; };
+		93AFA11F1E2A2C44002516E1 /* ITMoneyKeeperProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITMoneyKeeperProtocol.h; sourceTree = "<group>"; };
+		93B136951E34A60300BF2276 /* ITSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ITSources.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/HWL1T1-gvzlabxmzdicjaeiwpkqbhcxymef/Build/Products/Debug/ITSources.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9357E8521E0B1213004ECC78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93B136961E34A60300BF2276 /* ITSources.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9307D7B51E41189F00267E60 /* ITEmployeeDispatcher */ = {
+			isa = PBXGroup;
+			children = (
+				9307D7B61E4118B400267E60 /* ITEmployeeDispatcher.h */,
+				9307D7B71E4118B400267E60 /* ITEmployeeDispatcher.m */,
+			);
+			path = ITEmployeeDispatcher;
+			sourceTree = "<group>";
+		};
+		9307D7B91E4280F200267E60 /* ITCarWashAdministrator */ = {
+			isa = PBXGroup;
+			children = (
+				9307D7BA1E42810700267E60 /* ITCarWashAdministrator.h */,
+				9307D7BB1E42810700267E60 /* ITCarWashAdministrator.m */,
+			);
+			path = ITCarWashAdministrator;
+			sourceTree = "<group>";
+		};
+		9357E84C1E0B1213004ECC78 = {
+			isa = PBXGroup;
+			children = (
+				9357E8581E0B1213004ECC78 /* main.m */,
+				93AFA1091E2A2C44002516E1 /* ITCar */,
+				93AFA10C1E2A2C44002516E1 /* ITCarWash */,
+				93AFA1101E2A2C44002516E1 /* ITEmployees */,
+				93AFA11E1E2A2C44002516E1 /* ITMoneyKeeper */,
+				93AFA1051E295471002516E1 /* ITQueue */,
+				9357E8561E0B1213004ECC78 /* Products */,
+				9357E8661E0B1525004ECC78 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9357E8561E0B1213004ECC78 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9357E8551E0B1213004ECC78 /* ITCarWash */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9357E8661E0B1525004ECC78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93B136951E34A60300BF2276 /* ITSources.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93AFA1051E295471002516E1 /* ITQueue */ = {
+			isa = PBXGroup;
+			children = (
+				93AFA1061E295485002516E1 /* ITQueue.h */,
+				93AFA1071E295485002516E1 /* ITQueue.m */,
+			);
+			path = ITQueue;
+			sourceTree = "<group>";
+		};
+		93AFA1091E2A2C44002516E1 /* ITCar */ = {
+			isa = PBXGroup;
+			children = (
+				93AFA10A1E2A2C44002516E1 /* ITCar.h */,
+				93AFA10B1E2A2C44002516E1 /* ITCar.m */,
+			);
+			path = ITCar;
+			sourceTree = "<group>";
+		};
+		93AFA10C1E2A2C44002516E1 /* ITCarWash */ = {
+			isa = PBXGroup;
+			children = (
+				9307D7B91E4280F200267E60 /* ITCarWashAdministrator */,
+				93AFA10D1E2A2C44002516E1 /* ITCarWash.h */,
+				93AFA10E1E2A2C44002516E1 /* ITCarWash.m */,
+			);
+			path = ITCarWash;
+			sourceTree = "<group>";
+		};
+		93AFA1101E2A2C44002516E1 /* ITEmployees */ = {
+			isa = PBXGroup;
+			children = (
+				9307D7B51E41189F00267E60 /* ITEmployeeDispatcher */,
+				93AFA1111E2A2C44002516E1 /* ITAccountant */,
+				93AFA1141E2A2C44002516E1 /* ITDirector */,
+				93AFA1171E2A2C44002516E1 /* ITEmployee */,
+				93AFA11B1E2A2C44002516E1 /* ITWasher */,
+			);
+			path = ITEmployees;
+			sourceTree = "<group>";
+		};
+		93AFA1111E2A2C44002516E1 /* ITAccountant */ = {
+			isa = PBXGroup;
+			children = (
+				93AFA1121E2A2C44002516E1 /* ITAccountant.h */,
+				93AFA1131E2A2C44002516E1 /* ITAccountant.m */,
+			);
+			path = ITAccountant;
+			sourceTree = "<group>";
+		};
+		93AFA1141E2A2C44002516E1 /* ITDirector */ = {
+			isa = PBXGroup;
+			children = (
+				93AFA1151E2A2C44002516E1 /* ITDirector.h */,
+				93AFA1161E2A2C44002516E1 /* ITDirector.m */,
+			);
+			path = ITDirector;
+			sourceTree = "<group>";
+		};
+		93AFA1171E2A2C44002516E1 /* ITEmployee */ = {
+			isa = PBXGroup;
+			children = (
+				93AFA1181E2A2C44002516E1 /* ITEmployee.h */,
+				93AFA1191E2A2C44002516E1 /* ITEmployee.m */,
+				93AFA11A1E2A2C44002516E1 /* ITEmployeeObserverProtocol.h */,
+			);
+			path = ITEmployee;
+			sourceTree = "<group>";
+		};
+		93AFA11B1E2A2C44002516E1 /* ITWasher */ = {
+			isa = PBXGroup;
+			children = (
+				93AFA11C1E2A2C44002516E1 /* ITWasher.h */,
+				93AFA11D1E2A2C44002516E1 /* ITWasher.m */,
+			);
+			path = ITWasher;
+			sourceTree = "<group>";
+		};
+		93AFA11E1E2A2C44002516E1 /* ITMoneyKeeper */ = {
+			isa = PBXGroup;
+			children = (
+				93AFA11F1E2A2C44002516E1 /* ITMoneyKeeperProtocol.h */,
+			);
+			path = ITMoneyKeeper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9357E8541E0B1213004ECC78 /* ITCarWash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9357E85C1E0B1213004ECC78 /* Build configuration list for PBXNativeTarget "ITCarWash" */;
+			buildPhases = (
+				9357E8511E0B1213004ECC78 /* Sources */,
+				9357E8521E0B1213004ECC78 /* Frameworks */,
+				9357E8531E0B1213004ECC78 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ITCarWash;
+			productName = ITCarWash;
+			productReference = 9357E8551E0B1213004ECC78 /* ITCarWash */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9357E84D1E0B1213004ECC78 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Ivan Tsyganok";
+				TargetAttributes = {
+					9357E8541E0B1213004ECC78 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 2TPE62FV94;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9357E8501E0B1213004ECC78 /* Build configuration list for PBXProject "ITCarWash" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9357E84C1E0B1213004ECC78;
+			productRefGroup = 9357E8561E0B1213004ECC78 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9357E8541E0B1213004ECC78 /* ITCarWash */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9357E8511E0B1213004ECC78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93AFA1231E2A2C44002516E1 /* ITAccountant.m in Sources */,
+				93AFA1241E2A2C44002516E1 /* ITDirector.m in Sources */,
+				9307D7BC1E42810700267E60 /* ITCarWashAdministrator.m in Sources */,
+				93AFA1211E2A2C44002516E1 /* ITCarWash.m in Sources */,
+				93AFA1251E2A2C44002516E1 /* ITEmployee.m in Sources */,
+				93AFA1201E2A2C44002516E1 /* ITCar.m in Sources */,
+				9357E8591E0B1213004ECC78 /* main.m in Sources */,
+				9307D7B81E4118B400267E60 /* ITEmployeeDispatcher.m in Sources */,
+				93AFA1081E295485002516E1 /* ITQueue.m in Sources */,
+				93AFA1261E2A2C44002516E1 /* ITWasher.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9357E85A1E0B1213004ECC78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9357E85B1E0B1213004ECC78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9357E85D1E0B1213004ECC78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 2TPE62FV94;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9357E85E1E0B1213004ECC78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 2TPE62FV94;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9357E8501E0B1213004ECC78 /* Build configuration list for PBXProject "ITCarWash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9357E85A1E0B1213004ECC78 /* Debug */,
+				9357E85B1E0B1213004ECC78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9357E85C1E0B1213004ECC78 /* Build configuration list for PBXNativeTarget "ITCarWash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9357E85D1E0B1213004ECC78 /* Debug */,
+				9357E85E1E0B1213004ECC78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9357E84D1E0B1213004ECC78 /* Project object */;
+}

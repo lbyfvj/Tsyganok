@@ -14,8 +14,8 @@
 @class ITEmployee;
 
 typedef NS_ENUM(NSUInteger, ITEmployeeState) {
-    ITEmployeeDidFinishWork,
-    ITEmployeeDidBeginWork,
+    ITemployeeDidBecomeFree,
+    ITemployeeDidBecomeBusy,
     ITEmployeeDidPerformWorkWithObject
 };
 

@@ -15,9 +15,8 @@ FOUNDATION_EXPORT double ITSourcesVersionNumber;
 FOUNDATION_EXPORT const unsigned char ITSourcesVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ITSources/PublicHeader.h>
-//#import <ITSources/ITObject/NSObject+ITObject.h>
-//#import <ITSources.h/NSString+ITString.h>
 #import <ITSources/NSObject+ITObject.h>
 #import <ITSources/NSString+ITString.h>
-
+#import <ITSources/ITObservableObject.h>
+#import <ITSources/NSArray+ITArray.h>
 

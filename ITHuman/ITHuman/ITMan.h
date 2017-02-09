@@ -10,6 +10,7 @@
 
 @interface ITMan : ITHuman
 
+- (void)goFight;
 - (void)performGenderSpecificOperation;
 
 @end

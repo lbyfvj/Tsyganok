@@ -8,7 +8,28 @@
 
 #import "ITWoman.h"
 
+static const NSUInteger kITRandomWomenNameLength = 7;
+static const NSRange kITRandomWomenAgeRange = {24, 40};
+static const NSRange kITRandomWomenWeightRange = {65, 85};
+
 @implementation ITWoman
+
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {        
+        self.name = [NSString randomNameWithLength:kITRandomWomenNameLength];
+        self.age = ITRandomNumberInRange(kITRandomWomenAgeRange);
+        self.weight = ITRandomNumberInRange(kITRandomWomenWeightRange);
+        self.gender = ITFemale;
+    }
+    
+    return self;
+}
+
+- (void)giveBirth {
+    NSLog(@"Give birth to baby!");
+}
 
 - (void)performGenderSpecificOperation {
     [self giveBirth];

@@ -44,11 +44,15 @@ NSRange ITMakeCharactersRange(unichar value1, unichar value2) {
     return [self charactersWithRange:ITMakeCharactersRange('a', 'z')];
 }
 
-+ (id)characters {
++ (id)alphanumericCharacters {
     return [self charactersWithCharacters:@[[self numericCharacters],
-                                            [self symbolCharacters],
                                             [self capitalizedCharacters],
                                             [self lowercaseCharacters]]];
+}
+
++ (id)characters {
+    return [self charactersWithCharacters:@[[self alphanumericCharacters],
+                                            [self symbolCharacters]]];
 }
 
 + (id)charactersWithRange:(NSRange)range {
@@ -125,7 +129,8 @@ NSRange ITMakeCharactersRange(unichar value1, unichar value2) {
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
                                   objects:(id [])buffer
-                                    count:(NSUInteger)resultLength {
+                                    count:(NSUInteger)resultLength
+{
     state->mutationsPtr = (unsigned long *)self;
     
     NSUInteger length = MIN(state->state + resultLength, [self count]);

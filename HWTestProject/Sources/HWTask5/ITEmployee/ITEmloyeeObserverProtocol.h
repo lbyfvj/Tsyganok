@@ -14,7 +14,7 @@
 
 @optional
 - (void)employeeDidPerformWork:(ITEmployee *)employee;
-- (void)employeeDidFinishWork:(ITEmployee *)employee;
-- (void)employeeDidBeginWork:(ITEmployee *)employee;
+- (void)employeeDidBecomeFree:(ITEmployee *)employee;
+- (void)employeeDidBecomeBusy:(ITEmployee *)employee;
 
 @end

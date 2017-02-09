@@ -7,6 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ITSources/ITSources.h>
+
+#import "math.h"
+
+extern
+NSUInteger ITRandomNumberInRange(NSRange range);
 
 typedef enum {
     ITMale,
@@ -17,13 +23,11 @@ typedef enum {
 @property (nonatomic, copy)     NSString      *name;
 @property (nonatomic, assign)   ITGender      gender;
 @property (nonatomic, assign)   NSUInteger    age;
-@property (nonatomic, assign)   double        weight;
+@property (nonatomic, assign)   float         weight;
 
 @property (nonatomic, copy, readonly) NSArray *children;
 
 - (void)sayHello;
-- (void)goFight;
-- (void)giveBirth;
 
 - (void)addChild:(ITHuman *)child;
 - (void)removeChild:(ITHuman *)child;

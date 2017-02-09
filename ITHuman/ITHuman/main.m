@@ -12,28 +12,40 @@
 #import "ITMan.h"
 #import "ITWoman.h"
 
-
-
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        ITHuman *human = [ITHuman object];
-        human.name = @"Ivan";
-        human.age = 32;
-        human.gender = ITMale;
-        human.weight = 65;
-        ITHuman *child = [ITHuman object];
-        child.name = @"Baby";
-        child.age = 5;
-        child.gender = ITFemale;
-        child.weight = 20;
-        ITHuman *child1 = [ITHuman object];
-        child1.name = @"BabyOfBaby";
-        child1.age = 5;
-        child1.gender = ITMale;
-        child1.weight = 20;
-        [human addChild:child];
-        [child addChild:child1];
+        NSMutableArray *humansArray = [NSMutableArray array];
+        
+        //NSArray *mensArray = [ITMan objectsWithCount:4];
+        NSArray *mensArray = [NSArray objectsWithCount:4 block:^id{
+            return [ITMan object];
+        }];
+        
+        //NSArray *womensArray = [ITWoman objectsWithCount:4];
+        NSArray *womensArray = [NSArray objectsWithCount:4 block:^id{
+            return [ITWoman object];
+        }];
+        
+        for (id women in womensArray) {
+            [humansArray addObject:women];
+        }
+        
+        for (id man in mensArray) {
+            [humansArray addObject:man];
+        }
+        
+        for (ITHuman *human in humansArray) {
+            [human performGenderSpecificOperation];
+        }
+        
+        ITHuman *human = [ITMan object];
+        ITHuman *child1 = [ITWoman object];
+        ITHuman *childOfChild1 = [ITMan object];
+        
+        [child1 addChild:childOfChild1];
+        [human addChild:child1];
+        
         [human sayHello];
     }
     return 0;

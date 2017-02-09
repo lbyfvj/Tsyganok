@@ -31,6 +31,14 @@ static const NSUInteger kDefaultRandomStringLength = 30;
     return [self stringWithString:result];
 }
 
++ (id)randomNameWithLength:(NSUInteger)length {
+    NSMutableString *result = [NSMutableString string];
+    NSString *capitalizedLetter = [self randomStringWithLenght:1 ofCharacters:[ITCharacters capitalizedCharacters]];
+    NSString *randomName = [capitalizedLetter stringByAppendingString:[self randomStringWithLenght:length - 1 ofCharacters:[ITCharacters characters]]];
+    [result appendFormat:@"%@", randomName];
+    return [self stringWithString:result];
+}
+
 - (NSArray *)symbols {
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self length]];
     NSUInteger lenght = [self length];

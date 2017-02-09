@@ -10,6 +10,7 @@
 
 @interface ITWoman : ITHuman
 
+- (void)giveBirth;
 - (void)performGenderSpecificOperation;
 
 @end
