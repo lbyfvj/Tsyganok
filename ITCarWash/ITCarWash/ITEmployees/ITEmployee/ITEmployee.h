@@ -11,7 +11,7 @@
 #import "ITMoneyKeeperProtocol.h"
 #import "ITEmployeeObserverProtocol.h"
 
-static const uint8_t kITEmployeeMaxSleepTime = 2;
+static const uint8_t kITEmployeeMaxSleepTime = 3;
 
 typedef NS_ENUM (NSUInteger, ITEmployeeState) {
     ITEmployeeDidBecomeFree,
@@ -26,7 +26,7 @@ typedef NS_ENUM (NSUInteger, ITEmployeeState) {
 
 - (void)performWorkWithObject:(id)object;
 
-- (void)performWorkInBackgroundWithObject:(id)object;
+//- (void)performWorkInBackgroundWithObject:(id)object;
 
 - (void)finishProcessingingObject:(ITEmployee *)object;
 

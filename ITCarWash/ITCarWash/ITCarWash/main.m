@@ -16,8 +16,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         ITCarWashAdministrator *carWashAdminstrator = [ITCarWashAdministrator object];
-        
-//        [carWashAdminstrator startTimer];
+
         [carWashAdminstrator start];
         [[NSRunLoop mainRunLoop] run];
     }

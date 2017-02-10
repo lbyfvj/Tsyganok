@@ -17,16 +17,13 @@
 
 - (void)finishProcessing {
     self.state = ITEmployeeDidBecomeFree;
-    
 }
 
 -(void)proccessObject:(ITAccountant *)object {
     [self print:@"begin procceed" withObject:object];
-    //NSLog(@"%@ begin procceed %@(%@)", [self class], [object class], object.name);
     object.state = ITEmployeeDidBecomeFree;
     [self getProfit];
     [self print:@"finished procceed" withObject:object];
-    //NSLog(@"%@(%@) finished procceed %@(%@)", [self class], self.name, [object class], object.name);
 }
 
 #pragma mark-

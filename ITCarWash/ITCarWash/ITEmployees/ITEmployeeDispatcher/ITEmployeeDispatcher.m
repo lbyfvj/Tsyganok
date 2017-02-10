@@ -132,9 +132,11 @@
 
 - (void)employeeDidBecomeFree:(ITEmployee *)employee {
     if ([self.handlers containsObject:employee]) {
-        if (ITEmployeeDidBecomeFree == employee.state && !(self.objectsQueue.count == 0)) {
-            [self giveWorkToEmployee:employee];
-        }
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            if (ITEmployeeDidBecomeFree == employee.state && !(self.objectsQueue.count == 0)) {
+                [self giveWorkToEmployee:employee];
+            }
+        });
     }
 }
 

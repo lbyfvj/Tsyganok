@@ -13,8 +13,6 @@
 @interface ITEmployee ()
 @property (nonatomic, assign) NSUInteger money;
 
-- (void)performWorkOnMainThreadWithObject:(ITEmployee *)object;
-
 @end
 
 @implementation ITEmployee
@@ -43,23 +41,14 @@
 }
 
 - (void)performWorkWithObject:(ITEmployee *)object {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         [self takeMoneyFromObject:object];
         [self proccessObject:object];
         dispatch_async(dispatch_get_main_queue(), ^ {
-//            [self finishProcessingingObject:object];
-//            [self finishProcessing];
-            [self performWorkInBackgroundWithObject:object];
+            [self finishProcessingingObject:object];
+            [self finishProcessing];
         });
     });
-}
-
-- (void)performWorkInBackgroundWithObject:(id)object {
-    [self takeMoneyFromObject:object];
-    [self proccessObject:object];
-    [self performSelectorOnMainThread:@selector(performWorkOnMainThreadWithObject:)
-                           withObject:object
-                        waitUntilDone:NO];
 }
 
 - (void)finishProcessingingObject:(ITEmployee *)object {
@@ -74,19 +63,6 @@
 
 - (void)print:(NSString *)message withObject:(id)object {
     NSLog(@"%@(%@) %@ %@(%@)", [self class], self.name, message, [object class], ((ITEmployee *)object).name);
-}
-
-#pragma mark-
-#pragma mark Private
-
-- (void)performWorkOnMainThreadWithObject:(ITEmployee *)object {
-    @synchronized (object) {
-        [self finishProcessingingObject:object];
-    }
-    
-    @synchronized (self) {
-        [self finishProcessing];
-    }
 }
 
 #pragma mark -
