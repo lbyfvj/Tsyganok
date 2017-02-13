@@ -11,9 +11,6 @@
       location = "group:ITHuman/ITHuman.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:HWL1T1.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:ITSources/ITSources.xcodeproj">
    </FileRef>
    <FileRef

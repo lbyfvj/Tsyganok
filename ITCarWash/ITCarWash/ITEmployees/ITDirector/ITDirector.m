@@ -23,6 +23,7 @@
     NSLog(@"%@ begin procceed %@", [self class], [object class]);
     object.state = ITEmployeeDidBecomeFree;
     [self getProfit];
+    NSLog(@"%@ finished procceed %@", [self class], [object class]);
 }
 
 #pragma mark-

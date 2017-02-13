@@ -137,9 +137,13 @@ typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *
 - (ITWasher *)findFreeWasher {
     ITWasher *washer= nil;
     for (washer in [self employeesOfClass:[ITWasher class]]) {
-        if (washer.state == ITEmployeeDidBecomeFree) {
-            break;
+        @synchronized (washer) {
+            if (washer.state == ITEmployeeDidBecomeFree) {
+                washer.state = ITEmployeeDidBecomeBusy;
+                break;
+            }
         }
+
     }
     
     return washer;
@@ -148,7 +152,7 @@ typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *
 - (ITWasher *)reserveWasher {
     @synchronized (self.staff) {
         ITWasher *washer = [self findFreeWasher];
-        washer.state = ITEmployeeDidBecomeBusy;
+        //washer.state = ITEmployeeDidBecomeBusy;
         
         return washer;
     }
