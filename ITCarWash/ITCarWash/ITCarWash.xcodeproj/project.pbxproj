@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9307D7B81E4118B400267E60 /* ITEmployeeDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9307D7B71E4118B400267E60 /* ITEmployeeDispatcher.m */; };
 		9307D7BC1E42810700267E60 /* ITCarWashAdministrator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9307D7BB1E42810700267E60 /* ITCarWashAdministrator.m */; };
+		932BCC6B1E524F160097976A /* ITSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932BCC6A1E524F160097976A /* ITSources.framework */; };
 		9357E8591E0B1213004ECC78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357E8581E0B1213004ECC78 /* main.m */; };
 		93AFA1081E295485002516E1 /* ITQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA1071E295485002516E1 /* ITQueue.m */; };
 		93AFA1201E2A2C44002516E1 /* ITCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA10B1E2A2C44002516E1 /* ITCar.m */; };
@@ -17,7 +18,6 @@
 		93AFA1241E2A2C44002516E1 /* ITDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA1161E2A2C44002516E1 /* ITDirector.m */; };
 		93AFA1251E2A2C44002516E1 /* ITEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA1191E2A2C44002516E1 /* ITEmployee.m */; };
 		93AFA1261E2A2C44002516E1 /* ITWasher.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFA11D1E2A2C44002516E1 /* ITWasher.m */; };
-		93B136961E34A60300BF2276 /* ITSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B136951E34A60300BF2276 /* ITSources.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +37,7 @@
 		9307D7B71E4118B400267E60 /* ITEmployeeDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITEmployeeDispatcher.m; sourceTree = "<group>"; };
 		9307D7BA1E42810700267E60 /* ITCarWashAdministrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCarWashAdministrator.h; sourceTree = "<group>"; };
 		9307D7BB1E42810700267E60 /* ITCarWashAdministrator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCarWashAdministrator.m; sourceTree = "<group>"; };
+		932BCC6A1E524F160097976A /* ITSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ITSources.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/HWL1T1-gvzlabxmzdicjaeiwpkqbhcxymef/Build/Products/Debug/ITSources.framework"; sourceTree = "<group>"; };
 		9357E8551E0B1213004ECC78 /* ITCarWash */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ITCarWash; sourceTree = BUILT_PRODUCTS_DIR; };
 		9357E8581E0B1213004ECC78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ITCarWash/main.m; sourceTree = "<group>"; };
 		93AFA1061E295485002516E1 /* ITQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITQueue.h; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		93AFA11C1E2A2C44002516E1 /* ITWasher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITWasher.h; sourceTree = "<group>"; };
 		93AFA11D1E2A2C44002516E1 /* ITWasher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITWasher.m; sourceTree = "<group>"; };
 		93AFA11F1E2A2C44002516E1 /* ITMoneyKeeperProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITMoneyKeeperProtocol.h; sourceTree = "<group>"; };
-		93B136951E34A60300BF2276 /* ITSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ITSources.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/HWL1T1-gvzlabxmzdicjaeiwpkqbhcxymef/Build/Products/Debug/ITSources.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93B136961E34A60300BF2276 /* ITSources.framework in Frameworks */,
+				932BCC6B1E524F160097976A /* ITSources.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +113,7 @@
 		9357E8661E0B1525004ECC78 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				93B136951E34A60300BF2276 /* ITSources.framework */,
+				932BCC6A1E524F160097976A /* ITSources.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

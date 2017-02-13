@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import <ITSources/ITDispatchQueue.h>
+
 @interface ITCarWashAdministrator : NSObject
 
 - (void)start;

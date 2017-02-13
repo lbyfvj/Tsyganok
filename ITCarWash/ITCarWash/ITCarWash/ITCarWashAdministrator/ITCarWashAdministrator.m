@@ -48,7 +48,8 @@ static NSTimeInterval const kITCarProceedInterval = 2;
 #pragma mark Private
 
 - (void)beginProcess {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+    
+    ITAsyncPerformInBackgroundQueue(^{
         NSUInteger carsInPack = MIN(kITDefaultCarsPack, kITCarsQuantity - self.washedCars);
         NSArray *cars = [NSArray objectsWithCount:carsInPack block:^id{
             return [ITCar object];
@@ -60,16 +61,38 @@ static NSTimeInterval const kITCarProceedInterval = 2;
         
         self.washedCars += carsInPack;
     });
+    
+    
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+//        NSUInteger carsInPack = MIN(kITDefaultCarsPack, kITCarsQuantity - self.washedCars);
+//        NSArray *cars = [NSArray objectsWithCount:carsInPack block:^id{
+//            return [ITCar object];
+//        }];
+//        
+//        if (cars.count > 0) {
+//            [self.carWash washCars:cars];
+//        }
+//        
+//        self.washedCars += carsInPack;
+//    });
 }
 
 #pragma mark -
 #pragma mark Public
 
 - (void)start {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kITCarProceedInterval * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+    
+
+    ITDispatchAfter(kITCarProceedInterval, ITDispatchQueueBackgroundPriority, ^{
         [self beginProcess];
         [self start];
     });
+    
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kITCarProceedInterval * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+//        [self beginProcess];
+//        [self start];
+//    });
 }
 
 @end

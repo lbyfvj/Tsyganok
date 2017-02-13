@@ -19,4 +19,5 @@ FOUNDATION_EXPORT const unsigned char ITSourcesVersionString[];
 #import <ITSources/NSString+ITString.h>
 #import <ITSources/ITObservableObject.h>
 #import <ITSources/NSArray+ITArray.h>
+#import <ITSources/ITDispatchQueue.h>
 

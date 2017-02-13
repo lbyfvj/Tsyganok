@@ -64,6 +64,16 @@
     }
 }
 
+- (void)setMutableHandlers:(NSMutableArray *)mutableHandlers {
+    if (_mutableHandlers != mutableHandlers) {
+        for (id object in _mutableHandlers) {
+            [object removeObject:self];
+        }
+        [_mutableHandlers release];
+        _mutableHandlers = [mutableHandlers retain];
+    }
+}
+
 #pragma mark -
 #pragma mark Public
 
@@ -95,7 +105,7 @@
     NSArray *employees = self.handlers;
     @synchronized (employees) {
         ITEmployee *employee = [self findFreeEmployee];
-        employee.state = ITEmployeeDidBecomeBusy;
+        //employee.state = ITEmployeeDidBecomeBusy;
         
         return employee;
     }
@@ -104,8 +114,11 @@
 - (ITEmployee *)findFreeEmployee {
     NSArray *employees = self.handlers;
         for (ITEmployee *employee in employees) {
-            if (employee.state == ITEmployeeDidBecomeFree) {
-                return employee;
+            @synchronized (employee) {
+                if (employee.state == ITEmployeeDidBecomeFree) {
+                    employee.state = ITEmployeeDidBecomeBusy;
+                    return employee;
+                }
             }
         }
 
@@ -127,16 +140,26 @@
     [employee performWorkWithObject:object];
 }
 
+- (void)employeeWorkProcessing:(ITEmployee *)employee {
+    if (ITEmployeeDidBecomeFree == employee.state && !(self.objectsQueue.count == 0)) {
+        [self giveWorkToEmployee:employee];
+    }
+}
+
+
 #pragma mark -
 #pragma mark - ITEmployeeObserver Protocol
 
 - (void)employeeDidBecomeFree:(ITEmployee *)employee {
-    if ([self.handlers containsObject:employee]) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-            if (ITEmployeeDidBecomeFree == employee.state && !(self.objectsQueue.count == 0)) {
-                [self giveWorkToEmployee:employee];
-            }
-        });
+    @synchronized (employee) {
+        if ([self.handlers containsObject:employee]) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+                //            if (ITEmployeeDidBecomeFree == employee.state && !(self.objectsQueue.count == 0)) {
+                //                [self giveWorkToEmployee:employee];
+                //            }
+                [self employeeWorkProcessing:employee];
+            });
+        }
     }
 }
 
