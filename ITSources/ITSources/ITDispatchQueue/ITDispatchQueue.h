@@ -25,6 +25,8 @@ void ITAsyncPerformInQueue(ITDispatchQueuePriority type, ITGCDBlock block);
 
 void ITAsyncPerformInMainQueue(ITGCDBlock block);
 
-void ITDispatchAfter(NSUInteger delay, ITDispatchQueuePriority type, ITGCDBlock block);
+void ITDispatchAfter(NSTimeInterval delay, ITDispatchQueuePriority type, ITGCDBlock block);
+
+void ITCancelDispatchBlock(ITGCDBlock block);
 
 dispatch_queue_t ITGetDispatchGlobalQueueWithType(ITDispatchQueuePriority type);

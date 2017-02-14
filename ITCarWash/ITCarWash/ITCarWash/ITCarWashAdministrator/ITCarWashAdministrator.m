@@ -81,18 +81,19 @@ static NSTimeInterval const kITCarProceedInterval = 2;
 #pragma mark Public
 
 - (void)start {
-    
-
     ITDispatchAfter(kITCarProceedInterval, ITDispatchQueueBackgroundPriority, ^{
         [self beginProcess];
         [self start];
     });
-    
-    
+
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kITCarProceedInterval * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
 //        [self beginProcess];
 //        [self start];
 //    });
+}
+
+- (void)stop {
+    
 }
 
 @end
