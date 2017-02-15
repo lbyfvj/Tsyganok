@@ -20,7 +20,7 @@ static NSTimeInterval const kITCarProceedInterval = 2;
 @property (nonatomic, retain)   ITCarWash   *carWash;
 @property (nonatomic, assign)   NSUInteger  washedCars;
 
-- (void)beginProcess;
+- (void)beginCarWashProcess;
 
 @end
 
@@ -47,16 +47,20 @@ static NSTimeInterval const kITCarProceedInterval = 2;
 #pragma mark -
 #pragma mark Private
 
-- (void)beginProcess {
+- (void)beginCarWashProcess {
     
     ITAsyncPerformInBackgroundQueue(^{
         NSUInteger carsInPack = MIN(kITDefaultCarsPack, kITCarsQuantity - self.washedCars);
-        NSArray *cars = [NSArray objectsWithCount:carsInPack block:^id{
-            return [ITCar object];
-        }];
+        NSArray *cars = [ITCar objectsWithCount:carsInPack];
+        
+//        NSArray *cars = [NSArray objectsWithCount:carsInPack block:^id{
+//            return [ITCar object];
+//        }];
         
         if (cars.count > 0) {
             [self.carWash washCars:cars];
+        } else {
+            [self stop];
         }
         
         self.washedCars += carsInPack;
@@ -82,10 +86,10 @@ static NSTimeInterval const kITCarProceedInterval = 2;
 
 - (void)start {
     ITDispatchAfter(kITCarProceedInterval, ITDispatchQueueBackgroundPriority, ^{
-        [self beginProcess];
+        [self beginCarWashProcess];
         [self start];
     });
-
+    
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kITCarProceedInterval * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
 //        [self beginProcess];
 //        [self start];
@@ -93,7 +97,8 @@ static NSTimeInterval const kITCarProceedInterval = 2;
 }
 
 - (void)stop {
-    
+    NSLog(@"Working day finished");
+    //ITCancelDispatchBlock();
 }
 
 @end

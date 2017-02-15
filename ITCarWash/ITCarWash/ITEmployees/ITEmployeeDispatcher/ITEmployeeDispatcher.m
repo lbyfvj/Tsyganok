@@ -153,12 +153,13 @@
 - (void)employeeDidBecomeFree:(ITEmployee *)employee {
     @synchronized (employee) {
         if ([self.handlers containsObject:employee]) {
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-                //            if (ITEmployeeDidBecomeFree == employee.state && !(self.objectsQueue.count == 0)) {
-                //                [self giveWorkToEmployee:employee];
-                //            }
+            ITAsyncPerformInBackgroundQueue(^{
                 [self employeeWorkProcessing:employee];
             });
+            
+//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+//                [self employeeWorkProcessing:employee];
+//            });
         }
     }
 }

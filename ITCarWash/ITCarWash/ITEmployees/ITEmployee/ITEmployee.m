@@ -41,14 +41,23 @@
 }
 
 - (void)performWorkWithObject:(ITEmployee *)object {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+    ITAsyncPerformInBackgroundQueue(^{
         [self takeMoneyFromObject:object];
         [self proccessObject:object];
-        dispatch_async(dispatch_get_main_queue(), ^ {
+        ITAsyncPerformInMainQueue(^{
             [self finishProcessingingObject:object];
             [self finishProcessing];
         });
     });
+    
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+//        [self takeMoneyFromObject:object];
+//        [self proccessObject:object];
+//        dispatch_async(dispatch_get_main_queue(), ^ {
+//            [self finishProcessingingObject:object];
+//            [self finishProcessing];
+//        });
+//    });
 }
 
 - (void)finishProcessingingObject:(ITEmployee *)object {
@@ -61,8 +70,8 @@
     self.state = ITEmployeeDidBecomePending;
 }
 
-- (void)print:(NSString *)message withObject:(id)object {
-    NSLog(@"%@(%@) %@ %@(%@)", [self class], self.name, message, [object class], ((ITEmployee *)object).name);
+- (void)print:(NSString *)message withObject:(ITEmployee *)object {
+    NSLog(@"%@(%@) %@ %@(%@)", [self class], self.name, message, [object class], object.name);
 }
 
 #pragma mark -
