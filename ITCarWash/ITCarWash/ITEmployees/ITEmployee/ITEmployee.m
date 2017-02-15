@@ -58,7 +58,9 @@
 }
 
 - (void)finishProcessingObject:(ITEmployee *)object {
-    object.state = ITEmployeeDidBecomeFree;
+    @synchronized (object) {
+        object.state = ITEmployeeDidBecomeFree;
+    }
 }
 
 - (void)finishProcessing {
@@ -76,9 +78,7 @@
 }
 
 - (void)performWorkOnMainThreadWithObject:(id)object {
-    @synchronized (object) {
-        [self finishProcessingObject:object];
-    }
+    [self finishProcessingObject:object];
     
     @synchronized(self) {
         ITQueue *queue = self.queue;
