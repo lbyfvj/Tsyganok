@@ -49,15 +49,6 @@
             [self finishProcessing];
         });
     });
-    
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-//        [self takeMoneyFromObject:object];
-//        [self proccessObject:object];
-//        dispatch_async(dispatch_get_main_queue(), ^ {
-//            [self finishProcessingingObject:object];
-//            [self finishProcessing];
-//        });
-//    });
 }
 
 - (void)finishProcessingingObject:(ITEmployee *)object {

@@ -53,32 +53,13 @@ static NSTimeInterval const kITCarProceedInterval = 2;
         NSUInteger carsInPack = MIN(kITDefaultCarsPack, kITCarsQuantity - self.washedCars);
         NSArray *cars = [ITCar objectsWithCount:carsInPack];
         
-//        NSArray *cars = [NSArray objectsWithCount:carsInPack block:^id{
-//            return [ITCar object];
-//        }];
-        
         if (cars.count > 0) {
             [self.carWash washCars:cars];
         } else {
-            [self stop];
+            return;
         }
-        
         self.washedCars += carsInPack;
     });
-    
-    
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-//        NSUInteger carsInPack = MIN(kITDefaultCarsPack, kITCarsQuantity - self.washedCars);
-//        NSArray *cars = [NSArray objectsWithCount:carsInPack block:^id{
-//            return [ITCar object];
-//        }];
-//        
-//        if (cars.count > 0) {
-//            [self.carWash washCars:cars];
-//        }
-//        
-//        self.washedCars += carsInPack;
-//    });
 }
 
 #pragma mark -
@@ -88,17 +69,11 @@ static NSTimeInterval const kITCarProceedInterval = 2;
     ITDispatchAfter(kITCarProceedInterval, ITDispatchQueueBackgroundPriority, ^{
         [self beginCarWashProcess];
         [self start];
-    });
-    
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kITCarProceedInterval * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-//        [self beginProcess];
-//        [self start];
-//    });
+    });    
 }
 
 - (void)stop {
-    NSLog(@"Working day finished");
-    //ITCancelDispatchBlock();
+
 }
 
 @end

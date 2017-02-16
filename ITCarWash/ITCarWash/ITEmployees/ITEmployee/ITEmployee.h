@@ -26,8 +26,6 @@ typedef NS_ENUM (NSUInteger, ITEmployeeState) {
 
 - (void)performWorkWithObject:(id)object;
 
-//- (void)performWorkInBackgroundWithObject:(id)object;
-
 - (void)finishProcessingingObject:(ITEmployee *)object;
 
 - (void)finishProcessing;

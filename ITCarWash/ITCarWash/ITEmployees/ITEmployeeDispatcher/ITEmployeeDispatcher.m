@@ -105,7 +105,6 @@
     NSArray *employees = self.handlers;
     @synchronized (employees) {
         ITEmployee *employee = [self findFreeEmployee];
-        //employee.state = ITEmployeeDidBecomeBusy;
         
         return employee;
     }
@@ -156,10 +155,6 @@
             ITAsyncPerformInBackgroundQueue(^{
                 [self employeeWorkProcessing:employee];
             });
-            
-//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-//                [self employeeWorkProcessing:employee];
-//            });
         }
     }
 }
