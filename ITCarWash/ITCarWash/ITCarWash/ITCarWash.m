@@ -152,7 +152,6 @@ typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *
 - (ITWasher *)reserveWasher {
     @synchronized (self.staff) {
         ITWasher *washer = [self findFreeWasher];
-        //washer.state = ITEmployeeDidBecomeBusy;
         
         return washer;
     }

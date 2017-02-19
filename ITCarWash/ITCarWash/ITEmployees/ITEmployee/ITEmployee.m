@@ -39,6 +39,22 @@
     return self;
 }
 
+#pragma mark -
+#pragma mark Accessors
+
+- (void)setState:(NSUInteger)state {
+    @synchronized(self) {
+        if (state == ITEmployeeDidBecomeFree && [self.queue count] > 0) {
+            [super setState:ITEmployeeDidBecomeBusy];
+            [self performSelectorOnMainThread:@selector(performWorkOnMainThreadWithObject:)
+                                   withObject:nil
+                                waitUntilDone:NO];
+        } else {
+            [super setState:state];
+        }
+    }
+}
+
 #pragma mark-
 #pragma mark Public
 
@@ -52,7 +68,8 @@
             [self.queue enqueueObject:employee];
         } else {
             self.state = ITEmployeeDidBecomeBusy;            
-            [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:employee];
+            [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:)
+                                   withObject:employee];
         }
     }
 }
@@ -74,7 +91,9 @@
     [self takeMoneyFromObject:object];
     [self processObject:object];
     
-    [self performSelectorOnMainThread:@selector(performWorkOnMainThreadWithObject:) withObject:object waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(performWorkOnMainThreadWithObject:)
+                           withObject:object
+                        waitUntilDone:NO];
 }
 
 - (void)performWorkOnMainThreadWithObject:(id)object {
@@ -84,7 +103,8 @@
         ITQueue *queue = self.queue;
         if (queue.count > 0 ) {
             id object = [queue dequeueObject];
-            [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:) withObject:object];
+            [self performSelectorInBackground:@selector(performWorkInBackgroundWithObject:)
+                                   withObject:object];
         } else {
             [self finishProcessing];
         }
@@ -143,7 +163,8 @@
 }
 
 - (void)employeeDidBecomePending:(ITEmployee *)employee {
-    [self performSelectorInBackground:@selector(performWorkWithObject:) withObject:employee];
+    [self performSelectorInBackground:@selector(performWorkWithObject:)
+                           withObject:employee];
 }
 
 @end
