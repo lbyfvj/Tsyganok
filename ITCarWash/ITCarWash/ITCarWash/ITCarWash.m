@@ -57,15 +57,10 @@ typedef void (^ITRemoveCarWashConnections)(NSArray *observableObjects, NSArray *
 - (void)initialSetup {
     id (^carWashFactory)(Class, NSUInteger, id) = ^id(Class handlerClass, NSUInteger count, id handlerObserver) {
         id dispatcher = [ITEmployeeDispatcher object];
-        NSArray *handlers = [NSArray objectsWithCount:count block:^id{
+        for (NSUInteger i = 0; i < count; i++) {
             ITEmployee *employee = [handlerClass object];
             [employee addObserver:handlerObserver];
-            
-            return employee;
-        }];
-        
-        for (id hanler in handlers) {
-            [dispatcher addHandler:hanler];
+            [dispatcher addHandler:employee];
         }
         
         return dispatcher;

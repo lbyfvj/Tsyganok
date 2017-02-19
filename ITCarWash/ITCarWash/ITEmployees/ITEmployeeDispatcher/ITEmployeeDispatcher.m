@@ -18,7 +18,7 @@
 @property (nonatomic, retain)   ITQueue         *objectsQueue;
 
 - (ITEmployee *)reserveEmployee;
-- (ITEmployee *)findFreeEmployee;
+//- (ITEmployee *)findFreeEmployee;
 - (void)giveWorkToEmployee:(ITEmployee *)employee;
 
 @end
@@ -34,13 +34,13 @@
     self.mutableHandlers = nil;
     self.objectsQueue = nil;
     
-    void (^ITRemoveConnections)(NSArray *observableObjects, NSArray *observers) = ^void(NSArray *observableObjects, NSArray *observers) {
-        for (id object in observableObjects) {
-            [object removeObservers:observers];
-        }
-    };
-    
-    ITRemoveConnections(self.mutableHandlers, @[self]);
+//    void (^ITRemoveConnections)(NSArray *observableObjects, NSArray *observers) = ^void(NSArray *observableObjects, NSArray *observers) {
+//        for (id object in observableObjects) {
+//            [object removeObservers:observers];
+//        }
+//    };
+//    
+//    ITRemoveConnections(self.mutableHandlers, @[self]);
     
     [super dealloc];
 }
@@ -51,6 +51,7 @@
         self.mutableHandlers = [NSMutableArray array];
         self.objectsQueue = [ITQueue object];
     }
+    
     return self;
 }
 
@@ -67,10 +68,16 @@
 - (void)setMutableHandlers:(NSMutableArray *)mutableHandlers {
     if (_mutableHandlers != mutableHandlers) {
         for (id object in _mutableHandlers) {
-            [object removeObject:self];
+            [object removeObserver:self];
         }
+        
         [_mutableHandlers release];
         _mutableHandlers = [mutableHandlers retain];
+        
+        for (id object in mutableHandlers) {
+            [object addObserver:self];
+        }
+        
     }
 }
 
@@ -101,26 +108,26 @@
 #pragma mark -
 #pragma mark Private
 
-- (ITEmployee *)reserveEmployee {
-    NSArray *employees = self.handlers;
-    @synchronized (employees) {
-        ITEmployee *employee = [self findFreeEmployee];
-        
-        return employee;
-    }
-}
+//- (ITEmployee *)reserveEmployee {
+//    NSArray *employees = self.handlers;
+//    @synchronized (employees) {
+//        ITEmployee *employee = [self findFreeEmployee];
+//        
+//        return employee;
+//    }
+//}
 
-- (ITEmployee *)findFreeEmployee {
-    NSArray *employees = self.handlers;
-        for (ITEmployee *employee in employees) {
-            @synchronized (employee) {
-                if (employee.state == ITEmployeeDidBecomeFree) {
-                    employee.state = ITEmployeeDidBecomeBusy;
-                    return employee;
-                }
+- (ITEmployee *)reserveEmployee {
+    for (ITEmployee *employee in self.handlers) {
+        @synchronized (employee) {
+            if (employee.state == ITEmployeeDidBecomeFree) {
+                employee.state = ITEmployeeDidBecomeBusy;
+                
+                return employee;
             }
         }
-
+    }
+    
     return nil;
 }
 
@@ -140,22 +147,23 @@
 }
 
 - (void)employeeWorkProcessing:(ITEmployee *)employee {
-    if (ITEmployeeDidBecomeFree == employee.state && !(self.objectsQueue.count == 0)) {
-        [self giveWorkToEmployee:employee];
+    @synchronized (employee) {
+        if (ITEmployeeDidBecomeFree == employee.state) {
+            employee.state = ITEmployeeDidBecomeBusy;
+        }
     }
+    
+    [self giveWorkToEmployee:employee];
 }
-
 
 #pragma mark -
 #pragma mark - ITEmployeeObserver Protocol
 
 - (void)employeeDidBecomeFree:(ITEmployee *)employee {
-    @synchronized (employee) {
-        if ([self.handlers containsObject:employee]) {
-            ITAsyncPerformInBackgroundQueue(^{
-                [self employeeWorkProcessing:employee];
-            });
-        }
+    if ([self.handlers containsObject:employee]) {
+        ITAsyncPerformInBackgroundQueue(^{
+            [self employeeWorkProcessing:employee];
+        });
     }
 }
 

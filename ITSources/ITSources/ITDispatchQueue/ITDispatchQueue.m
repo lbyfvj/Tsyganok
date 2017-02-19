@@ -30,7 +30,9 @@ dispatch_queue_t ITGetDispatchGlobalQueueWithType(ITDispatchQueuePriority type) 
 }
 
 void ITDispatchAfter(NSTimeInterval delay, ITDispatchQueuePriority type, ITGCDBlock block) {
-    if (!block) return;
+    if (!block) {
+       return; 
+    }
     
     __block BOOL cancelled = NO;
     
@@ -39,7 +41,10 @@ void ITDispatchAfter(NSTimeInterval delay, ITDispatchQueuePriority type, ITGCDBl
             cancelled = YES;
             return;
         }
-        if (!cancelled) block();
+        
+        if (!cancelled) {
+            block();
+        }
     };
     
     executedBlock = [[executedBlock copy] autorelease];

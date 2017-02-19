@@ -58,6 +58,7 @@ static NSTimeInterval const kITCarProceedInterval = 2;
         } else {
             return;
         }
+        
         self.washedCars += carsInPack;
     });
 }
