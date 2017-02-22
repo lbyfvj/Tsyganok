@@ -25,6 +25,18 @@ void ITAsyncPerformInMainQueue(ITGCDBlock block) {
     dispatch_async(dispatch_get_main_queue(), block);
 }
 
+void ITSyncPerformInBackgroundQueue(ITGCDBlock block) {
+    ITSyncPerformInQueue(ITDispatchQueueBackgroundPriority, block);
+}
+
+void ITSyncPerformInQueue(ITDispatchQueuePriority type, ITGCDBlock block) {
+    dispatch_sync(ITGetDispatchGlobalQueueWithType(type), block);
+}
+
+void ITSyncPerformInMainQueue(ITGCDBlock block) {
+    dispatch_sync(dispatch_get_main_queue(), block);
+}
+
 dispatch_queue_t ITGetDispatchGlobalQueueWithType(ITDispatchQueuePriority type) {
     return dispatch_get_global_queue(type, 0);
 }
@@ -49,12 +61,8 @@ void ITDispatchAfter(NSTimeInterval delay, ITDispatchQueuePriority type, ITGCDBl
     
     executedBlock = [[executedBlock copy] autorelease];
     
-    dispatch_after(ITTimeDelay(delay), ITGetDispatchGlobalQueueWithType(type), ^{  executedBlock(NO); });
-}
-
-void ITCancelDispatchBlock(ITGCDBlock block) {
-    if (!block) return;
-    void (^executedBlock)(BOOL) = (void(^)(BOOL))block;
-    executedBlock(YES);
+    dispatch_after(ITTimeDelay(delay), ITGetDispatchGlobalQueueWithType(type), ^{
+        executedBlock(NO);
+    });
 }
 

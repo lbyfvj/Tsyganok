@@ -26,6 +26,8 @@ static NSTimeInterval const kITCarProceedInterval = 2;
 
 @implementation ITCarWashAdministrator
 
+@synthesize running = _running;
+
 #pragma mark -
 #pragma mark Initializations and dellocations
 
@@ -45,22 +47,33 @@ static NSTimeInterval const kITCarProceedInterval = 2;
 }
 
 #pragma mark -
+#pragma mark Accessors
+
+- (BOOL)running {
+    return _running;
+}
+- (void)setRunning:(BOOL)newValue {
+    _running = newValue;
+}
+
+#pragma mark -
 #pragma mark Private
 
 - (void)beginCarWashProcess {
-    
-    ITAsyncPerformInBackgroundQueue(^{
-        NSUInteger carsInPack = MIN(kITDefaultCarsPack, kITCarsQuantity - self.washedCars);
-        NSArray *cars = [ITCar objectsWithCount:carsInPack];
-        
-        if (cars.count > 0) {
-            [self.carWash washCars:cars];
-        } else {
-            return;
-        }
-        
-        self.washedCars += carsInPack;
-    });
+        ITAsyncPerformInBackgroundQueue(^{
+            NSUInteger carsInPack = MIN(kITDefaultCarsPack, kITCarsQuantity - self.washedCars);
+            NSArray *cars = [ITCar objectsWithCount:carsInPack];
+            
+            if (cars.count > 0) {
+                self.running = YES;
+                [self.carWash washCars:cars];
+            } else {
+                self.running = NO;
+                return;
+            }
+            
+            self.washedCars += carsInPack;
+        });
 }
 
 #pragma mark -
@@ -69,12 +82,10 @@ static NSTimeInterval const kITCarProceedInterval = 2;
 - (void)start {
     ITDispatchAfter(kITCarProceedInterval, ITDispatchQueueBackgroundPriority, ^{
         [self beginCarWashProcess];
-        [self start];
-    });    
-}
-
-- (void)stop {
-
+        if (self.running) {
+            [self start];
+        }
+    });
 }
 
 @end

@@ -11,9 +11,8 @@
 #import <ITSources/ITDispatchQueue.h>
 
 @interface ITCarWashAdministrator : NSObject
+@property (nonatomic, assign)   BOOL    running;
 
 - (void)start;
-
-- (void)stop;
 
 @end

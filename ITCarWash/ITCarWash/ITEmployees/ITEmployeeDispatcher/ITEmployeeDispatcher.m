@@ -18,7 +18,6 @@
 @property (nonatomic, retain)   ITQueue         *objectsQueue;
 
 - (ITEmployee *)reserveEmployee;
-//- (ITEmployee *)findFreeEmployee;
 - (void)giveWorkToEmployee:(ITEmployee *)employee;
 
 @end
@@ -33,14 +32,6 @@
 - (void)dealloc {
     self.mutableHandlers = nil;
     self.objectsQueue = nil;
-    
-//    void (^ITRemoveConnections)(NSArray *observableObjects, NSArray *observers) = ^void(NSArray *observableObjects, NSArray *observers) {
-//        for (id object in observableObjects) {
-//            [object removeObservers:observers];
-//        }
-//    };
-//    
-//    ITRemoveConnections(self.mutableHandlers, @[self]);
     
     [super dealloc];
 }
@@ -107,15 +98,6 @@
 
 #pragma mark -
 #pragma mark Private
-
-//- (ITEmployee *)reserveEmployee {
-//    NSArray *employees = self.handlers;
-//    @synchronized (employees) {
-//        ITEmployee *employee = [self findFreeEmployee];
-//        
-//        return employee;
-//    }
-//}
 
 - (ITEmployee *)reserveEmployee {
     for (ITEmployee *employee in self.handlers) {

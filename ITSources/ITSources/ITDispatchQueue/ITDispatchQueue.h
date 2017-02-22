@@ -13,20 +13,20 @@ typedef void (^ITGCDBlock)(void);
 typedef NSUInteger ITDelayInSeconds;
 
 typedef enum {
-    ITDispatchQueueHighPriority        = DISPATCH_QUEUE_PRIORITY_HIGH,
-    ITDispatchQueueDefaultPriority     = DISPATCH_QUEUE_PRIORITY_DEFAULT,
-    ITDispatchQueueLowPriority         = DISPATCH_QUEUE_PRIORITY_LOW,
-    ITDispatchQueueBackgroundPriority  = DISPATCH_QUEUE_PRIORITY_BACKGROUND
+    ITDispatchQueueHighPriority        = QOS_CLASS_USER_INITIATED,
+    ITDispatchQueueDefaultPriority     = QOS_CLASS_DEFAULT,
+    ITDispatchQueueLowPriority         = QOS_CLASS_UTILITY,
+    ITDispatchQueueBackgroundPriority  = QOS_CLASS_BACKGROUND
 } ITDispatchQueuePriority;
 
 void ITAsyncPerformInBackgroundQueue(ITGCDBlock block);
-
 void ITAsyncPerformInQueue(ITDispatchQueuePriority type, ITGCDBlock block);
-
 void ITAsyncPerformInMainQueue(ITGCDBlock block);
 
-void ITDispatchAfter(NSTimeInterval delay, ITDispatchQueuePriority type, ITGCDBlock block);
+void ITSyncPerformInBackgroundQueue(ITGCDBlock block);
+void ITSyncPerformInQueue(ITDispatchQueuePriority type, ITGCDBlock block);
+void ITSyncPerformInMainQueue(ITGCDBlock block);
 
-void ITCancelDispatchBlock(ITGCDBlock block);
+void ITDispatchAfter(NSTimeInterval delay, ITDispatchQueuePriority type, ITGCDBlock block);
 
 dispatch_queue_t ITGetDispatchGlobalQueueWithType(ITDispatchQueuePriority type);
