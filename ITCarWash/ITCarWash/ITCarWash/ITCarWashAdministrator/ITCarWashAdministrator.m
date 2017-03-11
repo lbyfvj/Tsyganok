@@ -49,12 +49,12 @@ static NSTimeInterval const kITCarProceedInterval = 2;
 #pragma mark -
 #pragma mark Accessors
 
-- (BOOL)running {
-    return _running;
-}
-- (void)setRunning:(BOOL)newValue {
-    _running = newValue;
-}
+//- (BOOL)running {
+//    return _running;
+//}
+//- (void)setRunning:(BOOL)newValue {
+//    _running = newValue;
+//}
 
 #pragma mark -
 #pragma mark Private
@@ -64,12 +64,18 @@ static NSTimeInterval const kITCarProceedInterval = 2;
             NSUInteger carsInPack = MIN(kITDefaultCarsPack, kITCarsQuantity - self.washedCars);
             NSArray *cars = [ITCar objectsWithCount:carsInPack];
             
-            if (cars.count > 0) {
-                self.running = YES;
+//            self.running = carsInPack;
+//            self.washedCars += carsInPack;
+//            if (carsInPack) {
+//                [self.carWash washCars:cars];
+//            }
+            
+            if (carsInPack) {
+//                self.running = YES;
                 [self.carWash washCars:cars];
             } else {
                 self.running = NO;
-                return;
+                //return;
             }
             
             self.washedCars += carsInPack;
@@ -80,11 +86,28 @@ static NSTimeInterval const kITCarProceedInterval = 2;
 #pragma mark Public
 
 - (void)start {
-    ITDispatchAfter(kITCarProceedInterval, ITDispatchQueueBackgroundPriority, ^{
+    dispatch_block_t work = dispatch_block_create(0, ^{
+        self.running = YES;
         [self beginCarWashProcess];
-        if (self.running) {
-            [self start];
+        
+        if (!self.running) {
+            NSLog(@"***********************************************************call cancelled");
+            //dispatch_block_cancel(work);
         }
+        //if (self.running) {
+            [self start];
+        //}
+    });
+    
+    
+//    ITDispatchAfter(kITCarProceedInterval, ITDispatchQueueBackgroundPriority, work);
+    
+    ITDispatchAfter(kITCarProceedInterval, ITDispatchQueueBackgroundPriority, ^{
+        if (dispatch_block_testcancel(work) != 0) {
+            return;
+        }
+        
+        work();
     });
 }
 

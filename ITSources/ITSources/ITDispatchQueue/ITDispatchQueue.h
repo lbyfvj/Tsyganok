@@ -30,3 +30,10 @@ void ITSyncPerformInMainQueue(ITGCDBlock block);
 void ITDispatchAfter(NSTimeInterval delay, ITDispatchQueuePriority type, ITGCDBlock block);
 
 dispatch_queue_t ITGetDispatchGlobalQueueWithType(ITDispatchQueuePriority type);
+
+//typedef void(^SMDelayedBlockHandle)(BOOL cancel);
+//
+//SMDelayedBlockHandle perform_block_after_delay(CGFloat seconds, dispatch_block_t block);
+//
+//void cancel_delayed_block(SMDelayedBlockHandle delayedHandle);
+
